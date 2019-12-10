@@ -18,7 +18,7 @@ def search_insert(nums: [int], target: int) -> int:
 
         if nums[middle] == target:
             return middle
-        elif nums[middle] < target:
+        if nums[middle] < target:
             left_index = middle + 1
         else:
             right_index = middle - 1

@@ -11,5 +11,6 @@ python:
 
 # command to run tests
 script:
-  - python compile-files.py
+  - pylint *
+  - python compile_files.py
   - pytest # or py.test for Python versions 3.5 and below
