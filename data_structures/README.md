@@ -3,6 +3,8 @@
 * [Singly Linked List](#singly-linked-list)
 * [Doubly Linked List](#doubly-linked-list)
 * [Circularly Linked List](#circularly-linked-list)
+* [Binary Tree](#binary-tree)
+* [Stack](#stack)
 * [Queues](#queue)
     * [Built-ins](#built-ins)
 
@@ -379,6 +381,10 @@ class BinaryTree(object):
     def root(self, root: BinaryTreeNode):
         self._root = root
 ```
+
+## Stack
+
+A stack is a FIFO (first in first out) data structure
 
 ## Queue
 
