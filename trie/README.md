@@ -43,7 +43,8 @@ class MapSum:
         for index in range(1, len(prefix) + 1):
             if prefix[0:index] in current_node.nodes:
                 current_node = current_node.nodes.get(prefix[0:index])
-
+            else:
+                return 0 # node does not exist
         # sum child nodes
         return self.__recursive_sum(current_node)
 
