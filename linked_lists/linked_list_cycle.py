@@ -3,8 +3,8 @@ from typing import Generic, Optional, TypeVar
 T = TypeVar('T')
 
 
-def has_cycle(head: 'ListNode') -> bool:
-    if not head and head.next:
+def has_cycle(head: Optional['ListNode']) -> bool:
+    if not head or not head.next:
         return False
 
     slow = head

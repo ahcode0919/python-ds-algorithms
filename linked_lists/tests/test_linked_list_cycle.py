@@ -2,6 +2,9 @@ from linked_lists.linked_list_cycle import ListNode, has_cycle
 
 
 def test_linked_list_cycle():
+    assert not has_cycle(None)
+    assert not has_cycle(ListNode(1))
+    
     head = ListNode(1)
     head.next = ListNode(2)
     head.next.next = ListNode(3)

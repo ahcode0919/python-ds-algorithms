@@ -10,7 +10,7 @@ To represent a cycle in the given linked list, we use an integer pos which repre
 linked list where tail connects to. If pos is -1, then there is no cycle in the linked list.
 
 ```python
-def has_cycle(head: 'ListNode') -> bool:
+def has_cycle(head: Optional['ListNode']) -> bool:
     if not head and head.next:
         return False
 
