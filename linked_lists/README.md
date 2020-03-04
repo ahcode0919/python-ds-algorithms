@@ -11,7 +11,7 @@ linked list where tail connects to. If pos is -1, then there is no cycle in the 
 
 ```python
 def has_cycle(head: Optional['ListNode']) -> bool:
-    if not head and head.next:
+    if not head or not head.next:
         return False
 
     slow = head
