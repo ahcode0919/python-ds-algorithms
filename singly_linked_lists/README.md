@@ -249,7 +249,7 @@ Output: `true`
 Time: O(N), Space: O(1)
 
 ```python
-def is_palindrome(head: ListNode) -> bool:
+def is_palindrome(head: Optional[ListNode]) -> bool:
     if not head:
         return False
 
