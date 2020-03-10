@@ -1,12 +1,14 @@
 # Linked Lists
 
+* [Add Two Numbers](#add-two-numbers)
+* [Copy List with Random Pointer](#copy-list-with-random-pointer)
 * [Detect Cycle](#detect-cycle)
 * [Find Middle Node](#find-middle-node)
 * [Intersection Two Linked Lists](#intersection-two-linked-lists)
 * [Linked List Cycle](#linked-list-cycle)
 * [Merge Two Sorted Lists](#)
 * [Odd Even Linked List](#odd-even-linked-list)
-* [Palindrome Linked List](#)
+* [Palindrome Linked List](#palindrome-linked-list)
 * [Remove Linked List Elements](#remove-linked-list-elements)
 * [Remove Nth Node From End of List](#remove-nth-node-from-end-of-list)
 * [Reverse Linked List](#reverse-linked-list)
@@ -50,6 +52,12 @@ Explanation: `342 + 465 = 807`
         result.next = ListNode(carry)
 
     return dummy_node.next
+```
+
+## Copy List with Random Pointer
+
+```python
+
 ```
 
 ## Detect Cycle
@@ -422,8 +430,16 @@ Time: O(N), Space: O(1)
 def reverse_linked_list(head: ListNode) -> Optional[ListNode]:
     if not head:
         return None
-    previous: O = None
+    previous: Optional[ListNode] = None
+    current: Optional[ListNode] = head
 
+    while current:
+        temp = current.next
+        current.next = previous
+        previous = current
+        current = temp
+
+    return previous
 ```
 
 Solution using recursion
