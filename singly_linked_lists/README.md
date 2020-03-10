@@ -56,8 +56,36 @@ Explanation: `342 + 465 = 807`
 
 ## Copy List with Random Pointer
 
-```python
+A linked list is given such that each node contains an additional random pointer which could point to any node in the list or null.
 
+Return a deep copy of the list.
+
+```python
+def copy_random_list(head: Node) -> Node:
+    if not head:
+        return None
+
+    current = head
+    nodes = {}
+    new_node = Node(head.value, None, None)
+    nodes[current] = new_node
+
+    while current:
+        new_node.random = get_cloned_node(current.random, nodes)
+        new_node.next = get_cloned_node(current.next, nodes)
+        current = current.next
+        new_node = new_node.next
+
+    return get_cloned_node(head, nodes)
+
+
+def get_cloned_node(node: Node, visited: Dict) -> Optional[Node]:
+    if node:
+        if node in visited:
+            return visited[node]
+        visited[node] = Node(node.value, None, None)
+        return visited[node]
+    return None
 ```
 
 ## Detect Cycle
