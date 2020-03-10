@@ -17,7 +17,7 @@ def insert(head: Optional[ListNode], value: int) -> Optional[ListNode]:
             previous.next = new_node
             new_node.next = node
             return head
-        elif previous.val > node.val:
+        if previous.val > node.val:
             if value >= previous.val or value <= node.val:
                 new_node = ListNode(value)
                 previous.next = new_node
