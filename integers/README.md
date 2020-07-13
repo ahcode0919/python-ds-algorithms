@@ -59,11 +59,11 @@ Solution - Time: O(N)
 def two_sum(array: [int], target: int) -> [int]:
     complements = dict()
 
-    for index in range(len(array)):
-        complement = target - array[index]
+    for index, number in enumerate(array):
+        complement = target - number
         if complement in complements:
             return [complements[complement], index]
-        complements[array[index]] = index
+        complements[number] = index
 
     return [-1, -1]
 ```
