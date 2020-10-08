@@ -26,8 +26,9 @@ def longest_common_prefix_vertical(strings: List[str]) -> str:
 
     length = len(strings)
     prefix = strings[0]
+    prefix_length = len(prefix)
 
-    for index in range(len(prefix)):
+    for index in range(prefix_length):
         for string_index in range(1, length):
             if index > len(prefix) - 1:
                 return prefix
