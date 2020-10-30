@@ -1,4 +1,4 @@
-from binary_tree.binary_tree_generator import generate_binary_tree
+from test_helpers.test_helpers import generate_binary_tree
 from binary_tree.level_order_traversal import level_order_traversal
 
 

@@ -1,5 +1,5 @@
 from binary_tree.preorder_traversal import preorder_traversal_iterative, preorder_traversal_morris, preorder_traversal_recursive
-from binary_tree.binary_tree_generator import generate_binary_tree
+from test_helpers.test_helpers import generate_binary_tree
 
 
 def test_preorder_traversal_iterative():
