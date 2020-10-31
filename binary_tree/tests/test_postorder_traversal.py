@@ -1,5 +1,5 @@
 from binary_tree.postorder_traversal import postorder_traversal_iterative, postorder_traversal_recursive
-from binary_tree.binary_tree_generator import generate_binary_tree
+from test_helpers.test_helpers import generate_binary_tree
 
 
 def test_postorder_traversal_iterative():
