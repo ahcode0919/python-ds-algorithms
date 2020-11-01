@@ -1,5 +1,5 @@
-from binary_tree.tree_node import TreeNode
 from typing import Optional
+from binary_tree.tree_node import TreeNode
 
 
 def symmetric_binary_tree(root: Optional[TreeNode]) -> bool:
