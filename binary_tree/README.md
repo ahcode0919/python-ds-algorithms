@@ -1,6 +1,7 @@
 # Binary Tree
 
 * [Binary Tree Path](#binary-tree-path)
+* [Has Path Sum](#has-path-sum)
 * [In-order Traversal](#in-order-traversal)
 * [Level-order Traversal](#level-order-traversal)
 * [Max Depth](#max-depth)
@@ -43,6 +44,25 @@ def get_path(node: TreeNode, path: str, paths: []) -> str:
         get_path(node.left, path + str(node.val) + '->', paths)
     if node.right:
         get_path(node.right, path + str(node.val) + '->', paths)
+```
+
+## Has Path Sum
+
+Given a binary tree and a sum, determine if the tree has a root-to-leaf path such that adding up all the values along
+the path equals the given sum.
+
+```python
+def has_path_sum(root: TreeNode, target: int) -> bool:
+    if not root:
+        return False
+
+    target -= root.val
+
+    if root.left or root.right:
+        left = has_path_sum(root.left, target)
+        right = has_path_sum(root.right, target)
+        return left or right
+    return target == 0
 ```
 
 ## In-order Traversal
