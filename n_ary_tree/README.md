@@ -12,10 +12,65 @@ Similar to a binary tree except Nodes can have any number of child Nodes.
 K       L
 ```
 
+* [Encode Decode](#encode--decode-tree)
 * [Level Order Traversal](#level-order-traversal)
 * [Max Depth](#max-depth)
 * [Postorder Traversal](#postorder-traversal)
 * [Preorder Traversal](#preorder-traversal)
+
+## Encode / Decode Tree
+
+Encode a N-ary tree to a binary tree and decode it back to a matching n-nary tree
+
+```python
+def encode(root: Node) -> Optional[TreeNode]:
+    if not root:
+        return None
+
+    root_node = TreeNode(root.value)
+    queue = deque([(root_node, root)])
+
+    while queue:
+        parent, current = queue.popleft()
+        previous = None
+        head = None
+
+        if current.children:
+            for child in current.children:
+                node = TreeNode(child.value)
+
+                if previous:
+                    previous.right = node
+                else:
+                    head = node
+                previous = node
+                queue.append((node, child))
+
+        parent.left = head
+
+    return root_node
+
+
+def decode(data: TreeNode) -> Optional[Node]:
+    if not data:
+        return None
+
+    root = Node(data.val, [])
+    queue = deque([(root, data)])
+
+    while queue:
+        parent, current = queue.popleft()
+        first_child = current.left
+        sibling = first_child
+
+        while sibling:
+            node = Node(sibling.val, [])
+            parent.children.append(node)
+            queue.append((node, sibling))
+            sibling = sibling.right
+
+    return root
+```
 
 ## Level Order Traversal
 
