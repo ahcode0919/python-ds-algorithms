@@ -8,7 +8,7 @@ def encode(root: Node) -> Optional[TreeNode]:
     if not root:
         return None
 
-    root_node = TreeNode(root.val)
+    root_node = TreeNode(root.value)
     queue = deque([(root_node, root)])
 
     while queue:
@@ -16,15 +16,16 @@ def encode(root: Node) -> Optional[TreeNode]:
         previous = None
         head = None
 
-        for child in current.children:
-            node = TreeNode(child.val)
+        if current.children:
+            for child in current.children:
+                node = TreeNode(child.value)
 
-            if previous:
-                previous.right = node
-            else:
-                head = node
-            previous = node
-            queue.append((node, child))
+                if previous:
+                    previous.right = node
+                else:
+                    head = node
+                previous = node
+                queue.append((node, child))
 
         parent.left = head
 

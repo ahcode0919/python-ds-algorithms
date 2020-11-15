@@ -1,4 +1,5 @@
-from typing import TypeVar
+from collections import deque
+from typing import List, TypeVar
 from data_structures.list_node import ListNode
 from binary_tree.tree_node import TreeNode
 from n_ary_tree.node import Node
@@ -26,6 +27,22 @@ def get_binary_tree() -> TreeNode:
     return head
 
 
+def get_binary_tree_values(root: TreeNode) -> List:
+    values = []
+    queue = deque([root])
+
+    while queue:
+        for _ in range(len(queue)):
+            node = queue.popleft()
+            values.append(node.val)
+            if node.left:
+                queue.append(node.left)
+            if node.right:
+                queue.append(node.right)
+
+    return values
+
+
 def get_n_nary_tree():
     #         1
     #      /  |  \
@@ -51,6 +68,23 @@ def get_n_nary_tree():
     d.children = [h, i, j]
     j.children = [Node(12)]
     return root
+
+
+def get_n_ary_tree_values(root: Node) -> List:
+    queue = deque([root])
+    values = []
+
+    while queue:
+        node = queue.popleft()
+        values.append(node.value)
+
+        if not node.children:
+            continue
+
+        for child in node.children:
+            queue.append(child)
+
+    return values
 
 
 def get_list_values(head: T):
