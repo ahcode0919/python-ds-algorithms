@@ -19,6 +19,7 @@
 * [Max Subarray](#max-subarray)
 * [Merge Sorted Array](#merge-sorted-array)
 * [Minimum Subarray Length](#minimum-subarray-length)
+* [Missing Number](#missing-number)
 * [Move Zeros](#move-zeros)
 * [Pascal's Triangle II](#pascals-triangle-ii)
 * [Peaks](#peaks)
@@ -607,6 +608,30 @@ def minimum_subarray_length(target: int, numbers: List[int]) -> int:
             left += 1
 
     return answer if answer else 0
+```
+
+## Missing Number
+
+Given an array nums containing n distinct numbers in the range `[0, n]`, return the only number in the range that is
+missing from the array.
+
+```python
+def missing_number(nums: List[int]) -> int:
+    nums.sort()
+    length = len(nums)
+
+    for index in range(length):
+        if nums[index] != index:
+            return index
+    return length
+
+
+def missing_number_ii(nums: List[int]) -> int:
+    length = len(nums)
+    expected = (length * (length + 1)) // 2
+    total = sum(nums)
+
+    return expected - total
 ```
 
 ## Move Zeros
