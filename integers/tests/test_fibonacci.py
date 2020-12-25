@@ -1,4 +1,4 @@
-from integers.fibonacci import fibonacci, fibonacci2, fibonacci3, fibonacci_sequence
+from integers.fibonacci import fibonacci, fibonacci2, fibonacci3, fibonacci_sequence, fibonacci_with_array
 
 
 def test_fibonacci():
@@ -19,3 +19,8 @@ def test_fibonacci3():
 def test_fibonacci_sequence():
     assert list(fibonacci_sequence(6)) == [0, 1, 1, 2, 3, 5, 8]
     assert list(fibonacci_sequence(0)) == [0]
+
+
+def test_fibonacci_with_array():
+    assert fibonacci_with_array(6) == 8
+    assert fibonacci_with_array(0) == 0

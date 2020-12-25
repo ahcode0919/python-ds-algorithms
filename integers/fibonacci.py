@@ -58,6 +58,18 @@ def fibonacci3(number: int) -> int:
     return next_nbr
 
 
+def fibonacci_with_array(number: int, memo=None) -> int:
+    if memo is None:
+        memo = [0, 1]
+
+    if len(memo) > number:
+        return memo[number]
+
+    memo.append(memo[-1] + memo[-2])
+
+    return fibonacci_with_array(number, memo)
+
+
 def fibonacci_sequence(number: int) -> Generator[int, None, None]:
     """
     Generate the fibonacci number for n
