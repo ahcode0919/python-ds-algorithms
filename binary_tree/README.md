@@ -8,6 +8,8 @@
 * [Next Right Pointer](#next-right-pointer)
 * [Post-order Traversal](#post-order-traversal)
 * [Pre-order Traversal](#pre-order-traversal)
+* [Symmetric Binary Tree](#symmetric-binary-tree)
+* [Tree from Inorder and Postorder Traversal](#tree-from-inorder-and-postorder-traversal)
 * [Valid Binary Search Tree](#valid-binary-search-tree)
 
 ## Binary Tree Path
@@ -416,7 +418,49 @@ def symmetric_binary_tree(root: Optional[TreeNode]) -> bool:
         level = next_level
 
     return True
+```
 
+## Tree from Inorder and Postorder Traversal
+
+Given inorder and postorder traversal of a tree, construct the binary tree.
+
+Note: You may assume that duplicates do not exist in the tree.
+
+For example, given
+
+inorder = `[9,3,15,20,7]` - Left -> Node -> Right
+postorder = `[9,15,7,20,3]` - Left -> Right -> Node
+
+Return the following binary tree:
+
+```text
+    3
+   / \
+  9  20
+    /  \
+   15   7
+```
+
+```python
+def tree_from_inorder_and_postorder(inorder: List[int], postorder: List[int]) -> TreeNode:
+    def helper(in_left, in_right):
+        if in_left > in_right:
+            return None
+
+        # last element is root
+        value = postorder.pop()
+        root = TreeNode(value)
+
+        middle = index_map[value]
+
+        root.right = helper(middle + 1, in_right)
+        root.left = helper(in_left, middle - 1)
+
+        return root
+
+    index_map = {value: index for index, value in enumerate(inorder)}
+
+    return helper(0, len(inorder) - 1)
 ```
 
 ## Valid Binary Search Tree
