@@ -20,7 +20,8 @@ Note: A leaf is a node with no children.
 Example:
 
 Input:
-```
+
+```text
    1
  /   \
 2     3
@@ -74,13 +75,15 @@ In-order traversal is to traverse the left subtree first. Then visit the root. F
 
 Example:
 
+```text
      1
     / \
    2   3
   / \
  4   5 
+```
  
-Output: [4, 2, 5, 1, 1]
+Output: `[4, 2, 5, 1, 1]`
 
 In-order traversal recursively
 
@@ -126,11 +129,13 @@ Given a binary tree, return the level order traversal of its nodes' values. (ie,
 
 Example:
 
+```text
     1
    / \
   2   3
     /   \
    4     5
+```
 
 `[
   [1],
@@ -237,14 +242,14 @@ Algorithm Postorder(tree)
    3. Visit the root.
 
 Example:
-
+```text
      1
     / \
    2   3
   / \
  4   5 
- 
-Output: [4, 5, 2, 3, 1]
+ ```
+Output: `[4, 5, 2, 3, 1]`
    
 Recursive Approach:
 
@@ -296,13 +301,15 @@ Pre-order traversal is to visit the root first. Then traverse the left subtree. 
 
 Example:
 
+```text
      1
     / \
    2   3
   / \
  4   5 
- 
-Output: [1, 2, 4, 5, 3]
+ ```
+
+Output: `[1, 2, 4, 5, 3]`
 
 Iterative approach Time: O(N), Space: O(N)
 
@@ -372,7 +379,8 @@ def preorder_traversal_recursive(root: TreeNode) -> List[int]:
 
 Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).
 
-For example, this binary tree `[1,2,2,3,4,4,3]` is symmetric:
+For example, this binary tree `[1, 2, 2, 3, 4, 4, 3]` is symmetric:
+
 ```
     1
    / \
@@ -381,7 +389,7 @@ For example, this binary tree `[1,2,2,3,4,4,3]` is symmetric:
 3  4 4  3
 ```
 
-But the following `[1,2,2,null,3,null,3]` is not:
+But the following `[1 ,2, 2, null, 3, null, 3]` is not:
 
 ```
     1
@@ -428,8 +436,8 @@ Note: You may assume that duplicates do not exist in the tree.
 
 For example, given
 
-inorder = `[9,3,15,20,7]` - Left -> Node -> Right
-postorder = `[9,15,7,20,3]` - Left -> Right -> Node
+inorder = `[9, 3, 15, 20, 7]` - Left -> Node -> Right
+postorder = `[9, 15, 7, 20, 3]` - Left -> Right -> Node
 
 Return the following binary tree:
 
