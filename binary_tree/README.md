@@ -10,6 +10,7 @@
 * [Pre-order Traversal](#pre-order-traversal)
 * [Symmetric Binary Tree](#symmetric-binary-tree)
 * [Tree from Inorder and Postorder Traversal](#tree-from-inorder-and-postorder-traversal)
+* [Tree from Preorder and Inorder Traversal](#tree-from-preorder-and-inorder-traversal)
 * [Valid Binary Search Tree](#valid-binary-search-tree)
 
 ## Binary Tree Path
@@ -469,6 +470,53 @@ def tree_from_inorder_and_postorder(inorder: List[int], postorder: List[int]) ->
     index_map = {value: index for index, value in enumerate(inorder)}
 
     return helper(0, len(inorder) - 1)
+```
+
+## Tree From Preorder and Inorder Traversal
+
+Given preorder and inorder traversal of a tree, construct the binary tree.
+
+Note: You may assume that duplicates do not exist in the tree.
+
+For example, given
+
+preorder = `[3, 9, 20, 15, 7]` - Top -> Bottom, Left -> Right
+inorder = `[9, 3, 15, 20, 7]` - Left -> Node -> Right
+
+Return the following binary tree:
+
+```text
+    3
+   / \
+  9  20
+    /  \
+   15   7
+```
+
+```python
+def tree_from_preorder_inorder(preorder: List[int], inorder: List[int]) -> TreeNode:
+    if not preorder:
+        return None
+
+    def tree_builder(preorder_index, inorder_left_index, inorder_right_index):
+        nonlocal preorder_index
+
+        if inorder_left_index == inorder_right_index:
+            return None
+
+        root = TreeNode(preorder[preorder_index])
+        inorder_index = index_map[root.val]
+        preorder_index += 1
+
+        root.left = tree_builder(inorder_left_index, inorder_index)
+        root.right = tree_builder(inorder_index + 1, inorder_right_index)
+
+        return root
+
+    preorder_index = 0
+    index_map = {value: index for index, value in enumerate(inorder)}
+
+    return tree_builder(0, len(inorder))
 ```
 
 ## Valid Binary Search Tree
