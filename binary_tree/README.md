@@ -10,6 +10,7 @@
 * [Pre-order Traversal](#pre-order-traversal)
 * [Symmetric Binary Tree](#symmetric-binary-tree)
 * [Tree from Inorder and Postorder Traversal](#tree-from-inorder-and-postorder-traversal)
+* [Tree from Preorder and Inorder Traversal](#tree-from-preorder-and-inorder-traversal)
 * [Valid Binary Search Tree](#valid-binary-search-tree)
 
 ## Binary Tree Path
