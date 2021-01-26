@@ -3,7 +3,7 @@ from collections import Counter
 
 def palindrome_permutation(palindrome: str) -> bool:
     length = len(palindrome)
-    counter = Counter([char for char in palindrome])
+    counter = Counter(list(palindrome))
 
     if length % 2 == 0:
         for key in counter:
