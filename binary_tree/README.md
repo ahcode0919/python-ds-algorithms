@@ -5,6 +5,7 @@
 * [In-order Traversal](#in-order-traversal)
 * [Level-order Traversal](#level-order-traversal)
 * [Max Depth](#max-depth)
+* [Min Depth](#min-depth)
 * [Next Right Pointer](#next-right-pointer)
 * [Post-order Traversal](#post-order-traversal)
 * [Pre-order Traversal](#pre-order-traversal)
@@ -197,6 +198,59 @@ def max_depth(root: TreeNode) -> int:
         level = next_level
 
     return max_level
+```
+
+## Min Depth
+
+Given a binary tree, find its minimum depth.
+
+The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf node.
+
+Note: A leaf is a node with no children.
+
+
+Example 1:
+Input: 
+```text
+   3
+  / \
+ 9  20
+   /  \
+ 15    7
+```
+Output: 2 (Node - 9)
+
+```python
+def min_depth(root: TreeNode) -> int:
+    if not root:
+        return 0
+
+    if not root.left:
+        return min_depth(root.right) + 1
+    if not root.right:
+        return min_depth(root.left) + 1
+
+    return min(min_depth(root.left), min_depth(root.right)) + 1
+
+
+def min_depth_bfs(root: TreeNode) -> int:
+    if not root:
+        return 0
+
+    level = deque([root])
+    depth = 1
+
+    while level:
+        for _ in range(len(level)):
+            node = level.popleft()
+            if not node.left and not node.right:
+                return depth
+            if node.left:
+                level.append(node.left)
+            if node.right:
+                level.append(node.right)
+        depth += 1
+    return depth
 ```
 
 ## Next Right Pointer
