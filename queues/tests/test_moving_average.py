@@ -2,8 +2,10 @@ from queues.moving_average import MovingAverage
 
 
 def test_moving_average():
-    m_avg = MovingAverage(3)
-    assert m_avg.next(1) == 1
-    assert m_avg.next(2) == 1.5
-    assert m_avg.next(3) == 2
-    assert m_avg.next(4) == 3
+    m = MovingAverage(3)
+    assert m.next(0) == 0
+    assert m.next(2) == 1
+    assert m.next(4) == 2
+    assert m.next(12) == 6
+    assert round(m.next(1), 2) == 5.67
+

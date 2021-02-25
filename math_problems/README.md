@@ -2,7 +2,6 @@
 
 * [Count Primes](#count-primes)
 * [Fizz Buzz](#fizz-buzz)
-* [Moving Average](#moving-average)
 * [Power of Three](#power-of-three)
 
 ## Count Primes
