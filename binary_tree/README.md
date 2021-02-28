@@ -13,6 +13,7 @@
 * [Symmetric Binary Tree](#symmetric-binary-tree)
 * [Tree from Inorder and Postorder Traversal](#tree-from-inorder-and-postorder-traversal)
 * [Tree from Preorder and Inorder Traversal](#tree-from-preorder-and-inorder-traversal)
+* [Two Sum IV]()
 * [Valid Binary Search Tree](#valid-binary-search-tree)
 
 ## Binary Tree Path
@@ -602,6 +603,33 @@ def tree_from_preorder_inorder(preorder: List[int], inorder: List[int]) -> TreeN
     index_map = {value: index for index, value in enumerate(inorder)}
 
     return tree_builder(0, len(inorder))
+```
+
+## Two Sum IV
+
+Given the root of a Binary Tree and a target number, return `true` if there exist two elements in the BST such 
+that their sum is equal to the given target.
+
+```python
+def two_sum_iv(root: TreeNode, target: int) -> bool:
+    if not root:
+        return False
+
+    values = set()
+    queue = [root]
+
+    while queue:
+        node = queue.pop()
+        
+        if node:
+            if target - node.val in values:
+                return True
+            values.add(node.val)
+        if node.left:
+            queue.append(node.left)
+        if node.right:
+            queue.append(node.right)
+    return False
 ```
 
 ## Valid Binary Search Tree
