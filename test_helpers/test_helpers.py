@@ -43,6 +43,28 @@ def get_binary_tree_values(root: TreeNode) -> List:
     return values
 
 
+def get_list_values(head: T):
+    node = head
+    values = []
+    while node:
+        values.append(node.val)
+        node = node.next
+    return values
+
+
+def get_cyclic_list_values(head: ListNode):
+    if not head:
+        return []
+
+    values = [head.val]
+    node = head.next
+
+    while node is not head:
+        values.append(node.val)
+        node = node.next
+    return values
+
+
 def get_n_nary_tree():
     #         1
     #      /  |  \
@@ -87,23 +109,12 @@ def get_n_ary_tree_values(root: Node) -> List:
     return values
 
 
-def get_list_values(head: T):
-    node = head
-    values = []
-    while node:
-        values.append(node.val)
-        node = node.next
-    return values
+def get_singly_linked_list(values: List[T]) -> ListNode[T]:
+    dummy = ListNode()
+    current = dummy
 
+    for value in values:
+        current.next = ListNode(value)
+        current = current.next
 
-def get_cyclic_list_values(head: ListNode):
-    if not head:
-        return []
-
-    values = [head.val]
-    node = head.next
-
-    while node is not head:
-        values.append(node.val)
-        node = node.next
-    return values
+    return dummy.next
