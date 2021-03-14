@@ -11,4 +11,3 @@ def group_anagrams(strings: List[str]) -> List[List[str]]:
         else:
             answer[sorted_strings[index]] = [value]
     return list(answer.values())
-
