@@ -1,10 +1,10 @@
 from typing import Optional
-from data_structures.list_node import ListNode
+from data_structures.singly_linked_list_node import SinglyLinkedListNode
 
 
-def insert(head: Optional[ListNode], value: int) -> Optional[ListNode]:
+def insert(head: Optional[SinglyLinkedListNode], value: int) -> Optional[SinglyLinkedListNode]:
     if not head:
-        cyclic_list = ListNode(value)
+        cyclic_list = SinglyLinkedListNode(value)
         cyclic_list.next = cyclic_list
         return cyclic_list
 
@@ -12,14 +12,14 @@ def insert(head: Optional[ListNode], value: int) -> Optional[ListNode]:
     node = head.next
 
     while node:
-        if previous.val <= value <= node.val:
-            new_node = ListNode(value)
+        if previous.data <= value <= node.data:
+            new_node = SinglyLinkedListNode(value)
             previous.next = new_node
             new_node.next = node
             return head
-        if previous.val > node.val:
-            if value >= previous.val or value <= node.val:
-                new_node = ListNode(value)
+        if previous.data > node.data:
+            if value >= previous.data or value <= node.data:
+                new_node = SinglyLinkedListNode(value)
                 previous.next = new_node
                 new_node.next = node
                 return head
@@ -30,7 +30,7 @@ def insert(head: Optional[ListNode], value: int) -> Optional[ListNode]:
         if previous == head:
             break
 
-    new_node = ListNode(value)
+    new_node = SinglyLinkedListNode(value)
     previous.next = new_node
     new_node.next = node
 

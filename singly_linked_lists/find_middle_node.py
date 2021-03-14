@@ -1,8 +1,8 @@
 from typing import Optional
-from data_structures.list_node import ListNode
+from data_structures.singly_linked_list_node import SinglyLinkedListNode
 
 
-def find_middle_node(head: Optional[ListNode]) -> Optional[ListNode]:
+def find_middle_node(head: Optional[SinglyLinkedListNode]) -> Optional[SinglyLinkedListNode]:
     if not head:
         return None
     slow = head

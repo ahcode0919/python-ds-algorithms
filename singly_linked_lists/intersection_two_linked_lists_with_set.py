@@ -1,11 +1,12 @@
 from typing import Optional, Set
-from data_structures.list_node import ListNode
+from data_structures.singly_linked_list_node import SinglyLinkedListNode
 
 
-def get_intersection_node_with_set(head_a: ListNode, head_b: ListNode) -> Optional[ListNode]:
-    nodes: Set[ListNode] = set()
-    node_a: ListNode = head_a
-    node_b: ListNode = head_b
+def get_intersection_node_with_set(head_a: SinglyLinkedListNode,
+                                   head_b: SinglyLinkedListNode) -> Optional[SinglyLinkedListNode]:
+    nodes: Set[SinglyLinkedListNode] = set()
+    node_a: SinglyLinkedListNode = head_a
+    node_b: SinglyLinkedListNode = head_b
 
     while node_a or node_b:
         if node_a:

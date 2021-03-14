@@ -1,16 +1,16 @@
 from typing import Optional
-from data_structures.list_node import ListNode
+from data_structures.singly_linked_list_node import SinglyLinkedListNode
 
 
-def remove_elements(head: Optional[ListNode], val: int) -> Optional[ListNode]:
-    dummy_node: ListNode = ListNode(0)
+def remove_elements(head: Optional[SinglyLinkedListNode], data: int) -> Optional[SinglyLinkedListNode]:
+    dummy_node: SinglyLinkedListNode = SinglyLinkedListNode(0)
     dummy_node.next = head
 
-    previous: ListNode = dummy_node
-    current: Optional[ListNode] = head
+    previous: SinglyLinkedListNode = dummy_node
+    current: Optional[SinglyLinkedListNode] = head
 
     while current:
-        if current.val == val:
+        if current.data == data:
             previous.next = current.next
             current = current.next
         else:
