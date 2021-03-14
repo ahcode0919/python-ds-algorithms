@@ -3,6 +3,8 @@
 * [Add Binary](#add-binary)
 * [Crop String](#crop-string)
 * [First Unique Character](#first-unique-character-in-a-string)
+* [Group Anagrams](#group-anagrams)
+* [Implement strStr](#implement-strstr)
 * [Jewels and Stones](#jewels-and-stones)
 * [License Key Formatter](#license-key-formatter)
 * [Longest Common Prefix](#longest-common-prefix)
@@ -120,6 +122,26 @@ def first_unique_character_in_str(val: str) -> int:
             return index
 
     return -1
+```
+
+## Group Anagrams
+
+Given an array of strings, group the anagrams together.
+
+An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the
+original letters exactly once.
+
+```python
+def group_anagrams(strings: List[str]) -> List[List[str]]:
+    sorted_strings = ["".join(sorted(string)) for string in strings]
+    answer = {}
+
+    for index, value in enumerate(strings):
+        if sorted_strings[index] in answer:
+            answer[sorted_strings[index]].append(value)
+        else:
+            answer[sorted_strings[index]] = [value]
+    return list(answer.values())
 ```
 
 ## Implement strStr
