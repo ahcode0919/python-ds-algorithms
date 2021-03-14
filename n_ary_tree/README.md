@@ -23,11 +23,11 @@ K       L
 Encode a N-ary tree to a binary tree and decode it back to a matching n-nary tree
 
 ```python
-def encode(root: Node) -> Optional[TreeNode]:
+def encode(root: Node) -> Optional[NaryTreeNode]:
     if not root:
         return None
 
-    root_node = TreeNode(root.value)
+    root_node = NaryTreeNode(root.value)
     queue = deque([(root_node, root)])
 
     while queue:
@@ -37,7 +37,7 @@ def encode(root: Node) -> Optional[TreeNode]:
 
         if current.children:
             for child in current.children:
-                node = TreeNode(child.value)
+                node = NaryTreeNode(child.value)
 
                 if previous:
                     previous.right = node
@@ -51,11 +51,11 @@ def encode(root: Node) -> Optional[TreeNode]:
     return root_node
 
 
-def decode(data: TreeNode) -> Optional[Node]:
+def decode(data: NaryTreeNode) -> Optional[NaryTreeNode]:
     if not data:
         return None
 
-    root = Node(data.val, [])
+    root = NaryTreeNode(data.val, [])
     queue = deque([(root, data)])
 
     while queue:
@@ -64,7 +64,7 @@ def decode(data: TreeNode) -> Optional[Node]:
         sibling = first_child
 
         while sibling:
-            node = Node(sibling.val, [])
+            node = NaryTreeNode(sibling.val, [])
             parent.children.append(node)
             queue.append((node, sibling))
             sibling = sibling.right
@@ -79,7 +79,7 @@ Return N-nary tree level by level as a nested array.
 Example: `[[A], [B, C, D], [E, F, H, I, J], [K, L]]`
 
 ```python
-def level_order_traversal(root: Node) -> List[List[int]]:
+def level_order_traversal(root: NaryTreeNode) -> List[List[int]]:
     levels = []
 
     if not root:
@@ -109,7 +109,7 @@ Given a n-ary tree, find its maximum depth.
 The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.
 
 ```python
-def max_depth_top_down(root: Node) -> int:
+def max_depth_top_down(root: NaryTreeNode) -> int:
     def traverse(node, depth):
         if not node:
             return depth
@@ -127,7 +127,7 @@ def max_depth_top_down(root: Node) -> int:
     return traverse(root, 1)
 
 
-def max_depth_bottom_up(root: Node) -> int:
+def max_depth_bottom_up(root: NaryTreeNode) -> int:
     if not root:
         return 0
 
@@ -145,7 +145,7 @@ def max_depth_bottom_up(root: Node) -> int:
 Recursive
 
 ```python
-def postorder_traversal(root: Optional[Node]) -> List:
+def postorder_traversal(root: Optional[NaryTreeNode]) -> List:
     values = []
 
     if not root:
@@ -162,7 +162,7 @@ def postorder_traversal(root: Optional[Node]) -> List:
 Iterative:
 
 ```python
-def postorder_traversal_iterative(root: Optional[Node]) -> List:
+def postorder_traversal_iterative(root: Optional[NaryTreeNode]) -> List:
     values = deque()
     stack = []
     if not root:
@@ -185,7 +185,7 @@ def postorder_traversal_iterative(root: Optional[Node]) -> List:
 Recursive
 
 ```python
-def preorder_traversal(root: Node) -> List:
+def preorder_traversal(root: NaryTreeNode) -> List:
     if not root:
         return []
 
@@ -200,7 +200,7 @@ def preorder_traversal(root: Node) -> List:
 Iterative
 
 ```python
-def preorder_traversal_iterative(root: Node) -> List:
+def preorder_traversal_iterative(root: NaryTreeNode) -> List:
     if not root:
         return []
 
