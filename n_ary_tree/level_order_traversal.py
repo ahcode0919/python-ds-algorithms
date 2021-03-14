@@ -1,8 +1,8 @@
 from typing import List
-from n_ary_tree.node import Node
+from n_ary_tree.nary_tree_node import NaryTreeNode
 
 
-def level_order_traversal(root: Node) -> List[List[int]]:
+def level_order_traversal(root: NaryTreeNode) -> List[List[int]]:
     levels = []
 
     if not root:
