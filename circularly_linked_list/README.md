@@ -15,9 +15,9 @@ If the list is empty (i.e., given node is null), you should create a new single 
 to that single node. Otherwise, you should return the original given node.
 
 ```python
-def insert(head: Optional[ListNode], value: int) -> Optional[ListNode]:
+def insert(head: Optional[SinglyLinkedListNode], value: int) -> Optional[SinglyLinkedListNode]:
     if not head:
-        cyclic_list = ListNode(value)
+        cyclic_list = SinglyLinkedListNode(value)
         cyclic_list.next = cyclic_list
         return cyclic_list
 
@@ -26,13 +26,13 @@ def insert(head: Optional[ListNode], value: int) -> Optional[ListNode]:
 
     while node:
         if previous.val <= value <= node.val:
-            new_node = ListNode(value)
+            new_node = SinglyLinkedListNode(value)
             previous.next = new_node
             new_node.next = node
             return head
         if previous.val > node.val:
             if value >= previous.val or value <= node.val:
-                new_node = ListNode(value)
+                new_node = SinglyLinkedListNode(value)
                 previous.next = new_node
                 new_node.next = node
                 return head
@@ -43,7 +43,7 @@ def insert(head: Optional[ListNode], value: int) -> Optional[ListNode]:
         if previous == head:
             break
 
-    new_node = ListNode(value)
+    new_node = SinglyLinkedListNode(value)
     previous.next = new_node
     new_node.next = node
 
