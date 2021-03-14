@@ -1,14 +1,14 @@
 from typing import Optional, Set
-from data_structures.list_node import ListNode
+from data_structures.singly_linked_list_node import SinglyLinkedListNode
 
 
-def detect_cycle(head: ListNode) -> Optional[ListNode]:
+def detect_cycle(head: SinglyLinkedListNode) -> Optional[SinglyLinkedListNode]:
     # detect cycle
     if not head or not head.next:
         return None
-    slow: ListNode = head
-    fast: ListNode = head
-    intersection: Optional[ListNode] = None
+    slow: SinglyLinkedListNode = head
+    fast: SinglyLinkedListNode = head
+    intersection: Optional[SinglyLinkedListNode] = None
 
     while fast and fast.next:
         slow = slow.next
@@ -29,8 +29,8 @@ def detect_cycle(head: ListNode) -> Optional[ListNode]:
     return intersection
 
 
-def detect_cycle_with_set(head: ListNode) -> Optional[ListNode]:
-    visited_nodes: Set[ListNode] = set()
+def detect_cycle_with_set(head: SinglyLinkedListNode) -> Optional[SinglyLinkedListNode]:
+    visited_nodes: Set[SinglyLinkedListNode] = set()
 
     node = head
 

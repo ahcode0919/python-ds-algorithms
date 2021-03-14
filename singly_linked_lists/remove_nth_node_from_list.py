@@ -1,12 +1,12 @@
 from typing import Optional
-from data_structures.list_node import ListNode
+from data_structures.singly_linked_list_node import SinglyLinkedListNode
 
 
-def remove_nth_from_end(head: ListNode, nth: int) -> Optional[ListNode]:
-    dummy: ListNode = ListNode(0)
+def remove_nth_from_end(head: SinglyLinkedListNode, nth: int) -> Optional[SinglyLinkedListNode]:
+    dummy: SinglyLinkedListNode = SinglyLinkedListNode(0)
     dummy.next = head
-    previous: ListNode = dummy
-    lead: ListNode = dummy
+    previous: SinglyLinkedListNode = dummy
+    lead: SinglyLinkedListNode = dummy
 
     # Move lead forward
     for _ in range(nth + 1):

@@ -1,18 +1,19 @@
 from typing import Optional
-from data_structures.list_node import ListNode
+from data_structures.singly_linked_list_node import SinglyLinkedListNode
 
 
-def merge_two_lists(head1: Optional[ListNode], head2: Optional[ListNode]) -> Optional[ListNode]:
+def merge_two_lists(head1: Optional[SinglyLinkedListNode],
+                    head2: Optional[SinglyLinkedListNode]) -> Optional[SinglyLinkedListNode]:
     if not head1 and not head2:
         return None
 
     node1 = head1
     node2 = head2
-    dummy_node = ListNode(0)
+    dummy_node = SinglyLinkedListNode(0)
     current_node = dummy_node
 
     while node1 and node2:
-        if node1.val <= node2.val:
+        if node1.data <= node2.data:
             current_node.next = node1
             node1 = node1.next
         else:
