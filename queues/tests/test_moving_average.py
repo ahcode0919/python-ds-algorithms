@@ -8,4 +8,3 @@ def test_moving_average():
     assert m.next(4) == 2
     assert m.next(12) == 6
     assert round(m.next(1), 2) == 5.67
-

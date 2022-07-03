@@ -1,4 +1,7 @@
-from strings.reverse_string import reverse_string, reverse_string_in_place, reverse_string_with_list_comprehension, reverse_string_with_loop
+from strings.reverse_string import \
+    reverse_string, reverse_string_in_place, \
+    reverse_string_with_list_comprehension, \
+    reverse_string_with_loop
 
 
 def test_reverse_string():

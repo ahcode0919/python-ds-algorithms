@@ -1,4 +1,5 @@
-from strings.longest_substring_without_duplicates import longest_substring_without_duplicates
+from strings.longest_substring_without_duplicates \
+    import longest_substring_without_duplicates
 
 
 def test_longest_substring_without_duplicates():
