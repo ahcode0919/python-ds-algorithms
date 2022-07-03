@@ -1,4 +1,4 @@
-# Python Data Structures and Algorithms [![Build Status](https://travis-ci.org/ahcode0919/python-ds-algorithms.svg?branch=master)](https://travis-ci.org/ahcode0919/python-ds-algorithms) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+# Python Data Structures and Algorithms ![](https://github.com/ahcode0919/python-ds-algorithms/actions/workflows/Python.yml/badge.svg?branch=main)) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Various Data Structures and Algorithm Solutions in Python (3.x). Succinct Python one-liners are avoided in most solutions
 to prevent obscuring the function and logic of the algorithms / data-structures.  
@@ -35,15 +35,24 @@ to prevent obscuring the function and logic of the algorithms / data-structures.
 * [Strings](strings/README.md)
 * [Trie](trie/README.md)
 
+## Project Setup
+
+### Local development
+
+- Install `pyenv`
+- Install current Python version: `pyenv install 3.10`
+- Set global Python version: `pyenv global 3.10`
+- Initialize virtual environment: `python -m venv .venv`
+- Activate: source `.venv/bin/activate`
+- Install packages: `pip3 -r requirements.txt`
+
+### VS Code Dev Container
+
+- Download VSCode and Docker
+- Launch project inside of Docker container in VSCode
+- VSCode does the rest!
+
 ## Project Commands
 
-* Compile project files - `python compile_files.py`
-* Lint project - `pylint *`
-* Run Unit Tests - `pytest` or `py.test` for Python versions 3.5 and below
-
-## Resources
-
-* [Code Signal](https://codesignal.com)
-* [Geeks For Geeks](https://www.geeksforgeeks.org/)
-* [Hackerrank](https://www.hackerrank.com/)
-* [Leetcode](https://www.leetcode.com)
+* Lint project - `flake8`
+* Run Unit Tests - `pytest`
