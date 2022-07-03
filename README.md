@@ -4,21 +4,21 @@ Various Data Structures and Algorithm Solutions in Python (3.x). Succinct Python
 to prevent obscuring the function and logic of the algorithms / data-structures.  
 
 * [Algorithm Theory](algorithm_theory/README.md)
-    * [Searches](algorithm_theory/README.md#searches)
-        * [Binary Search](algorithm_theory/README.md#binary-search)
-        * [Jump Search](algorithm_theory/README.md#jump-search)
-        * [Linear Search](algorithm_theory/README.md#linear-search)
-    * [Sorts](algorithm_theory/README.md#sorts)
-        * [Bubble Sort](algorithm_theory/README.md#bubble-sort)
+  * [Searches](algorithm_theory/README.md#searches)
+    * [Binary Search](algorithm_theory/README.md#binary-search)
+    * [Jump Search](algorithm_theory/README.md#jump-search)
+    * [Linear Search](algorithm_theory/README.md#linear-search)
+  * [Sorts](algorithm_theory/README.md#sorts)
+    * [Bubble Sort](algorithm_theory/README.md#bubble-sort)
 * [Data Structures](data_structures/README.md)
-    * [Binary Tree](data_structures/README.md#binary-tree)
-    * [Circularly Linked List](data_structures/README.md#circularly-linked-list)
-    * [Doubly Linked List](data_structures/README.md#doubly-linked-list)
-    * [Singly Linked List](data_structures/README.md#singly-linked-list)
-    * [Queue](data_structures/README.md#queue)
-    * [Stack](data_structures/README.md#stack)
-    * [Trie](data_structures/README.md#trie)
-    
+  * [Binary Tree](data_structures/README.md#binary-tree)
+  * [Circularly Linked List](data_structures/README.md#circularly-linked-list)
+  * [Doubly Linked List](data_structures/README.md#doubly-linked-list)
+  * [Singly Linked List](data_structures/README.md#singly-linked-list)
+  * [Queue](data_structures/README.md#queue)
+  * [Stack](data_structures/README.md#stack)
+  * [Trie](data_structures/README.md#trie)
+
 ## Algorithms
 
 * [Arrays](arrays/README.md)
