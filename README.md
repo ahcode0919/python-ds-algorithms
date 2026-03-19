@@ -40,11 +40,11 @@ to prevent obscuring the function and logic of the algorithms / data-structures.
 ### Local development
 
 - Install `pyenv`
-- Install current Python version: `pyenv install 3.10`
-- Set global Python version: `pyenv global 3.10`
+- Install current Python version: `pyenv install 3.12`
+- Set global Python version: `pyenv global 3.12`
 - Initialize virtual environment: `python -m venv .venv`
-- Activate: source `.venv/bin/activate`
-- Install packages: `pip3 -r requirements.txt`
+- Activate: `source .venv/bin/activate`
+- Install packages: `pip3 install -r requirements.txt`
 
 ### VS Code Dev Container
 
