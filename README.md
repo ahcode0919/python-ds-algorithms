@@ -39,18 +39,18 @@ to prevent obscuring the function and logic of the algorithms / data-structures.
 
 ### Local development
 
-- Install `pyenv`
-- Install current Python version: `pyenv install 3.12`
-- Set global Python version: `pyenv global 3.12`
-- Initialize virtual environment: `python -m venv .venv`
-- Activate: `source .venv/bin/activate`
-- Install packages: `pip3 install -r requirements.txt`
+* Install `pyenv`
+* Install current Python version: `pyenv install 3.12`
+* Set global Python version: `pyenv global 3.12`
+* Initialize virtual environment: `python -m venv .venv`
+* Activate: `source .venv/bin/activate`
+* Install packages: `pip install -r requirements.txt`
 
 ### VS Code Dev Container
 
-- Download VSCode and Docker
-- Launch project inside of Docker container in VSCode
-- VSCode does the rest!
+* Download VSCode and Docker
+* Launch project inside of Docker container in VSCode
+* VSCode does the rest!
 
 ## Project Commands
 
