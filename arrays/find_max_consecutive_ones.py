@@ -1,27 +1,19 @@
 from typing import List
 
-
 def find_max_consecutive_ones(nums: List[int]) -> int:
-    zero = -1
-    ones = 0
-    highest = 0
+    max_ones = 0
 
-    for index, num in enumerate(nums):
+    if not nums:
+        return max_ones
+    
+    ones_count = 0
+
+    for num in nums:
         if num == 1:
-            ones += 1
-        elif zero != -1:
-            total = ones + 1
-            if total > highest:
-                highest = total
-            ones = index - zero - 1
-            zero = index
+            ones_count += 1
         else:
-            zero = index
+            ones_count = 0
 
-    last_total = ones
+        max_ones = max(max_ones, ones_count)
 
-    if zero != -1:
-        last_total += 1
-    if last_total > highest:
-        return last_total
-    return highest
+    return max_ones
