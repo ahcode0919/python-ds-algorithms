@@ -9,7 +9,7 @@ pluggy==1.6.0
 py==1.11.0
 pycodestyle==2.14.0
 pyflakes==3.4.0
-Pygments==2.19.2
+Pygments==2.20.0
 pyparsing==3.0.9
 pyproject_hooks==1.2.0
 pytest==9.0.2
