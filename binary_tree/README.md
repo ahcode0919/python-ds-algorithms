@@ -1,6 +1,7 @@
 # Binary Tree
 
 * [Binary Tree Path](#binary-tree-path)
+* [Find Mode](#find-mode)
 * [Has Path Sum](#has-path-sum)
 * [In-order Traversal](#in-order-traversal)
 * [Level-order Traversal](#level-order-traversal)
@@ -50,6 +51,36 @@ def get_path(node: TreeNode, path: str, paths: []) -> str:
         get_path(node.left, path + str(node.val) + '->', paths)
     if node.right:
         get_path(node.right, path + str(node.val) + '->', paths)
+```
+
+## Find Mode
+
+Given a binary search tree (BST) with duplicates, find all the mode(s) (the most frequently occurred element) in the
+given BST.
+
+```python
+def find_mode(root: TreeNode) -> List:
+    counter = Counter()
+    values = []
+
+    def traverse(cnt, node):
+        if not node:
+            return
+        cnt[node.val] += 1
+        traverse(cnt, node.left)
+        traverse(cnt, node.right)
+
+    traverse(counter, root)
+    largest = counter.most_common(1)
+
+    if not largest:
+        return values
+
+    for element in counter:
+        if counter[element] == largest[0][1]:
+            values.append(element)
+
+    return values
 ```
 
 ## Has Path Sum
