@@ -29,82 +29,66 @@ Drawbacks:
 Node Implementation: 
 
 ```python
-class Node(Generic[T]):
-    def __init__(self, data: T = None, next_node: 'Node' = None):
+class SinglyLinkedListNode(Generic[T]):
+    def __init__(self, data: T = None, next_node: Optional['SinglyLinkedListNode'] = None):
         self.data = data
-        self.next_node = next_node
+        self.next = next_node
 ```
 
 Singly Linked List Implementation:
 
 ```python
-from typing import Generic, Optional, TypeVar
-
-T = TypeVar('T')
-
-
-class Node(Generic[T]):
-    def __init__(self, data: T = None, next_node: 'Node' = None):
-        self.data = data
-        self.next_node = next_node
-
-
-# Wikipedia: Singly linked lists contain nodes which have a data field as well as 'next' field, which points to the next
-# node in line of nodes. Operations that can be performed on singly linked lists include insertion, deletion and
-# traversal.
-
-
 class SinglyLinkedList(Generic[T]):
 
     def __init__(self):
-        self.__head = Node()
+        self.__head: SinglyLinkedListNode = SinglyLinkedListNode()
 
     def all_values(self) -> [T]:
         values = []
-        node = self.__head.next_node
+        node = self.__head.next
 
         while node:
             values.append(node.data)
-            node = node.next_node
+            node = node.next
 
         return values
 
     # O(N)
     def append(self, data: T) -> None:
-        node = Node(data)
+        node = SinglyLinkedListNode(data)
         last_node = self.__head
 
         while last_node:
-            if not last_node.next_node:
+            if not last_node.next:
                 break
-            last_node = last_node.next_node
-        last_node.next_node = node
+            last_node = last_node.next
+        last_node.next = node
 
     # O(N)
     def get(self, index: int) -> Optional[T]:
-        current_node = self.__head.next_node
+        current_node = self.__head.next
         count = 0
 
         while current_node:
             if count == index:
                 break
-            current_node = current_node.next_node
+            current_node = current_node.next
             count += 1
         if current_node is None or count != index:
             return None
         return current_node.data
 
     def insert(self, data: T, index: int) -> None:
-        node = Node(data)
+        node = SinglyLinkedListNode(data)
         current_node = self.__head
         count = 0
         while current_node:
             if count == index:
-                next_node = current_node.next_node
-                node.next_node = next_node
-                current_node.next_node = node
+                next_node = current_node.next
+                node.next = next_node
+                current_node.next = node
                 return
-            current_node = current_node.next_node
+            current_node = current_node.next
             count += 1
         if count < index:
             IndexError('Index out of bounds')
@@ -115,22 +99,22 @@ class SinglyLinkedList(Generic[T]):
 
         while current_node:
             if count == index:
-                remove_node = current_node.next_node
-                if remove_node and remove_node.next_node:
-                    current_node.next_node = remove_node.next_node
+                remove_node = current_node.next
+                if remove_node and remove_node.next:
+                    current_node.next = remove_node.next
                     return
-                current_node.next_node = None
-            current_node = current_node.next_node
+                current_node.next = None
+            current_node = current_node.next
             count += 1
 
     # O(N)
     def size(self) -> int:
         count = 0
-        current_node = self.__head.next_node
+        current_node = self.__head.next
 
         while current_node:
             count += 1
-            current_node = current_node.next_node
+            current_node = current_node.next
         return count
 ```
 
@@ -142,11 +126,13 @@ contains, besides the next-node link, a second link field pointing to the 'previ
 Doubly Linked List Node:
 
 ```python
-class Node(Generic[T]):
-    def __init__(self, data: T = None, previous_node: 'Node' = None, next_node: 'Node' = None):
-        self.data = data
-        self.previous_node = previous_node
-        self.next_node = next_node
+class DoublyLinkedListNode(Generic[T]):
+    def __init__(self, data: T = None,
+                 previous_node: Optional['DoublyLinkedListNode'] = None,
+                 next_node: Optional['DoublyLinkedListNode'] = None):
+        self.data: T = data
+        self.previous: Optional[DoublyLinkedListNode] = previous_node
+        self.next: Optional[DoublyLinkedListNode] = next_node
 ```
 
 Implementation:
@@ -155,44 +141,44 @@ Implementation:
 class DoublyLinkedList(Generic[T]):
 
     def __init__(self):
-        self.__head = Node()
-        self.__tail = Node()
+        self.__head: DoublyLinkedListNode = DoublyLinkedListNode()
+        self.__tail: DoublyLinkedListNode = DoublyLinkedListNode()
 
-        self.__head.next_node = self.__tail
-        self.__tail.previous_node = self.__head
+        self.__head.next = self.__tail
+        self.__tail.previous = self.__head
 
     # O(N)
     def all_values(self) -> [T]:
         values = []
-        node = self.__head.next_node
+        node = self.__head.next
 
         while node is not self.__tail:
             values.append(node.data)
-            node = node.next_node
+            node = node.next
 
         return values
 
     # O(1)
     def append(self, data: T):
         # Last <-> Tail --> Last <-> New <-> Tail
-        node = Node(data)
-        last_node = self.__tail.previous_node
+        node = DoublyLinkedListNode(data)
+        last_node = self.__tail.previous
 
-        last_node.next_node = node
-        node.previous_node = last_node
+        last_node.next = node
+        node.previous = last_node
 
-        node.next_node = self.__tail
-        self.__tail.previous_node = node
+        node.next = self.__tail
+        self.__tail.previous = node
 
     # O(N)
-    def get_node(self, index: int) -> Optional[Node]:
-        current_node = self.__head.next_node
+    def get_node(self, index: int) -> Optional[DoublyLinkedListNode]:
+        current_node = self.__head.next
         count = 0
 
         while current_node is not self.__tail:
             if count == index:
                 return current_node
-            current_node = current_node.next_node
+            current_node = current_node.next
             count += 1
         return None
 
@@ -205,24 +191,24 @@ class DoublyLinkedList(Generic[T]):
 
     # O(N)
     def insert(self, data: T, index: int):
-        node = Node(data)
-        current_node: Node = self.get_node(index)
-        
+        node = DoublyLinkedListNode(data)
+        current_node: DoublyLinkedListNode = self.get_node(index)
+
         if not current_node and index == 0:
-            self.__head.next_node = node
-            node.previous_node = self.__head
-            node.next_node = self.__tail
-            self.__tail.previous_node = node
+            self.__head.next = node
+            node.previous = self.__head
+            node.next = self.__tail
+            self.__tail.previous = node
             return
 
         if not current_node:
             raise IndexError("Index out of bounds")
 
         # Previous <-> Original --> Previous <-> New <-> Original
-        current_node.previous_node.next_node = node
-        node.previous_node = current_node.previous_node
-        node.next_node = current_node
-        current_node.previous_node = node
+        current_node.previous.next = node
+        node.previous = current_node.previous
+        node.next = current_node
+        current_node.previous = node
 
     # O(N)
     def remove(self, index: int) -> Optional[T]:
@@ -231,19 +217,19 @@ class DoublyLinkedList(Generic[T]):
             return None
 
         # Previous <-> Node <-> Next --> Previous <-> Next
-        node.previous_node.next_node = node.next_node
-        node.next_node.previous_node = node.previous_node
+        node.previous.next = node.next
+        node.next.previous = node.previous
 
         return node.data
 
     # O(N)
     def size(self) -> int:
         count = 0
-        node = self.__head.next_node
+        node = self.__head.next
 
         while node != self.__tail:
             count += 1
-            node = node.next_node
+            node = node.next
         return count
 ```
 
@@ -257,21 +243,21 @@ pointer points to the first node.
 This is more of an example. It can be optimized in a variety of ways depending on its intended usage.
 
 ```python
-class CircularlyLinkedList(object):
-    def __init__(self, node=None):
-        self._head = node
+class CircularlyLinkedList:
+    def __init__(self, node: Optional[SinglyLinkedListNode] = None):
+        self.__head: SinglyLinkedListNode = node
         if node:
-            node.next_node = self._head
+            node.next = self.__head
 
     @property
-    def head(self) -> Node:
-        return self._head
+    def head(self) -> SinglyLinkedListNode:
+        return self.__head
 
     @head.setter
-    def head(self, node: Node):
-        self._head = node
+    def head(self, node: SinglyLinkedListNode):
+        self.__head = node
         if node:
-            node.next_node = self._head
+            node.next = self.__head
 
     def all_values(self) -> []:
         values = []
@@ -279,25 +265,25 @@ class CircularlyLinkedList(object):
 
         while node:
             values.append(node.data)
-            node = node.next_node
+            node = node.next
             if node == self.head:
                 break
         return values
 
-    def append(self, node: Node):
+    def append(self, node: SinglyLinkedListNode):
         previous_node = self.head
 
         if not previous_node:
             self.head = node
-            node.next_node = self.head
+            node.next = self.head
             return
 
-        while previous_node.next_node != self.head:
-            previous_node = previous_node.next_node
+        while previous_node.next != self.head:
+            previous_node = previous_node.next
 
-        next_node = previous_node.next_node
-        previous_node.next_node = node
-        node.next_node = next_node
+        next_node = previous_node.next
+        previous_node.next = node
+        node.next = next_node
 
     def remove(self, index: int):
         previous_node = self.head
@@ -305,23 +291,23 @@ class CircularlyLinkedList(object):
         if not previous_node:
             raise IndexError("List is empty")
 
-        if previous_node.next_node == self.head:
+        if previous_node.next == self.head:
             self.head = None
             return
 
         if index == 0:
-            previous_node.next_node = self.head.next_node
-            self.head = previous_node.next_node
+            previous_node.next = self.head.next
+            self.head = previous_node.next
             return
 
         list_index = 1
-        while previous_node.next_node is not self.head and list_index < index:
-            previous_node = previous_node.next_node
+        while previous_node.next is not self.head and list_index < index:
+            previous_node = previous_node.next
             list_index += 1
 
         if list_index == index:
-            next_node = previous_node.next_node
-            previous_node.next_node = next_node.next_node
+            next_node = previous_node.next
+            previous_node.next = next_node.next
         else:
             raise IndexError
 
@@ -331,11 +317,11 @@ class CircularlyLinkedList(object):
             return count
 
         count += 1
-        node = self.head.next_node
+        node = self.head.next
 
         while node and node != self.head:
             count += 1
-            node = node.next_node
+            node = node.next
         return count
 ```
 
