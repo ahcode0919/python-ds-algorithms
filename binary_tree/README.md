@@ -2,7 +2,8 @@
 
 * [Binary Tree Path](#binary-tree-path)
 * [In-order Traversal](#in-order-traversal)
-* [Level-order Traversal](#)
+* [Level-order Traversal](#level-order-traversal)
+* [Max Depth](#max-depth)
 * [Post-order Traversal](#post-order-traversal)
 * [Pre-order Traversal](#pre-order-traversal)
 
@@ -136,6 +137,36 @@ def level_order_traversal(root: TreeNode) -> List[List[int]]:
         values.append(level)
 
     return values
+```
+
+## Max Depth
+
+Given a binary tree, find its maximum depth.
+
+The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.
+
+```python
+def max_depth(root: TreeNode) -> int:
+    max_level = 0
+
+    if not root:
+        return max_level
+
+    level = [root]
+
+    while level:
+        max_level += 1
+        next_level = []
+
+        while len(level) > 0:
+            node = level.pop()
+            if node.left:
+                next_level.append(node.left)
+            if node.right:
+                next_level.append(node.right)
+        level = next_level
+
+    return max_level
 ```
 
 ## Post-order Traversal
