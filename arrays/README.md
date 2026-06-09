@@ -7,6 +7,7 @@
 * [Find Disappeared Numbers](#find-disappeared-numbers)
 * [Find Index of Largest Number](#find-index-of-largest-number)
 * [Find Max Consecutive Ones](#find-max-consecutive-ones)
+* [Find Max Consecutive Ones With One Flip](#find-max-consecutive-ones-with-1-flip)
 * [Find Smallest Positive Integer](#find-smallest-positive-integer)
 * [First Duplicate](#first-duplicate)
 * [First Not Repeating Character](#first-not-repeating-character)
@@ -44,7 +45,7 @@ More formally check if there exists two indices i and j such that :
 
 `i != j`
 `arr[i] == 2 * arr[j]`
- 
+
 Example 1:
 
 Input: `[10,2,5,3]`
@@ -198,6 +199,42 @@ def find_index_largest_number(numbers: List[int]) -> int:
 
 ## Find Max Consecutive Ones
 
+You are given a binary array nums, return the maximum number of consecutive 1's in the array.
+
+Example 1:
+
+Input: nums = [1,1,0,1,1,1]
+
+Output: 3
+
+Example 2:
+
+Input: nums = [1,0,1,1,0,1]
+
+Output: 2
+
+```python
+def find_max_consecutive_ones(nums: List[int]) -> int:
+    max_ones = 0
+
+    if not nums:
+        return max_ones
+    
+    ones_count = 0
+
+    for num in nums:
+        if num == 1:
+            ones_count += 1
+        else:
+            ones_count = 0
+
+        max_ones = max(max_ones, ones_count)
+
+    return max_ones
+```
+
+## Find Max Consecutive Ones With 1 Flip
+
 Given a binary array, find the maximum number of consecutive 1s in this array if you can flip at most one 0.
 
 Example 1:
@@ -207,7 +244,7 @@ Output: `4`
 Explanation: Flip the first zero will get the the maximum number of consecutive 1s. After flipping, the maximum number of consecutive 1s is 4.
 
 ```python
-def find_max_consecutive_ones(nums: List[int]) -> int:
+def find_max_consecutive_ones_with_flip(nums: List[int]) -> int:
     zero = -1
     ones = 0
     highest = 0
