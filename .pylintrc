@@ -14,7 +14,9 @@ ignore=CVS
 ignore-patterns=README.md,
         .gitignore,
         LICENSE,
-        test_helpers.py
+        test_helpers.py,
+        Pipfile,
+        Pipfile.lock
 
 # Python code to execute, usually for sys.path manipulation such as
 # pygtk.require().

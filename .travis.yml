@@ -3,14 +3,13 @@
 
 language: python
 python:
-  - "3.6"
+  - "3.8"
 
-# command to install dependencies
 install:
-  - pip3 install pylint
+  - pip3 install pipenv
+  - pipenv install
 
-# command to run tests
 script:
   - pylint *
   - python compile_files.py
-  - pytest # or py.test for Python versions 3.5 and below
+  - pytest
