@@ -2,6 +2,7 @@
 
 * [Add Two Numbers](#add-two-numbers)
 * [Copy List with Random Pointer](#copy-list-with-random-pointer)
+* [Delete Duplicates](#delete-duplicates)
 * [Detect Cycle](#detect-cycle)
 * [Find Middle Node](#find-middle-node)
 * [Intersection Two Linked Lists](#intersection-two-linked-lists)
@@ -87,6 +88,24 @@ def get_cloned_node(node: Node, visited: Dict) -> Optional[Node]:
         visited[node] = Node(node.value, None, None)
         return visited[node]
     return None
+```
+
+## Delete Duplicates
+
+Given the head of a sorted linked list, delete all duplicates such that each element appears only once.
+Return the linked list sorted as well.
+
+```python
+def delete_duplicates(head: Optional[ListNode]) -> Optional[ListNode]:
+    node = head
+
+    while node:
+        if node.next and node.val == node.next.val:
+            node.next = node.next.next
+        else:
+            node = node.next
+
+    return head
 ```
 
 ## Detect Cycle
