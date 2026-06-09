@@ -1,21 +1,15 @@
-from queue import LifoQueue
-
-
 def valid_parentheses(value: str) -> bool:
     if len(value) % 2 != 0:
         return False
 
     closing_values = {'(': ')', '{': '}', '[': ']'}
-    open_chars = closing_values.keys()
-    stack = LifoQueue(len(value))
+    stack = []
 
     for char in value:
-        if char in open_chars:
-            stack.put(char)
+        if char in closing_values:
+            stack.append(char)
         else:
-            if stack.empty():
-                return False
-            if closing_values[stack.get()] != char:
+            if not stack or closing_values[stack.pop()] != char:
                 return False
 
-    return stack.empty()
+    return len(stack) == 0
