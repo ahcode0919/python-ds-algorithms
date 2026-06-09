@@ -17,4 +17,3 @@ def test_longest_common_prefix_vertical():
     assert longest_common_prefix_vertical(["c", "c"]) == "c"
     assert longest_common_prefix_vertical(["a", "aa", "aaa"]) == "a"
     assert longest_common_prefix_vertical(["aaa", "aa", "a"]) == "a"
-

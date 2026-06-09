@@ -13,4 +13,3 @@ def test_copy_random_list():
     assert new_head.next.next.value == 3
     assert new_head.next.random == new_head
     assert new_head.next.next.random == new_head
-
