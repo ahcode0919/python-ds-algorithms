@@ -65,6 +65,28 @@ def fizz_buzz(iterations: int) -> List[str]:
     return output
 ```
 
+## Moving Average
+
+Create a class `MovingAverage` to calculate the average of a max amount of numbers (n).
+Class should have a `.next(value: int)` method that returns the average after adding the new value.
+The oldest values should be removed when adding new values once the max amount of numbers is reached.
+
+```python
+class MovingAverage:
+
+    def __init__(self, max_size: int):
+        self.max_size = max_size
+        self.queue = deque()
+
+    def next(self, number: int) -> float:
+        self.queue.append(number)
+
+        if len(self.queue) > self.max_size:
+            self.queue.popleft()
+
+        return sum(self.queue) / float(len(self.queue))
+```
+
 ## Power of Three
 
 Given an integer, write a function to determine if it is a power of three.
