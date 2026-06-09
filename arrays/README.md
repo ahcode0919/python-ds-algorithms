@@ -146,8 +146,8 @@ Could you do it without extra space and in O(n) runtime? You may assume the retu
 
 Example:
 
-Input: `[4,3,2,7,8,2,3,1]`
-Output: `[5,6]`
+Input: `[4, 3, 2, 7, 8, 2, 3, 1]`
+Output: `[5, 6]`
 
 ```python
 def find_disappeared_numbers(nums: List[int]) -> List[int]:
@@ -202,7 +202,7 @@ Given a binary array, find the maximum number of consecutive 1s in this array if
 
 Example 1:
 
-Input: `[1,0,1,1,0]`
+Input: `[1, 0, 1, 1, 0]`
 Output: `4`
 Explanation: Flip the first zero will get the the maximum number of consecutive 1s. After flipping, the maximum number of consecutive 1s is 4.
 
@@ -407,8 +407,8 @@ Given two arrays, write a function to compute their intersection.
 
 Example 1:
 
-Input: nums1 = `[1,2,2,1]`, nums2 = `[2,2]`
-Output: `[2,2]`
+Input: nums1 = `[1, 2, 2, 1]`, nums2 = `[2, 2]`
+Output: `[2, 2]`
 
 ```python
 def intersection_of_two_arrays(nums1: List[int], nums2: List[int]) -> List[int]:
@@ -486,7 +486,7 @@ def largest_number_at_least_twice_of_others2(nums: [int]) -> int:
 
 Find the number of elements that would need to be added so that each array value is separated by one.
 
-`[1,2,3,5] -> 1 #4 needs to be added to the array`
+`[1, 2, 3, 5] -> 1 #4 needs to be added to the array`
 
 ```python
 def make_array_consecutive(arr: [int]) -> int:
@@ -553,8 +553,8 @@ You may assume that nums1 has enough space (size that is equal to m + n) to hold
 Example:
 
 Input:
-`nums1 = [1,2,3,0,0,0], m = 3`
-`nums2 = [2,5,6],       n = 3`
+`nums1 = [1, 2, 3, 0, 0, 0], m = 3`
+`nums2 = [2, 5, 6], n = 3`
 
 Output: `[1,2,2,3,5,6]`
 
@@ -586,10 +586,10 @@ Find the minimal length of a contiguous subarray of which the sum ≥ target. If
 
 Example: 
 
-Input: `7, [2,3,1,2,4,3]`
+Input: `7, [2, 3, 1, 2, 4, 3]`
 Output: `2`
 
-Explanation: the subarray `[4,3]` has the minimal length under the problem constraint.
+Explanation: the subarray `[4, 3]` has the minimal length under the problem constraint.
 
 ```python
 def minimum_subarray_length(target: int, numbers: List[int]) -> int:
@@ -641,8 +641,8 @@ non-zero elements.
 
 Example:
 
-Input: `[0,1,0,3,12]`
-Output: `[1,3,12,0,0]`
+Input: `[0, 1, 0, 3, 12]`
+Output: `[1, 3, 12, 0, 0]`
 Note:
 
 You must do this in-place without making a copy of the array.
@@ -673,11 +673,13 @@ Note: Pascal's Triangle I is under Matrices
 Given an integer `row_index`, return the row of the Pascal's triangle.
 
 A Pascal Triangle is:
+```text
     1
    1 1
   1 2 1
  1 3 3 1
 1 4 6 4 1
+```
 
 ```python
 def pascals_triangle_ii(row_index: int) -> List[int]:
