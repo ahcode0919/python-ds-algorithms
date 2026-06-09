@@ -4,6 +4,6 @@ T = TypeVar('T')
 
 
 class ListNode(Generic[T]):
-    def __init__(self, val: T):
-        self.val: T = val
-        self.next: Optional[ListNode] = None
+    def __init__(self, val: Optional[T] = None, next_node: Optional['ListNode[T]'] = None):
+        self.val: Optional[T] = val
+        self.next: Optional[ListNode] = next_node

@@ -7,6 +7,7 @@
 * [Find Middle Node](#find-middle-node)
 * [Intersection Two Linked Lists](#intersection-two-linked-lists)
 * [Linked List Cycle](#linked-list-cycle)
+* [Merge K Sorted Lists](#merge-k-sorted-lists)
 * [Merge Two Sorted Lists](#)
 * [Odd Even Linked List](#odd-even-linked-list)
 * [Palindrome Linked List](#palindrome-linked-list)
@@ -295,6 +296,39 @@ def has_cycle_with_set(head: Optional['ListNode']) -> bool:
         node_set.add(node)
         node = node.next
     return False
+```
+
+## Merge K Sorted Lists
+
+You are given an array of k linked-lists lists, each linked-list is sorted in ascending order.
+
+Merge all the linked-lists into one sorted linked-list and return it.
+
+```python
+def merge_k_lists(lists: Optional[List[ListNode]]) -> Optional[ListNode]:
+    dummy = ListNode()
+    current = dummy
+
+    lists = [val for val in lists if val]
+
+    while lists:
+        min_node = None
+        smallest = float('inf')
+
+        for index, head in enumerate(lists):
+            if head and head.val <= smallest:
+                smallest = head.val
+                min_node = index
+
+        current.next = lists[min_node]
+
+        if not lists[min_node].next:
+            lists.pop(min_node)
+        else:
+            lists[min_node] = lists[min_node].next
+        current = current.next
+
+    return dummy.next
 ```
 
 ## Merge Two Sorted Lists
