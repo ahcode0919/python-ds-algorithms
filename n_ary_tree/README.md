@@ -12,8 +12,39 @@ Similar to a binary tree except Nodes can have any number of child Nodes.
 K       L
 ```
 
+* [Level Order Traversal](#level-order-traversal)
 * [Postorder Traversal](#postorder-traversal)
 * [Preorder Traversal](#preorder-traversal)
+
+## Level Order Traversal
+
+Return N-nary tree level by level as a nested array.
+
+Example: `[[A], [B, C, D], [E, F, H, I, J], [K, L]]`
+
+```python
+def level_order_traversal(root: Node) -> List[List[int]]:
+    levels = []
+
+    if not root:
+        return levels
+
+    current_level = [root]
+
+    while current_level:
+        next_level = []
+        values = []
+
+        for node in current_level:
+            if node.children:
+                next_level.extend(node.children)
+            values.append(node.value)
+
+        levels.append(values)
+        current_level = next_level
+
+    return levels
+```
 
 ## Postorder Traversal
 
