@@ -16,6 +16,7 @@
 * [Largest Number At Least Twice of Others](#largest-number-at-least-twice-of-others)
 * [Make Array Consecutive](#make-array-consecutive)
 * [Max Consecutive Ones](#max-consecutive-ones)
+* [Max Subarray](#max-subarray)
 * [Merge Sorted Array](#merge-sorted-array)
 * [Minimum Subarray Length](#minimum-subarray-length)
 * [Move Zeros](#move-zeros)
@@ -521,6 +522,23 @@ def max_consecutive_ones(nums: List[int]) -> int:
             count = 0
 
     return max(max_ones, count)
+```
+
+## Max Subarray
+
+Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
+
+```python
+def max_subarray(nums: List[int]) -> int:
+    length = len(nums)
+    current_sum = nums[0]
+    max_sum = nums[0]
+
+    for i in range(1, length):
+        current_sum = max(nums[i], current_sum + nums[i])
+        max_sum = max(max_sum, current_sum)
+
+    return max_sum
 ```
 
 ## Merge Sorted Array
