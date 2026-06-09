@@ -1,4 +1,4 @@
-# Python Data Structures and Algorithms
+# Python Data Structures and Algorithms [![Build Status](https://travis-ci.org/ahcode0919/python-ds-algorithms.svg?branch=master)](https://travis-ci.org/ahcode0919/python-ds-algorithms) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Various Data Structures and Algorithm Solutions in Python (3.x)
 
@@ -6,7 +6,8 @@ Various Data Structures and Algorithm Solutions in Python (3.x)
 
 ## Arrays
 
-* [First Duplicate](#firstduplicate)
+* [First Duplicate](#first-duplicate)
+* [First Not Repeating Character](#first-not-repeating-character)
 
 #### First Duplicate
 
@@ -25,4 +26,23 @@ def firstDuplicate(a):
         else:
             uniqueSet.add(value)
     return -1
+```
+
+#### First Not Repeating Character
+
+Note: Write a solution that only iterates over the string once and uses O(1) additional memory, since this is what you
+would be asked to do during a real interview.
+
+Given a string s, find and return the first instance of a non-repeating character in it. If there is no such character,
+return '_'.
+
+
+```python
+def firstNotRepeatingCharacter(s):
+    checkedChars = set() #skip characters we've already checked.
+    for char in s:
+        if char not in checkedChars and s.index(char) == s.rindex(char):
+            return char
+        checkedChars.add(char)
+    return '_'
 ```
