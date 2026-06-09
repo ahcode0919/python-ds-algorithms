@@ -13,7 +13,7 @@
 * [Symmetric Binary Tree](#symmetric-binary-tree)
 * [Tree from Inorder and Postorder Traversal](#tree-from-inorder-and-postorder-traversal)
 * [Tree from Preorder and Inorder Traversal](#tree-from-preorder-and-inorder-traversal)
-* [Two Sum IV]()
+* [Two Sum IV](#two-sum-iv)
 * [Valid Binary Search Tree](#valid-binary-search-tree)
 
 ## Binary Tree Path
@@ -82,6 +82,52 @@ def find_mode(root: TreeNode) -> List:
             values.append(element)
 
     return values
+```
+
+## Even Odd Tree
+
+A binary tree is named even odd if it meets the following conditions:
+
+For every even-indexed level (0, 2, 4, etc), all nodes at the level have odd integer values in strictly increasing order
+(from left to right).
+
+For every odd-indexed level, all nodes at the level have even integer values in strictly decreasing order (from left to
+right). Given the root of a binary tree, return true if the binary tree is even odd, otherwise return false.
+
+```python
+def even_odd_tree(root: TreeNode):
+    if not root:
+        return False
+
+    level = deque([root])
+    even = True
+
+    while level:
+        last_value = None
+
+        for _ in range(len(level)):
+            node = level.popleft()
+
+            if even:
+                if node.val % 2 == 0:
+                    return False
+                if last_value and node.val <= last_value:
+                    return False
+            else:
+                if node.val % 2 != 0:
+                    return False
+                if last_value and node.val >= last_value:
+                    return False
+
+            last_value = node.val
+
+            if node.left:
+                level.append(node.left)
+            if node.right:
+                level.append(node.right)
+        even = not even
+
+    return True
 ```
 
 ## Has Path Sum
