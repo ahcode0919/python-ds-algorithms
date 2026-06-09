@@ -1,5 +1,5 @@
 from binary_tree.max_depth import max_depth
-from binary_tree.binary_tree_generator import generate_binary_tree
+from test_helpers.test_helpers import generate_binary_tree
 
 
 def test_max_depth():
