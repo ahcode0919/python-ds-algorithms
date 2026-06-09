@@ -29,3 +29,24 @@ def preorder_traversal(root: Node) -> List:
 
     return values
 ```
+
+Iterative
+
+```python
+def preorder_traversal_iterative(root: Node) -> List:
+    if not root:
+        return []
+
+    stack = [root]
+    values = []
+
+    while stack:
+        node = stack.pop()
+        values.append(node.value)
+
+        if node.children:
+            for child in reversed(node.children):
+                stack.append(child)
+
+    return values
+```
