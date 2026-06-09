@@ -205,29 +205,23 @@ getMin() -- Retrieve the minimum element in the stack.
 ```python
 class MinStack:
     def __init__(self):
-        self.stack = deque()
-        self.min_index = 0
+        # Tuple (value, current_min)
+        self.stack = []
 
     def push(self, value: int) -> None:
-        self.stack.append(value)
-        if self.stack[self.min_index] > value:
-            self.min_index = len(self.stack) - 1
+        if len(self.stack) == 0:
+            self.stack.append((value, value))
+        else:
+            self.stack.append((value, min(value, self.stack[-1][1])))
 
     def pop(self) -> None:
-        if self.min_index == len(self.stack) - 1:
-            self.stack.pop()
-            self.min_index = 0
-            for index, value in enumerate(self.stack):
-                if value < self.stack[self.min_index]:
-                    self.min_index = index
-        else:
-            self.stack.pop()
+        self.stack.pop()
 
     def top(self) -> int:
-        return self.stack[len(self.stack) - 1]
+        return self.stack[-1][0]
 
     def get_min(self) -> int:
-        return self.stack[self.min_index]
+        return self.stack[-1][1]
 ```
 
 ## Roman to Integer
