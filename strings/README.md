@@ -8,6 +8,7 @@
 * [Longest Common Prefix](#longest-common-prefix)
 * [Longest Substring Without Duplicates](#longest-substring-without-duplicates)
 * [Multiply Strings](#multiply-strings)
+* [Palindrome Permutation](#palindrome-permutation)
 * [Pangram](#pangram)
 * [Reverse String](#reverse-string)
 * [Reverse Words In A Sentence](#reverse-words-in-a-sentence)
@@ -312,6 +313,39 @@ def multiply_strings(num1: str, num2: str) -> str:
         return value
 
     return str(string_to_int(num1) * string_to_int(num2))
+```
+
+## Palindrome Permutation
+
+Given a string, determine if a permutation of the string could form a palindrome.
+
+Example 1:
+Input: `"code"`
+Output: `false`
+
+Example 2:
+Input: `"aab"`
+Output: `true`
+
+Example 3:
+Input: `"carerac"`
+Output: `true`
+
+```python
+def palindrome_permutation(palindrome: str) -> bool:
+    length = len(palindrome)
+    counter = Counter([char for char in palindrome])
+
+    if length % 2 == 0:
+        for key in counter:
+            if counter[key] % 2 != 0:
+                return False
+    else:
+        ones_count = Counter(counter.values()).get(1)
+        if ones_count > 1:
+            return False
+
+    return True
 ```
 
 ## Pangram
