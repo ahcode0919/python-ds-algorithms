@@ -1,6 +1,7 @@
 from typing import TypeVar
 from data_structures.list_node import ListNode
 from binary_tree.tree_node import TreeNode
+from n_ary_tree.node import Node
 
 T = TypeVar('T')
 
@@ -16,13 +17,33 @@ def get_binary_search_tree():
     return root
 
 
-def generate_binary_tree() -> TreeNode:
+def get_binary_tree() -> TreeNode:
     head = TreeNode(1)
     head.left = TreeNode(2)
     head.right = TreeNode(3)
     head.left.left = TreeNode(4)
     head.left.right = TreeNode(5)
     return head
+
+
+def get_n_nary_tree():
+    root = Node(1)
+    b = Node(2)
+    c = Node(3)
+    d = Node(4)
+    root.children = [b, c, d]
+    e = Node(5)
+    f = Node(6)
+    b.children = [e, f]
+    e.children = [Node(7)]
+    g = Node(8)
+    c.children = [g]
+    h = Node(9)
+    i = Node(10)
+    j = Node(11)
+    d.children = [h, i, j]
+    j.children = [Node(12)]
+    return root
 
 
 def get_list_values(head: T):
