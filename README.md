@@ -1,4 +1,4 @@
-# Python Data Structures and Algorithms ![](https://github.com/ahcode0919/python-ds-algorithms/actions/workflows/Python.yml/badge.svg?branch=main)) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+# Python Data Structures and Algorithms ![](https://github.com/ahcode0919/python-ds-algorithms/actions/workflows/Python.yml/badge.svg?branch=main) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Various Data Structures and Algorithm Solutions in Python (3.x). Succinct Python one-liners are avoided in most solutions
 to prevent obscuring the function and logic of the algorithms / data-structures.  
