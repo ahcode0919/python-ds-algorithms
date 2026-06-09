@@ -32,7 +32,7 @@ Explanation: `342 + 465 = 807`
 ```python
     node1 = head1
     node2 = head2
-    dummy_node = ListNode(0)
+    dummy_node = SinglyLinkedListNode(0)
     result = dummy_node
     carry = 0
     while node1 or node2:
@@ -47,11 +47,11 @@ Explanation: `342 + 465 = 807`
 
         total = val1 + val2 + carry
         carry = int(total / 10)
-        result.next = ListNode(total % 10)
+        result.next = SinglyLinkedListNode(total % 10)
         result = result.next
 
     if carry > 0:
-        result.next = ListNode(carry)
+        result.next = SinglyLinkedListNode(carry)
 
     return dummy_node.next
 ```
@@ -97,7 +97,7 @@ Given the head of a sorted linked list, delete all duplicates such that each ele
 Return the linked list sorted as well.
 
 ```python
-def delete_duplicates(head: Optional[ListNode]) -> Optional[ListNode]:
+def delete_duplicates(head: Optional[SinglyLinkedListNode]) -> Optional[SinglyLinkedListNode]:
     node = head
 
     while node:
@@ -118,13 +118,13 @@ Solution with slow/fast
 Time: O(N), Space: O(1)
 
 ```python
-def detect_cycle(head: ListNode) -> Optional[ListNode]:
+def detect_cycle(head: SinglyLinkedListNode) -> Optional[SinglyLinkedListNode]:
     # detect cycle
     if not head or not head.next:
         return None
-    slow: ListNode = head
-    fast: ListNode = head
-    intersection: Optional[ListNode] = None
+    slow: SinglyLinkedListNode = head
+    fast: SinglyLinkedListNode = head
+    intersection: Optional[SinglyLinkedListNode] = None
 
     while fast and fast.next:
         slow = slow.next
@@ -150,8 +150,8 @@ Solution with set
 Time: O(N), Space: O(1)
 
 ```python
-def detect_cycle_with_set(head: ListNode) -> Optional[ListNode]:
-    visited_nodes: Set[ListNode] = set()
+def detect_cycle_with_set(head: SinglyLinkedListNode) -> Optional[SinglyLinkedListNode]:
+    visited_nodes: Set[SinglyLinkedListNode] = set()
 
     node = head
 
@@ -177,7 +177,7 @@ Example:
 ```
 
 ```python
-def find_middle_node(head: Optional[ListNode]) -> Optional[ListNode]:
+def find_middle_node(head: Optional[SinglyLinkedListNode]) -> Optional[SinglyLinkedListNode]:
     if not head:
         return None
     slow = head
@@ -207,12 +207,12 @@ Solution using two pointers:
 Time: O(N), Space: O(1)
       
 ```python
-def get_intersection_node(head_a: ListNode, head_b: ListNode) -> Optional[ListNode]:
+def get_intersection_node(head_a: SinglyLinkedListNode, head_b: SinglyLinkedListNode) -> Optional[SinglyLinkedListNode]:
     if not head_a or not head_b:
         return None
     
-    node_a: ListNode = head_a
-    node_b: ListNode = head_b
+    node_a: SinglyLinkedListNode = head_a
+    node_b: SinglyLinkedListNode = head_b
 
     while node_a != node_b:
         node_a = node_a.next
@@ -235,10 +235,10 @@ Solution using Set (less optimal)
 Time: O(N), Space: O(N)
 
 ```python
-def get_intersection_node_with_set(head_a: ListNode, head_b: ListNode) -> Optional[ListNode]:
-    nodes: Set[ListNode] = set()
-    node_a: ListNode = head_a
-    node_b: ListNode = head_b
+def get_intersection_node_with_set(head_a: SinglyLinkedListNode, head_b: SinglyLinkedListNode) -> Optional[SinglyLinkedListNode]:
+    nodes: Set[SinglyLinkedListNode] = set()
+    node_a: SinglyLinkedListNode = head_a
+    node_b: SinglyLinkedListNode = head_b
 
     while node_a or node_b:
         if node_a:
@@ -265,12 +265,12 @@ linked list where tail connects to. If pos is -1, then there is no cycle in the 
 
 ```python
 # Time: O(N + K) -> O(N), Space: O(1)
-def has_cycle(head: Optional['ListNode']) -> bool:
+def has_cycle(head: Optional['SinglyLinkedListNode']) -> bool:
     if not head or not head.next:
         return False
 
-    slow: ListNode = head
-    fast: ListNode = head.next
+    slow: SinglyLinkedListNode = head
+    fast: SinglyLinkedListNode = head.next
     while slow != fast:
         if fast is None or fast.next is None:
             return False
@@ -283,12 +283,12 @@ Solution with set (less optimal)
 
 ```python
 # Time: O(N), Space: O(N)
-def has_cycle_with_set(head: Optional['ListNode']) -> bool:
+def has_cycle_with_set(head: Optional['SinglyLinkedListNode']) -> bool:
     if not head or not head.next:
         return False
 
-    node_set: Set[ListNode] = set()
-    node: ListNode = head
+    node_set: Set[SinglyLinkedListNode] = set()
+    node: SinglyLinkedListNode = head
 
     while node:
         if not node or node in node_set:
@@ -305,8 +305,8 @@ You are given an array of k linked-lists lists, each linked-list is sorted in as
 Merge all the linked-lists into one sorted linked-list and return it.
 
 ```python
-def merge_k_lists(lists: Optional[List[ListNode]]) -> Optional[ListNode]:
-    dummy = ListNode()
+def merge_k_lists(lists: Optional[List[SinglyLinkedListNode]]) -> Optional[SinglyLinkedListNode]:
+    dummy = SinglyLinkedListNode()
     current = dummy
 
     lists = [val for val in lists if val]
@@ -343,13 +343,13 @@ Input: `1->2->4`, `1->3->4`
 Output: `1->1->2->3->4->4`
 
 ```python
-def merge_two_lists(head1: Optional[ListNode], head2: Optional[ListNode]) -> Optional[ListNode]:
+def merge_two_lists(head1: Optional[SinglyLinkedListNode], head2: Optional[SinglyLinkedListNode]) -> Optional[SinglyLinkedListNode]:
     if not head1 and not head2:
         return None
 
     node1 = head1
     node2 = head2
-    dummy_node = ListNode(0)
+    dummy_node = SinglyLinkedListNode(0)
     current_node = dummy_node
 
     while node1 and node2:
@@ -384,7 +384,7 @@ Output: `1->3->5->2->4->NULL`
 Time: O(N), Space: O(1)
 
 ```python
-def odd_even_list(head: Optional[ListNode]) -> Optional[ListNode]:
+def odd_even_list(head: Optional[SinglyLinkedListNode]) -> Optional[SinglyLinkedListNode]:
     if not head:
         return None
 
@@ -419,7 +419,7 @@ Output: `true`
 Time: O(N), Space: O(1)
 
 ```python
-def is_palindrome(head: Optional[ListNode]) -> bool:
+def is_palindrome(head: Optional[SinglyLinkedListNode]) -> bool:
     if not head:
         return False
 
@@ -457,12 +457,12 @@ Output: `1->2->3->4->5`
 Time: O(N), Space: O(1)
 
 ```python
-def remove_elements(head: Optional[ListNode], val: int) -> Optional[ListNode]:
-    dummy_node: ListNode = ListNode(0)
+def remove_elements(head: Optional[SinglyLinkedListNode], val: int) -> Optional[SinglyLinkedListNode]:
+    dummy_node: SinglyLinkedListNode = SinglyLinkedListNode(0)
     dummy_node.next = head
 
-    previous: ListNode = dummy_node
-    current: Optional[ListNode] = head
+    previous: SinglyLinkedListNode = dummy_node
+    current: Optional[SinglyLinkedListNode] = head
 
     while current:
         if current.val == val:
@@ -482,11 +482,11 @@ Given a linked list, remove the n-th node from the end of list and return its he
 Time: O(N), Space: O(1)
 
 ```python
-def remove_nth_from_end(head: ListNode, nth: int) -> Optional[ListNode]:
-    dummy: ListNode = ListNode(0)
+def remove_nth_from_end(head: SinglyLinkedListNode, nth: int) -> Optional[SinglyLinkedListNode]:
+    dummy: SinglyLinkedListNode = SinglyLinkedListNode(0)
     dummy.next = head
-    previous: ListNode = dummy
-    lead: ListNode = dummy
+    previous: SinglyLinkedListNode = dummy
+    lead: SinglyLinkedListNode = dummy
 
     # Move lead forward
     for _ in range(nth + 1):
@@ -509,11 +509,11 @@ Reverse a Singly Linked List.
 Time: O(N), Space: O(1)
 
 ```python
-def reverse_linked_list(head: ListNode) -> Optional[ListNode]:
+def reverse_linked_list(head: SinglyLinkedListNode) -> Optional[SinglyLinkedListNode]:
     if not head:
         return None
-    previous: Optional[ListNode] = None
-    current: Optional[ListNode] = head
+    previous: Optional[SinglyLinkedListNode] = None
+    current: Optional[SinglyLinkedListNode] = head
 
     while current:
         temp = current.next
@@ -529,7 +529,7 @@ Solution using recursion
 Time: O(N), Space: O(N)
 
 ```python
-def reverse_linked_list_recursive(head: ListNode) -> Optional[ListNode]:
+def reverse_linked_list_recursive(head: SinglyLinkedListNode) -> Optional[SinglyLinkedListNode]:
     if not head or not head.next:
         return head
 
@@ -550,7 +550,7 @@ Output: `4->5->1->2->3->NULL`
 
 
 ```python
-def rotate_list(head: Optional[ListNode], amount: int) -> Optional[ListNode]:
+def rotate_list(head: Optional[SinglyLinkedListNode], amount: int) -> Optional[SinglyLinkedListNode]:
     if not head:
         return None
 
