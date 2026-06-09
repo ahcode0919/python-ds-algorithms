@@ -11,9 +11,30 @@ Similar to a binary tree except Nodes can have any number of child Nodes.
  /     \
 K       L
 ```
-* [Pre-order Traversal](#pre-order-traversal)
 
-## Pre-order Traversal
+* [Postorder Traversal](#postorder-traversal)
+* [Preorder Traversal](#preorder-traversal)
+
+## Postorder Traversal
+
+Recursive
+
+```python
+def postorder_traversal(root: Optional[Node]) -> List:
+    values = []
+
+    if not root:
+        return values
+
+    if root.children:
+        for child in root.children:
+            values.extend(postorder_traversal(child))
+    values.append(root.value)
+
+    return values
+```
+
+## Preorder Traversal
 
 Recursive
 

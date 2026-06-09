@@ -27,6 +27,13 @@ def get_binary_tree() -> TreeNode:
 
 
 def get_n_nary_tree():
+    #         1
+    #      /  |  \
+    #     2   3   4
+    #    / \  |  / | \
+    #   5   6 8 9  10 11
+    #  /                \
+    # 7                  12
     root = Node(1)
     b = Node(2)
     c = Node(3)
