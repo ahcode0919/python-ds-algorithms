@@ -14,6 +14,7 @@
 * [Run Length Encoding](#run-length-encoding)
 * [String to Integer](#string-to-integer)
 * [String to Integer II](#string-to-integer-ii)
+* [Unique Email Addresses](#unique-email-addresses)
 * [Valid Anagram](#valid-anagram)
 * [Valid Palindrome](#valid-palindrome)
 * [Valid Word Abbreviation](#valid-word-abbreviation)
@@ -487,6 +488,53 @@ def string_to_integer_ii(string: str) -> int:
         number += temp * (10 ** (length - index - 1))
 
     return number if positive else number * -1
+```
+
+## Unique Email Addresses
+
+Every email consists of a local name and a domain name, separated by the `@` sign.
+
+For example, in alice@leetcode.com, alice is the local name, and leetcode.com is the domain name.
+
+If you add periods (`.`) between some characters in the local name part of an email address, mail sent there will be
+forwarded to the same address without dots in the local name.  For example, "alice.z@leetcode.com" and "alicez@leetcode.com"
+forward to the same email address.  (Note that this rule does not apply for domain names.)
+
+If you add a plus (`+`) in the local name, everything after the first plus sign will be ignored. This allows certain
+emails to be filtered, for example m.y+name@email.com will be forwarded to my@email.com.  (Again, this rule does not
+apply for domain names.)
+
+It is possible to use both of these rules at the same time.
+
+Given a list of emails return the number of email address that will receive emails
+
+Example:
+
+Input: `["test.email+alex@leetcode.com", "test.e.mail+bob.cathy@leetcode.com", "testemail+david@lee.tcode.com"]`
+Output: `2`
+
+```python
+def unique_email_addresses(emails: List[str]) -> int:
+    unique_emails = set()
+
+    for email in emails:
+        normalized_email = []
+
+        for index, string in enumerate(email):
+            if string == '+':
+                at_index = email.index('@', index)
+                normalized_email.append(email[at_index:])
+                unique_emails.add(''.join(normalized_email))
+                break
+            if string == '.':
+                continue
+            if string == '@':
+                normalized_email.append(email[index:])
+                unique_emails.add(''.join(normalized_email))
+                break
+            normalized_email.append(string)
+
+    return len(unique_emails)
 ```
 
 ## Valid Anagram
