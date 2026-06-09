@@ -1,8 +1,8 @@
 from typing import List
-from n_ary_tree.node import Node
+from n_ary_tree.nary_tree_node import NaryTreeNode
 
 
-def preorder_traversal_iterative(root: Node) -> List:
+def preorder_traversal_iterative(root: NaryTreeNode) -> List:
     if not root:
         return []
 

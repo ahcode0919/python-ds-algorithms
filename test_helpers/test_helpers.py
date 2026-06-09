@@ -2,7 +2,7 @@ from collections import deque
 from typing import List, TypeVar
 from data_structures.list_node import ListNode
 from binary_tree.tree_node import TreeNode
-from n_ary_tree.node import Node
+from n_ary_tree.nary_tree_node import NaryTreeNode
 
 T = TypeVar('T')
 
@@ -73,26 +73,26 @@ def get_n_nary_tree():
     #   5   6 8 9  10 11
     #  /                \
     # 7                  12
-    root = Node(1)
-    b = Node(2)
-    c = Node(3)
-    d = Node(4)
+    root = NaryTreeNode(1)
+    b = NaryTreeNode(2)
+    c = NaryTreeNode(3)
+    d = NaryTreeNode(4)
     root.children = [b, c, d]
-    e = Node(5)
-    f = Node(6)
+    e = NaryTreeNode(5)
+    f = NaryTreeNode(6)
     b.children = [e, f]
-    e.children = [Node(7)]
-    g = Node(8)
+    e.children = [NaryTreeNode(7)]
+    g = NaryTreeNode(8)
     c.children = [g]
-    h = Node(9)
-    i = Node(10)
-    j = Node(11)
+    h = NaryTreeNode(9)
+    i = NaryTreeNode(10)
+    j = NaryTreeNode(11)
     d.children = [h, i, j]
-    j.children = [Node(12)]
+    j.children = [NaryTreeNode(12)]
     return root
 
 
-def get_n_ary_tree_values(root: Node) -> List:
+def get_n_ary_tree_values(root: NaryTreeNode) -> List:
     queue = deque([root])
     values = []
 

@@ -1,7 +1,7 @@
-from n_ary_tree.node import Node
+from n_ary_tree.nary_tree_node import NaryTreeNode
 
 
-def max_depth_top_down(root: Node) -> int:
+def max_depth_top_down(root: NaryTreeNode) -> int:
     def traverse(node, depth):
         if not node:
             return depth
@@ -19,7 +19,7 @@ def max_depth_top_down(root: Node) -> int:
     return traverse(root, 1)
 
 
-def max_depth_bottom_up(root: Node) -> int:
+def max_depth_bottom_up(root: NaryTreeNode) -> int:
     if not root:
         return 0
 

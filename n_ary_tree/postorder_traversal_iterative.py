@@ -1,9 +1,9 @@
 from collections import deque
 from typing import List, Optional
-from n_ary_tree.node import Node
+from n_ary_tree.nary_tree_node import NaryTreeNode
 
 
-def postorder_traversal_iterative(root: Optional[Node]) -> List:
+def postorder_traversal_iterative(root: Optional[NaryTreeNode]) -> List:
     values = deque()
     stack = []
     if not root:

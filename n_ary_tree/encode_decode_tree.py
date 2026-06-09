@@ -1,10 +1,10 @@
 from collections import deque
 from typing import Optional
 from binary_tree.tree_node import TreeNode
-from n_ary_tree.node import Node
+from n_ary_tree.nary_tree_node import NaryTreeNode
 
 
-def encode(root: Node) -> Optional[TreeNode]:
+def encode(root: NaryTreeNode) -> Optional[TreeNode]:
     if not root:
         return None
 
@@ -32,11 +32,11 @@ def encode(root: Node) -> Optional[TreeNode]:
     return root_node
 
 
-def decode(data: TreeNode) -> Optional[Node]:
+def decode(data: TreeNode) -> Optional[NaryTreeNode]:
     if not data:
         return None
 
-    root = Node(data.val, [])
+    root = NaryTreeNode(data.val, [])
     queue = deque([(root, data)])
 
     while queue:
@@ -45,7 +45,7 @@ def decode(data: TreeNode) -> Optional[Node]:
         sibling = first_child
 
         while sibling:
-            node = Node(sibling.val, [])
+            node = NaryTreeNode(sibling.val, [])
             parent.children.append(node)
             queue.append((node, sibling))
             sibling = sibling.right
