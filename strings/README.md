@@ -4,6 +4,7 @@
 * [Crop String](#crop-string)
 * [First Unique Character](#first-unique-character-in-a-string)
 * [Jewels and Stones](#jewels-and-stones)
+* [License Key Formatter](#license-key-formatter)
 * [Longest Common Prefix](#longest-common-prefix)
 * [Longest Substring Without Duplicates](#longest-substring-without-duplicates)
 * [Multiply Strings](#multiply-strings)
@@ -172,6 +173,37 @@ def jewels_and_stones(jewels: str, stones: str) -> int:
             count += stone_count[jewel]
 
     return count
+```
+
+## License Key Formatter
+
+Given a license string which consists only alphanumeric character and dashes.
+The string is separated into `N+1` groups by `N` dashes.
+
+Given a `group_length` reformat the strings such that each group contains the exact number of characters,
+except for the first which could be shorter than `group_length`, but still must contain at least one character.
+There must be a dash inserted between groups and all lowercase letters should be converted to uppercase.
+
+Example:
+
+Input: `5F3Z-2e-9-w`, 3
+Output: `5F-3Z2-E9W`
+
+```python
+def license_key_formatter(license_str: str, group_length: int) -> str:
+    license_keys = license_str.replace('-', '').upper()
+    remainder = len(license_keys) % group_length
+
+    start = 0
+    end = remainder if remainder > 0 else group_length
+    license_groups = []
+
+    while end <= len(license_keys):
+        license_groups.append(license_keys[start:end])
+        start = end
+        end += group_length
+
+    return '-'.join(license_groups)
 ```
 
 ## Longest Common Prefix
