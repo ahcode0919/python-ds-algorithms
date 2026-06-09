@@ -6,4 +6,4 @@ def test_pangram():
     assert pangram('abcdefghijklmnopqrstuvwxyz')
     assert not pangram('test')
     assert not pangram('')
-    assert pangram('   \n\t!@#$%^&*()_+[]/\;\',./abcdefghijklmnopqrstuvwxyz')
+    assert pangram("   \n\t!@#$%^&*()_+[]/\\;',./abcdefghijklmnopqrstuvwxyz")
