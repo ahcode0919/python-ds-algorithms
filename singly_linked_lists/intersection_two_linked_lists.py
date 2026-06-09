@@ -1,13 +1,13 @@
 from typing import Optional
-from data_structures.list_node import ListNode
+from data_structures.singly_linked_list_node import SinglyLinkedListNode
 
 
-def get_intersection_node(head_a: ListNode, head_b: ListNode) -> Optional[ListNode]:
+def get_intersection_node(head_a: SinglyLinkedListNode, head_b: SinglyLinkedListNode) -> Optional[SinglyLinkedListNode]:
     if not head_a or not head_b:
         return None
 
-    node_a: ListNode = head_a
-    node_b: ListNode = head_b
+    node_a: SinglyLinkedListNode = head_a
+    node_b: SinglyLinkedListNode = head_b
 
     while node_a != node_b:
         node_a = node_a.next

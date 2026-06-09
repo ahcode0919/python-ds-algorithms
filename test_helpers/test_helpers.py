@@ -1,6 +1,6 @@
 from collections import deque
 from typing import List, TypeVar
-from data_structures.list_node import ListNode
+from data_structures.singly_linked_list_node import SinglyLinkedListNode
 from binary_tree.tree_node import TreeNode
 from n_ary_tree.nary_tree_node import NaryTreeNode
 
@@ -43,24 +43,24 @@ def get_binary_tree_values(root: TreeNode) -> List:
     return values
 
 
-def get_list_values(head: T):
+def get_list_values(head):
     node = head
     values = []
     while node:
-        values.append(node.val)
+        values.append(node.data)
         node = node.next
     return values
 
 
-def get_cyclic_list_values(head: ListNode):
+def get_cyclic_list_values(head: SinglyLinkedListNode):
     if not head:
         return []
 
-    values = [head.val]
+    values = [head.data]
     node = head.next
 
     while node is not head:
-        values.append(node.val)
+        values.append(node.data)
         node = node.next
     return values
 
@@ -109,12 +109,12 @@ def get_n_ary_tree_values(root: NaryTreeNode) -> List:
     return values
 
 
-def get_singly_linked_list(values: List[T]) -> ListNode[T]:
-    dummy = ListNode()
+def get_singly_linked_list(values: List[T]) -> SinglyLinkedListNode[T]:
+    dummy = SinglyLinkedListNode()
     current = dummy
 
     for value in values:
-        current.next = ListNode(value)
+        current.next = SinglyLinkedListNode(value)
         current = current.next
 
     return dummy.next

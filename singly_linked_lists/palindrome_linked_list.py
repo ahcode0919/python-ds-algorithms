@@ -1,10 +1,10 @@
 from typing import Optional
 from singly_linked_lists.find_middle_node import find_middle_node
 from singly_linked_lists.reverse_linked_list import reverse_linked_list
-from data_structures.list_node import ListNode
+from data_structures.singly_linked_list_node import SinglyLinkedListNode
 
 
-def is_palindrome(head: Optional[ListNode]) -> bool:
+def is_palindrome(head: Optional[SinglyLinkedListNode]) -> bool:
     if not head:
         return False
 
@@ -20,7 +20,7 @@ def is_palindrome(head: Optional[ListNode]) -> bool:
     second_pointer = second_half_head
 
     while palindrome and second_pointer:
-        if first_pointer.val != second_pointer.val:
+        if first_pointer.data != second_pointer.data:
             return False
         first_pointer = first_pointer.next
         second_pointer = second_pointer.next

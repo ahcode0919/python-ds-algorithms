@@ -1,8 +1,8 @@
 from typing import Optional
-from data_structures.list_node import ListNode
+from data_structures.singly_linked_list_node import SinglyLinkedListNode
 
 
-def odd_even_list(head: Optional[ListNode]) -> Optional[ListNode]:
+def odd_even_list(head: Optional[SinglyLinkedListNode]) -> Optional[SinglyLinkedListNode]:
     if not head:
         return None
 
