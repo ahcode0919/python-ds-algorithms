@@ -1,61 +1,50 @@
 from typing import Generic, Optional, TypeVar
+from data_structures.doubly_linked_list_node import DoublyLinkedListNode
 
 T = TypeVar('T')
-
-
-class Node(Generic[T]):
-    def __init__(self, data: T = None, previous_node: 'Node' = None, next_node: 'Node' = None):
-        self.data = data
-        self.previous_node = previous_node
-        self.next_node = next_node
-
-
-# Wikipedia: In a 'doubly linked list', each node contains, besides the next-node link, a second link field pointing
-# to the 'previous' node in the sequence. The two links may be called 'forward('s') and 'backwards', or 'next' and
-# 'prev'('previous').
 
 
 class DoublyLinkedList(Generic[T]):
 
     def __init__(self):
-        self.__head = Node()
-        self.__tail = Node()
+        self.__head: DoublyLinkedListNode = DoublyLinkedListNode()
+        self.__tail: DoublyLinkedListNode = DoublyLinkedListNode()
 
-        self.__head.next_node = self.__tail
-        self.__tail.previous_node = self.__head
+        self.__head.next = self.__tail
+        self.__tail.previous = self.__head
 
     # O(N)
     def all_values(self) -> [T]:
         values = []
-        node = self.__head.next_node
+        node = self.__head.next
 
         while node is not self.__tail:
             values.append(node.data)
-            node = node.next_node
+            node = node.next
 
         return values
 
     # O(1)
     def append(self, data: T):
         # Last <-> Tail --> Last <-> New <-> Tail
-        node = Node(data)
-        last_node = self.__tail.previous_node
+        node = DoublyLinkedListNode(data)
+        last_node = self.__tail.previous
 
-        last_node.next_node = node
-        node.previous_node = last_node
+        last_node.next = node
+        node.previous = last_node
 
-        node.next_node = self.__tail
-        self.__tail.previous_node = node
+        node.next = self.__tail
+        self.__tail.previous = node
 
     # O(N)
-    def get_node(self, index: int) -> Optional[Node]:
-        current_node = self.__head.next_node
+    def get_node(self, index: int) -> Optional[DoublyLinkedListNode]:
+        current_node = self.__head.next
         count = 0
 
         while current_node is not self.__tail:
             if count == index:
                 return current_node
-            current_node = current_node.next_node
+            current_node = current_node.next
             count += 1
         return None
 
@@ -68,24 +57,24 @@ class DoublyLinkedList(Generic[T]):
 
     # O(N)
     def insert(self, data: T, index: int):
-        node = Node(data)
-        current_node: Node = self.get_node(index)
+        node = DoublyLinkedListNode(data)
+        current_node: DoublyLinkedListNode = self.get_node(index)
 
         if not current_node and index == 0:
-            self.__head.next_node = node
-            node.previous_node = self.__head
-            node.next_node = self.__tail
-            self.__tail.previous_node = node
+            self.__head.next = node
+            node.previous = self.__head
+            node.next = self.__tail
+            self.__tail.previous = node
             return
 
         if not current_node:
             raise IndexError("Index out of bounds")
 
         # Previous <-> Original --> Previous <-> New <-> Original
-        current_node.previous_node.next_node = node
-        node.previous_node = current_node.previous_node
-        node.next_node = current_node
-        current_node.previous_node = node
+        current_node.previous.next = node
+        node.previous = current_node.previous
+        node.next = current_node
+        current_node.previous = node
 
     # O(N)
     def remove(self, index: int) -> Optional[T]:
@@ -94,17 +83,17 @@ class DoublyLinkedList(Generic[T]):
             return None
 
         # Previous <-> Node <-> Next --> Previous <-> Next
-        node.previous_node.next_node = node.next_node
-        node.next_node.previous_node = node.previous_node
+        node.previous.next = node.next
+        node.next.previous = node.previous
 
         return node.data
 
     # O(N)
     def size(self) -> int:
         count = 0
-        node = self.__head.next_node
+        node = self.__head.next
 
         while node != self.__tail:
             count += 1
-            node = node.next_node
+            node = node.next
         return count
