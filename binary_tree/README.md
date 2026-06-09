@@ -5,6 +5,7 @@
 * [In-order Traversal](#in-order-traversal)
 * [Level-order Traversal](#level-order-traversal)
 * [Max Depth](#max-depth)
+* [Next Right Pointer](#next-right-pointer)
 * [Post-order Traversal](#post-order-traversal)
 * [Pre-order Traversal](#pre-order-traversal)
 * [Valid Binary Search Tree](#valid-binary-search-tree)
@@ -190,6 +191,42 @@ def max_depth(root: TreeNode) -> int:
     return max_level
 ```
 
+## Next Right Pointer
+
+You are given a perfect binary tree where all leaves are on the same level, and every parent has two children.
+Populate each next pointer to point to its next right node. If there is no next right node, the next pointer should be
+set to `None`
+
+```python
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+        self.next = None
+
+
+def next_right_pointer(root: Node) -> Node:
+    if not root:
+        return root
+
+    level = deque([root])
+
+    while level:
+        right = None
+
+        for _ in range(len(level)):
+            left = level.pop()
+            left.next = right
+            right = left
+            if left.right:
+                level.appendleft(left.right)
+            if left.left:
+                level.appendleft(left.left)
+
+    return root
+```
+
 ## Post-order Traversal
 
 Algorithm Postorder(tree)
@@ -344,7 +381,7 @@ For example, this binary tree `[1,2,2,3,4,4,3]` is symmetric:
 
 But the following `[1,2,2,null,3,null,3]` is not:
 
-````
+```
     1
    / \
   2   2
