@@ -1,4 +1,4 @@
-from binary_tree.next_right_pointer import next_right_pointer, Node
+from binary_tree.next_right_pointer import Node, next_right_pointer
 
 
 def test_next_right_pointer():

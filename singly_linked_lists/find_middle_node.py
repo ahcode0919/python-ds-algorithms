@@ -1,4 +1,5 @@
 from typing import Optional
+
 from data_structures.singly_linked_list_node import SinglyLinkedListNode
 
 

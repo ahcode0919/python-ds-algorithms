@@ -1,5 +1,3 @@
-
-
 def valid_palindrome_naive(string: str) -> bool:
     return string == string[::-1]
 

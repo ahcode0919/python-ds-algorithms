@@ -42,4 +42,4 @@ class MapSum:
 class MapSumNode:
     def __init__(self, value: int = 0):
         self.value = value
-        self.nodes: Dict[str: MapSumNode] = dict()
+        self.nodes: Dict[str:MapSumNode] = dict()

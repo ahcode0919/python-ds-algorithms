@@ -1,5 +1,5 @@
-from test_helpers.test_helpers import get_binary_tree
 from binary_tree.level_order_traversal import level_order_traversal
+from test_helpers.test_helpers import get_binary_tree
 
 
 def test_level_order_traversal():

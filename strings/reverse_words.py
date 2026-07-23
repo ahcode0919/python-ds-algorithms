@@ -13,11 +13,11 @@ def reverse_words(sentence: str) -> str:
     left_index = 0
 
     for index in range(length):
-        if sentence_array[index] == ' ':
+        if sentence_array[index] == " ":
             reverse(sentence_array, left_index, index - 1)
             left_index = index + 1
 
     # reverse last word, or sentence if one word
     reverse(sentence_array, left_index, length - 1)
 
-    return ''.join(sentence_array)
+    return "".join(sentence_array)

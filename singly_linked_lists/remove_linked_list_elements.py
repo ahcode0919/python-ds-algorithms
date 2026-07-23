@@ -1,8 +1,11 @@
 from typing import Optional
+
 from data_structures.singly_linked_list_node import SinglyLinkedListNode
 
 
-def remove_elements(head: Optional[SinglyLinkedListNode], data: int) -> Optional[SinglyLinkedListNode]:
+def remove_elements(
+    head: Optional[SinglyLinkedListNode], data: int
+) -> Optional[SinglyLinkedListNode]:
     dummy_node: SinglyLinkedListNode = SinglyLinkedListNode(0)
     dummy_node.next = head
 

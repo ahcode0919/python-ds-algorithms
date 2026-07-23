@@ -1,5 +1,3 @@
-
-
 def jewels_and_stones(jewels: str, stones: str) -> int:
     stone_count = dict()
 

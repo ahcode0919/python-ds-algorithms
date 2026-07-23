@@ -1,7 +1,5 @@
-
-
 def license_key_formatter(license_str: str, group_length: int) -> str:
-    license_keys = license_str.replace('-', '').upper()
+    license_keys = license_str.replace("-", "").upper()
     remainder = len(license_keys) % group_length
 
     start = 0
@@ -13,4 +11,4 @@ def license_key_formatter(license_str: str, group_length: int) -> str:
         start = end
         end += group_length
 
-    return '-'.join(license_groups)
+    return "-".join(license_groups)

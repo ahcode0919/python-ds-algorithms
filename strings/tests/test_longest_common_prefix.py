@@ -1,4 +1,7 @@
-from strings.longest_common_prefix import longest_common_prefix_horizontal, longest_common_prefix_vertical
+from strings.longest_common_prefix import (
+    longest_common_prefix_horizontal,
+    longest_common_prefix_vertical,
+)
 
 
 def test_longest_common_prefix_horizontal():

@@ -2,15 +2,17 @@ from typing import Optional
 
 
 class Node:
-    def __init__(self,
-                 val: int,
-                 previous_node: Optional['Node'],
-                 next_node: Optional['Node'],
-                 child_node: Optional['Node']):
+    def __init__(
+        self,
+        val: int,
+        previous_node: Optional["Node"],
+        next_node: Optional["Node"],
+        child_node: Optional["Node"],
+    ):
         self.data: int = val
-        self.previous: Optional['Node'] = previous_node
-        self.next: Optional['Node'] = next_node
-        self.child: Optional['Node'] = child_node
+        self.previous: Optional["Node"] = previous_node
+        self.next: Optional["Node"] = next_node
+        self.child: Optional["Node"] = child_node
 
 
 def flatten(head: Node) -> Node:

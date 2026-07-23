@@ -1,9 +1,7 @@
-
-
 def multiply_strings(num1: str, num2: str) -> str:
     def string_to_int(string: str) -> int:
         length = len(string)
-        zero = ord('0')
+        zero = ord("0")
         value = 0
 
         for index in range(length):

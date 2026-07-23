@@ -1,5 +1,6 @@
 from collections import deque
 from typing import Optional
+
 from binary_tree.tree_node import TreeNode
 from n_ary_tree.nary_tree_node import NaryTreeNode
 

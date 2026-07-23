@@ -2,11 +2,11 @@ from strings.first_unique_character_in_str import first_unique_character_in_str
 
 
 def test_first_unique_character():
-    string = 'abc'
+    string = "abc"
     assert first_unique_character_in_str(string) == 0
 
-    string = 'eee'
+    string = "eee"
     assert first_unique_character_in_str(string) == -1
 
-    string = 'aba'
+    string = "aba"
     assert first_unique_character_in_str(string) == 1

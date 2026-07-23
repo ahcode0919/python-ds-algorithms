@@ -30,7 +30,7 @@ def binary_tree_paths(root_node: TreeNode) -> [str]:
     paths = []
     if not root_node:
         return paths
-    return get_path(root_node, '', paths)
+    return get_path(root_node, "", paths)
 
 
 def get_path(node: TreeNode, path: str, paths: [str]) -> [str]:
@@ -40,7 +40,7 @@ def get_path(node: TreeNode, path: str, paths: [str]) -> [str]:
         new_paths.append(path + str(node.val))
         return new_paths
     if node.left:
-        new_paths += get_path(node.left, path + str(node.val) + '->', paths)
+        new_paths += get_path(node.left, path + str(node.val) + "->", paths)
     if node.right:
-        new_paths += get_path(node.right, path + str(node.val) + '->', paths)
+        new_paths += get_path(node.right, path + str(node.val) + "->", paths)
     return new_paths

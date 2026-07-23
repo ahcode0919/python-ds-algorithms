@@ -9,10 +9,10 @@ def first_not_repeating_character(string: str) -> str:
     length = len(string)
     index = 0
     while index < length:
-        if string[index] not in string[:index] and string[index] not in string[index + 1:]:
+        if string[index] not in string[:index] and string[index] not in string[index + 1 :]:
             return string[index]
         index += 1
-    return '_'
+    return "_"
 
 
 def first_not_repeating_character_set(string: str) -> str:
@@ -21,4 +21,4 @@ def first_not_repeating_character_set(string: str) -> str:
         if char not in checked_characters and string.index(char) == string.rindex(char):
             return char
         checked_characters.add(char)
-    return '_'
+    return "_"

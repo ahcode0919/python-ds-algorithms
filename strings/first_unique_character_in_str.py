@@ -1,5 +1,3 @@
-
-
 def first_unique_character_in_str(val: str) -> int:
     chars = {}
 

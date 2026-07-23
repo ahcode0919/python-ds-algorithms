@@ -1,5 +1,3 @@
-
-
 def valid_word_abbreviation(word: str, abbr: str) -> bool:
     num = ""
     abbr_index = 0

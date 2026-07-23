@@ -1,5 +1,5 @@
-from singly_linked_lists.linked_list_cycle import has_cycle, has_cycle_with_set
 from data_structures.singly_linked_list_node import SinglyLinkedListNode
+from singly_linked_lists.linked_list_cycle import has_cycle, has_cycle_with_set
 
 
 def test_has_cycle():

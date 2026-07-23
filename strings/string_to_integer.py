@@ -1,8 +1,6 @@
-
-
 def string_to_integer(string: str) -> int:
     length = len(string)
-    numbers = set(list('1234567890'))
+    numbers = set(list("1234567890"))
     positive = True
     start_index = -1
 
@@ -10,10 +8,10 @@ def string_to_integer(string: str) -> int:
         return 0
 
     for index in range(length):
-        if string[index] in ' ':
+        if string[index] in " ":
             continue
 
-        if string[index] in '-':
+        if string[index] in "-":
             positive = False
             continue
 
@@ -36,4 +34,4 @@ def string_to_integer(string: str) -> int:
         else:
             break
 
-    return int(string[start_index: end_index]) if positive else -int(string[start_index: end_index])
+    return int(string[start_index:end_index]) if positive else -int(string[start_index:end_index])

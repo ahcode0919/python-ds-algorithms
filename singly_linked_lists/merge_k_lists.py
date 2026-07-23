@@ -1,4 +1,5 @@
 from typing import List, Optional
+
 from data_structures.singly_linked_list_node import SinglyLinkedListNode
 
 
@@ -10,7 +11,7 @@ def merge_k_lists(lists: Optional[List[SinglyLinkedListNode]]) -> Optional[Singl
 
     while lists:
         min_node = None
-        smallest = float('inf')
+        smallest = float("inf")
 
         for index, head in enumerate(lists):
             if head and head.data <= smallest:
