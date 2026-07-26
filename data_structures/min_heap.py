@@ -1,12 +1,11 @@
 class MinHeap:
-
     def __init__(self):
         self.list = []
 
     def insert(self, val):
         self.list.append(val)
         self._sift_up(len(self.list) - 1)
-    
+
     def is_empty(self):
         return len(self.list) == 0
 
@@ -29,7 +28,10 @@ class MinHeap:
             parent = self._get_parent(current_index)
 
             if self.list[current_index] < self.list[parent]:
-                self.list[current_index], self.list[parent] = self.list[parent], self.list[current_index]
+                self.list[current_index], self.list[parent] = (
+                    self.list[parent],
+                    self.list[current_index],
+                )
                 current_index = parent
             else:
                 break

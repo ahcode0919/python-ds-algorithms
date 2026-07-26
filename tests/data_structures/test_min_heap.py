@@ -1,8 +1,10 @@
 from data_structures.min_heap import MinHeap
 
+
 def test_min_heap_init():
     min_heap = MinHeap()
     assert min_heap.size() == 0
+
 
 def test_min_heap_insert():
     min_heap = MinHeap()
@@ -16,12 +18,14 @@ def test_min_heap_insert():
     min_heap.insert(14)
     assert min_heap.values() == [4, 11, 9, 13, 20, 12, 22, 14]
 
+
 def test_min_heap_is_empty():
     min_heap = MinHeap()
     assert min_heap.is_empty()
 
     min_heap.insert(1)
     assert not min_heap.is_empty()
+
 
 def test_min_heap_size():
     min_heap = MinHeap()
@@ -35,6 +39,7 @@ def test_min_heap_size():
 
     min_heap.insert(11)
     assert min_heap.size() == 3
+
 
 def test_min_heap_values():
     min_heap = MinHeap()
