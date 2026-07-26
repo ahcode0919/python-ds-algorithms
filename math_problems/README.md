@@ -81,36 +81,29 @@ Task
 
 Given a year, determine whether it is a leap year. If it is a leap year, return the Boolean True, otherwise return False.
 
-Note that the code stub provided reads from STDIN and passes arguments to the is_leap function. It is only necessary to complete the is_leap function.
-
 Input Format
 
 * the year to test.
 
 Output Format
 
-* The function must return a Boolean value (True/False). Output is handled by the provided code stub.
-
-## Moving Average
-
-Create a class `MovingAverage` to calculate the average of a max amount of numbers (n).
-Class should have a `.next(value: int)` method that returns the average after adding the new value.
-The oldest values should be removed when adding new values once the max amount of numbers is reached.
+* The function must return a Boolean value (True/False).
 
 ```python
-class MovingAverage:
+def leap_year(year: int) -> bool:
+    leap = False
 
-    def __init__(self, max_size: int):
-        self.max_size = max_size
-        self.queue = deque()
+    if year % 4 == 0:
+        if year % 100 == 0 and year % 400 == 0:
+            leap = True
+        elif year % 100 == 0:
+            leap = False
+        else:
+            leap = True
+    else:
+        leap = False
 
-    def next(self, number: int) -> float:
-        self.queue.append(number)
-
-        if len(self.queue) > self.max_size:
-            self.queue.popleft()
-
-        return sum(self.queue) / float(len(self.queue))
+    return leap
 ```
 
 ## Power of Three
