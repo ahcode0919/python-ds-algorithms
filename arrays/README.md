@@ -408,7 +408,7 @@ Output: `[1,5]`
 def arrays_intersection(arr1: List[int], arr2: List[int], arr3: List[int]) -> List[int]:
     intersection = set(arr1)
     intersection = intersection.intersection(arr2)
-    return sorted(list(intersection.intersection(arr3)))
+    return list(intersection.intersection(arr3))
 ```
 
 ```python

@@ -1,10 +1,11 @@
 # Data Structures
 
-* [Singly Linked List](#singly-linked-list)
-* [Doubly Linked List](#doubly-linked-list)
-* [Circularly Linked List](#circularly-linked-list)
 * [Binary Tree](#binary-tree)
+* [Circularly Linked List](#circularly-linked-list)
+* [Doubly Linked List](#doubly-linked-list)
+* [Min Heap](#min-heap)
 * [Queues](#queue)
+* [Singly Linked List](#singly-linked-list)
 * [Stack](#stack)
 * [Trie](#trie)
 
@@ -25,8 +26,7 @@ Drawbacks:
 * Operations take O(N) time (Ex: Search)
 * Tracking of pointers takes up additional memory
 
-
-Node Implementation: 
+Node Implementation:
 
 ```python
 class SinglyLinkedListNode(Generic[T]):
@@ -507,7 +507,6 @@ class StackList(Generic[T]):
         self.__list.pop(data)
 ```
 
-
 ## Trie
 
 A Trie is a special form of a Nary tree. Typically, a trie is used to store strings. Each Trie node represents a string 
@@ -630,6 +629,52 @@ class TrieWithDictionary:
 class TrieNode:
     def __init__(self):
         self.child_nodes: Dict[str: TrieNode] = dict()
+```
+
+## Min Heap
+
+A Min Heap is a complete binary tree where every parent node is smaller than or equal to its children. The smallest element is always at the root. It is commonly backed by an array where for a node at index `i`, its parent is at `(i - 1) // 2` and its children are at `2i + 1` and `2i + 2`.
+
+New values are inserted at the end of the array and then "sifted up" — repeatedly swapped with their parent until the heap property is restored.
+
+```python
+class MinHeap:
+    def __init__(self):
+        self.list = []
+
+    def insert(self, val):
+        self.list.append(val)
+        self._sift_up(len(self.list) - 1)
+
+    def is_empty(self):
+        return len(self.list) == 0
+
+    def size(self):
+        return len(self.list)
+
+    def values(self):
+        values = []
+        for value in self.list:
+            values.append(value)
+        return values
+
+    def _get_parent(self, idx):
+        return (idx - 1) // 2
+
+    def _sift_up(self, idx):
+        current_index = idx
+
+        while current_index > 0:
+            parent = self._get_parent(current_index)
+
+            if self.list[current_index] < self.list[parent]:
+                self.list[current_index], self.list[parent] = (
+                    self.list[parent],
+                    self.list[current_index],
+                )
+                current_index = parent
+            else:
+                break
 ```
 
 Trie like implementation with a flat dictionary (Hash table)
