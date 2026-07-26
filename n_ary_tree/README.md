@@ -15,6 +15,7 @@ K       L
 * [Encode Decode](#encode--decode-tree)
 * [Level Order Traversal](#level-order-traversal)
 * [Max Depth](#max-depth)
+* [NaryTreeNode](#narytreenode)
 * [Postorder Traversal](#postorder-traversal)
 * [Preorder Traversal](#preorder-traversal)
 
@@ -138,6 +139,17 @@ def max_depth_bottom_up(root: NaryTreeNode) -> int:
             depth = max(depth, max_depth_bottom_up(child) + 1)
 
     return depth
+```
+
+## NaryTreeNode
+
+The node class used by all N-ary tree implementations. Each node holds a value and an optional list of child nodes.
+
+```python
+class NaryTreeNode:
+    def __init__(self, value: T, children: Optional[List["NaryTreeNode"]] = None):
+        self.value: T = value
+        self.children: Optional[List[NaryTreeNode]] = children
 ```
 
 ## Postorder Traversal

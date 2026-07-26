@@ -8,7 +8,7 @@
 * [Intersection Two Linked Lists](#intersection-two-linked-lists)
 * [Linked List Cycle](#linked-list-cycle)
 * [Merge K Sorted Lists](#merge-k-sorted-lists)
-* [Merge Two Sorted Lists](#)
+* [Merge Two Sorted Lists](#merge-two-sorted-lists)
 * [Odd Even Linked List](#odd-even-linked-list)
 * [Palindrome Linked List](#palindrome-linked-list)
 * [Remove Linked List Elements](#remove-linked-list-elements)
