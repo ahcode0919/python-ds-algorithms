@@ -1,6 +1,16 @@
+[project]
+name = "python-ds-algorithms"
+version = "0.0.1"
+requires-python = ">=3.14"
+
+dependencies = []
+
+[dependency-groups]
+dev = ["pytest", "ruff>=0.16.0"]
+
 [tool.ruff]
 line-length = 100
-target-version = "py312"
+target-version = "py314"
 
 [tool.ruff.lint]
 select = ["E", "F", "W", "I", "N", "D"]  # Choose your rule categories
