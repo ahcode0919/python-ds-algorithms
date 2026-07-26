@@ -1,9 +1,11 @@
 from typing import Optional
+
 from data_structures.singly_linked_list_node import SinglyLinkedListNode
 
 
-def add_two_numbers(head1: Optional[SinglyLinkedListNode],
-                    head2: Optional[SinglyLinkedListNode]) -> Optional[SinglyLinkedListNode]:
+def add_two_numbers(
+    head1: Optional[SinglyLinkedListNode], head2: Optional[SinglyLinkedListNode]
+) -> Optional[SinglyLinkedListNode]:
     node1 = head1
     node2 = head2
     dummy_node = SinglyLinkedListNode(0)

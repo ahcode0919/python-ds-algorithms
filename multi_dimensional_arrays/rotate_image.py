@@ -1,5 +1,3 @@
-
-
 def rotate_image_90_degrees(matrix: [[int]]) -> [[int]]:
     size = len(matrix)
     layer_count = int(size / 2)

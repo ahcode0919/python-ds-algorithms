@@ -1,5 +1,4 @@
 class BinaryTreeNode:
-
     def __init__(self, data, left_node=None, right_node=None):
         self.__data = data
         self.__left_node = left_node

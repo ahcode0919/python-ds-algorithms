@@ -2,7 +2,6 @@ from collections import deque
 
 
 class MovingAverage:
-
     def __init__(self, max_size: int):
         self.max_size = max_size
         self.queue = deque()

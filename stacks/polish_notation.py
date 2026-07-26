@@ -1,13 +1,13 @@
 from math import trunc
-from typing import List
 from queue import LifoQueue
+from typing import List
 
 
 def evaluate_rpn(tokens: List[str]) -> int:
     stack = LifoQueue()
 
     for token in tokens:
-        if token.lstrip('-').isdigit():
+        if token.lstrip("-").isdigit():
             stack.put(token)
         else:
             right = int(stack.get())
@@ -18,10 +18,10 @@ def evaluate_rpn(tokens: List[str]) -> int:
 
 
 def compute(left: int, right: int, operator: str) -> int:
-    if operator == '-':
+    if operator == "-":
         return left - right
-    if operator == '+':
+    if operator == "+":
         return left + right
-    if operator == '/':
+    if operator == "/":
         return trunc(float(left) / right)
     return left * right

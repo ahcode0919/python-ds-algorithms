@@ -12,9 +12,9 @@ def add_binary(num1: str, num2: str) -> str:
     num2 = ("0" * (max_length - length_b)) + num2
 
     for index in range(max_length - 1, -1, -1):
-        if num1[index] == '1':
+        if num1[index] == "1":
             carry += 1
-        if num2[index] == '1':
+        if num2[index] == "1":
             carry += 1
 
         if carry % 2 == 1:
@@ -25,9 +25,9 @@ def add_binary(num1: str, num2: str) -> str:
         carry //= 2
 
     if carry == 1:
-        output.appendleft('1')
+        output.appendleft("1")
 
-    return ''.join(output)
+    return "".join(output)
 
 
 def add_binary_with_builtins(num1: str, num2: str) -> str:

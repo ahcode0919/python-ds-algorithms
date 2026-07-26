@@ -6,6 +6,6 @@ def test_unique_email_addresses():
         "test.email+alex@leetcode.com",
         "test.e.mail+bob.cathy@leetcode.com",
         "testemail+david@lee.tcode.com",
-        "testemail@leetcode.com"
+        "testemail@leetcode.com",
     ]
     assert unique_email_addresses(emails) == 2

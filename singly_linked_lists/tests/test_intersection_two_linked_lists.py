@@ -1,5 +1,5 @@
-from singly_linked_lists.intersection_two_linked_lists import get_intersection_node
 from data_structures.singly_linked_list_node import SinglyLinkedListNode
+from singly_linked_lists.intersection_two_linked_lists import get_intersection_node
 
 
 def test_get_intersection_node():

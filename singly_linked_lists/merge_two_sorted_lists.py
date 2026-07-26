@@ -1,9 +1,11 @@
 from typing import Optional
+
 from data_structures.singly_linked_list_node import SinglyLinkedListNode
 
 
-def merge_two_lists(head1: Optional[SinglyLinkedListNode],
-                    head2: Optional[SinglyLinkedListNode]) -> Optional[SinglyLinkedListNode]:
+def merge_two_lists(
+    head1: Optional[SinglyLinkedListNode], head2: Optional[SinglyLinkedListNode]
+) -> Optional[SinglyLinkedListNode]:
     if not head1 and not head2:
         return None
 

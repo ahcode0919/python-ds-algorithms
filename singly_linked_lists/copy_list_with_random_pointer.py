@@ -2,7 +2,7 @@ from typing import Dict, Optional
 
 
 class Node:
-    def __init__(self, value: int, next_node: 'Node' = None, random: 'Node' = None):
+    def __init__(self, value: int, next_node: "Node" = None, random: "Node" = None):
         self.value = value
         self.next = next_node
         self.random = random

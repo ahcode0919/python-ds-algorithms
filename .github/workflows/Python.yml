@@ -26,7 +26,7 @@ jobs:
         pip install -r requirements.txt
     - name: Lint
       run: |
-        flake8  --max-complexity=10 --max-line-length=120 --statistics
+        just lint
     - name: Unit tests
       run: |
-        pytest
+        just test

@@ -1,4 +1,7 @@
-from binary_tree.postorder_traversal import postorder_traversal_iterative, postorder_traversal_recursive
+from binary_tree.postorder_traversal import (
+    postorder_traversal_iterative,
+    postorder_traversal_recursive,
+)
 from test_helpers.test_helpers import get_binary_tree
 
 

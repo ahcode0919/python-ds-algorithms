@@ -1,9 +1,11 @@
 from typing import Optional, Set
+
 from data_structures.singly_linked_list_node import SinglyLinkedListNode
 
 
-def get_intersection_node_with_set(head_a: SinglyLinkedListNode,
-                                   head_b: SinglyLinkedListNode) -> Optional[SinglyLinkedListNode]:
+def get_intersection_node_with_set(
+    head_a: SinglyLinkedListNode, head_b: SinglyLinkedListNode
+) -> Optional[SinglyLinkedListNode]:
     nodes: Set[SinglyLinkedListNode] = set()
     node_a: SinglyLinkedListNode = head_a
     node_b: SinglyLinkedListNode = head_b

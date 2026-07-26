@@ -1,4 +1,5 @@
 from typing import List
+
 from n_ary_tree import nary_tree_node
 
 

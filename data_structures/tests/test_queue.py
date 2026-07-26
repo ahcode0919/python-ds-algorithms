@@ -1,4 +1,4 @@
-from data_structures.queues import CircularQueue, QueueList, QueueLinkedList
+from data_structures.queues import CircularQueue, QueueLinkedList, QueueList
 
 
 def test_queue_list():

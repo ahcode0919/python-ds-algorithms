@@ -1,8 +1,11 @@
 from typing import Optional
+
 from data_structures.singly_linked_list_node import SinglyLinkedListNode
 
 
-def get_intersection_node(head_a: SinglyLinkedListNode, head_b: SinglyLinkedListNode) -> Optional[SinglyLinkedListNode]:
+def get_intersection_node(
+    head_a: SinglyLinkedListNode, head_b: SinglyLinkedListNode
+) -> Optional[SinglyLinkedListNode]:
     if not head_a or not head_b:
         return None
 

@@ -1,8 +1,5 @@
-
-
 def leap_year(year: int) -> bool:
-    """
-    In the Gregorian calendar, three conditions are used to identify leap years:
+    """In the Gregorian calendar, three conditions are used to identify leap years:
 
     The year can be evenly divided by 4, is a leap year, unless:
     The year can be evenly divided by 100, it is NOT a leap year, unless:

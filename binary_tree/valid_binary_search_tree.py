@@ -1,7 +1,7 @@
 from binary_tree.tree_node import TreeNode
 
 
-def valid_bst(root: TreeNode, min_value=float('-inf'), max_value=float('inf')) -> bool:
+def valid_bst(root: TreeNode, min_value=float("-inf"), max_value=float("inf")) -> bool:
     if not root:
         return True
 

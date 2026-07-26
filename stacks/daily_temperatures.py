@@ -1,6 +1,6 @@
-from typing import List
 from collections import deque
 from queue import LifoQueue
+from typing import List
 
 
 def daily_temperatures_brute_force(temps: List[int]) -> List[int]:

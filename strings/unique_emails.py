@@ -8,16 +8,16 @@ def unique_email_addresses(emails: List[str]) -> int:
         normalized_email = []
 
         for index, string in enumerate(email):
-            if string == '+':
-                at_index = email.index('@', index)
+            if string == "+":
+                at_index = email.index("@", index)
                 normalized_email.append(email[at_index:])
-                unique_emails.add(''.join(normalized_email))
+                unique_emails.add("".join(normalized_email))
                 break
-            if string == '.':
+            if string == ".":
                 continue
-            if string == '@':
+            if string == "@":
                 normalized_email.append(email[index:])
-                unique_emails.add(''.join(normalized_email))
+                unique_emails.add("".join(normalized_email))
                 break
             normalized_email.append(string)
 

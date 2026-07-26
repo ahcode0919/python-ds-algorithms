@@ -2,11 +2,10 @@ from typing import Generic, Optional, TypeVar
 
 from data_structures.singly_linked_list_node import SinglyLinkedListNode
 
-T = TypeVar('T')
+T = TypeVar("T")
 
 
 class SinglyLinkedList(Generic[T]):
-
     def __init__(self):
         self.__head: SinglyLinkedListNode = SinglyLinkedListNode()
 
@@ -58,7 +57,7 @@ class SinglyLinkedList(Generic[T]):
             current_node = current_node.next
             count += 1
         if count < index:
-            IndexError('Index out of bounds')
+            IndexError("Index out of bounds")
 
     def remove(self, index: int) -> None:
         count = 0

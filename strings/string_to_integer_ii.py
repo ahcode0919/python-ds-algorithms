@@ -1,7 +1,5 @@
-
-
 def string_to_integer_ii(string: str) -> int:
-    zero = ord('0')
+    zero = ord("0")
     positive = True
     length = len(string)
     start = 0
@@ -11,10 +9,10 @@ def string_to_integer_ii(string: str) -> int:
         return 0
 
     # Determine Positive / Negative
-    if string[0] == '-':
+    if string[0] == "-":
         start = 1
         positive = False
-    elif string[0] == '+':
+    elif string[0] == "+":
         start = 1
 
     # Iterate over remaining characters

@@ -1,5 +1,3 @@
-
-
 def valid_anagram(val1: str, val2: str) -> bool:
     if len(val1) != len(val2):
         return False

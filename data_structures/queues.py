@@ -1,13 +1,14 @@
-from typing import Generic, TypeVar, List
+from typing import Generic, List, TypeVar
+
 from data_structures.doubly_linked_list import DoublyLinkedList
 
-T = TypeVar('T')
+T = TypeVar("T")
 
 
 class QueueList(Generic[T]):
-    """
-    Basic queue backed with a list. Not optimal since list has O(N) complexity for
-    inserting and removing elements at the beginning
+    """Basic queue backed with a list.
+
+    Not optimal since list has O(N) complexity for inserting and removing elements at the beginning
     """
 
     def __init__(self):
@@ -24,9 +25,7 @@ class QueueList(Generic[T]):
 
 
 class QueueLinkedList(Generic[T]):
-    """
-    Queue backed by a doubly linked list
-    """
+    """Queue backed by a doubly linked list"""
 
     def __init__(self):
         self.linked_list = DoublyLinkedList()
@@ -44,7 +43,6 @@ class QueueLinkedList(Generic[T]):
 
 
 class CircularQueue(Generic[T]):
-
     def __init__(self, k: int):
         self.queue = [0] * k
         self.count = 0
@@ -67,17 +65,13 @@ class CircularQueue(Generic[T]):
         return True
 
     def front(self) -> T:
-        """
-        Get the front item from the queue.
-        """
+        """Get the front item from the queue."""
         if self.isempty():
             return -1
         return self.queue[self.head]
 
     def rear(self) -> T:
-        """
-        Get the last item from the queue.
-        """
+        """Get the last item from the queue."""
         if self.isempty():
             return -1
         tail = (self.head + self.count - 1) % self.size

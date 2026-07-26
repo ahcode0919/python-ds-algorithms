@@ -1,5 +1,3 @@
-
-
 def longest_substring_without_duplicates(string: str) -> int:
     length = len(string)
     if length <= 1:
