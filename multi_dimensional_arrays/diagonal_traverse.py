@@ -2,8 +2,7 @@ from typing import List
 
 
 def diagonal_traverse(matrix: List[List[int]]) -> List[int]:
-    """
-    Given a matrix of M x N elements (M rows, N columns), return all elements of the matrix in diagonal order.
+    """Given a matrix of M x N elements (M rows, N columns), return all elements of the matrix in diagonal order.
 
     Input:
     [[1, 2, 3],

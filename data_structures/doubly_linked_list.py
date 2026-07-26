@@ -1,11 +1,11 @@
 from typing import Generic, Optional, TypeVar
+
 from data_structures.doubly_linked_list_node import DoublyLinkedListNode
 
-T = TypeVar('T')
+T = TypeVar("T")
 
 
 class DoublyLinkedList(Generic[T]):
-
     def __init__(self):
         self.__head: DoublyLinkedListNode = DoublyLinkedListNode()
         self.__tail: DoublyLinkedListNode = DoublyLinkedListNode()

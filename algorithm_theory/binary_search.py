@@ -23,7 +23,6 @@ def binary_search_iterative(array: [int], target: int) -> Optional[int]:
 
 def binary_search_recursive(array: [int], left: int, right: int, target: int) -> Optional[int]:
     if right >= left:
-
         mid = int((left + right) / 2)
 
         # If element is present at the middle

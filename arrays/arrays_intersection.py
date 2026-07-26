@@ -1,7 +1,7 @@
 from typing import List
 
-
 # Leetcode 1213. Intersection of Three Sorted Arrays
+
 
 def arrays_intersection(arr1: List[int], arr2: List[int], arr3: List[int]) -> List[int]:
     intersection = set(arr1)

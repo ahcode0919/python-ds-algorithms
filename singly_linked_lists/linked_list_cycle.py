@@ -1,7 +1,8 @@
 from typing import Optional, Set, TypeVar
+
 from data_structures.singly_linked_list_node import SinglyLinkedListNode
 
-T = TypeVar('T')
+T = TypeVar("T")
 
 
 # Time: O(N + K) -> O(N), Space: O(1)

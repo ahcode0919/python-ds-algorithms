@@ -2,7 +2,7 @@ def valid_parentheses(value: str) -> bool:
     if len(value) % 2 != 0:
         return False
 
-    closing_values = {'(': ')', '{': '}', '[': ']'}
+    closing_values = {"(": ")", "{": "}", "[": "]"}
     stack = []
 
     for char in value:

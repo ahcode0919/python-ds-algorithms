@@ -1,5 +1,5 @@
-from singly_linked_lists.add_two_numbers import add_two_numbers
 from data_structures.singly_linked_list_node import SinglyLinkedListNode
+from singly_linked_lists.add_two_numbers import add_two_numbers
 from test_helpers.test_helpers import get_list_values
 
 

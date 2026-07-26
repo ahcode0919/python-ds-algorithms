@@ -16,7 +16,7 @@ def longest_common_prefix_horizontal(strings: List[str]) -> str:
                 break
             last_match = char_index
         # Add 1 to end index since last index in slice is exclusive
-        longest = strings[index][0:last_match + 1]
+        longest = strings[index][0 : last_match + 1]
     return longest
 
 
@@ -33,7 +33,7 @@ def longest_common_prefix_vertical(strings: List[str]) -> str:
             if index > len(prefix) - 1:
                 return prefix
             if index > len(strings[string_index]) - 1:
-                prefix = prefix[:len(strings[string_index])]
+                prefix = prefix[: len(strings[string_index])]
                 continue
             if strings[string_index][index] != prefix[index]:
                 prefix = strings[string_index][:index]

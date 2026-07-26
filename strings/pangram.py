@@ -1,5 +1,3 @@
-
-
 def pangram(string: str) -> bool:
     alpha_set = set()
 

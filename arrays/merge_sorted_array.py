@@ -1,7 +1,9 @@
 from typing import List
 
 
-def merge_sorted_array(nums1: List[int], nums1_length: int, nums2: List[int], nums2_length: int) -> List[int]:
+def merge_sorted_array(
+    nums1: List[int], nums1_length: int, nums2: List[int], nums2_length: int
+) -> List[int]:
     index_nums1 = nums1_length - 1
     index_nums2 = nums2_length - 1
     current_index = nums1_length + nums2_length - 1

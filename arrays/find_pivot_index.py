@@ -1,4 +1,3 @@
-
 def find_pivot_index(nums: [int]) -> int:
     total = sum(nums)
     left_sum = 0

@@ -5,6 +5,7 @@
 
 import math
 from typing import Optional
+
 from algorithm_theory.linear_search import linear_search
 
 

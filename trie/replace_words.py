@@ -2,7 +2,7 @@ from typing import Dict, List
 
 
 def replace_words(dictionary: List[str], sentence: str) -> str:
-    words = sentence.split(' ')
+    words = sentence.split(" ")
     updated_sentence: [str] = []
     prefix_trie = TrieNode()
 
@@ -12,12 +12,12 @@ def replace_words(dictionary: List[str], sentence: str) -> str:
     for word in words:
         updated_sentence.append(prefix_trie.replace_word(word))
 
-    return ' '.join(updated_sentence)
+    return " ".join(updated_sentence)
 
 
 class TrieNode:
     def __init__(self):
-        self.nodes: Dict[str: TrieNode] = dict()
+        self.nodes: Dict[str:TrieNode] = dict()
 
     def insert(self, word: str) -> None:
         current_node = self

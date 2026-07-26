@@ -1,4 +1,10 @@
-from integers.fibonacci import fibonacci, fibonacci2, fibonacci3, fibonacci_sequence, fibonacci_with_array
+from integers.fibonacci import (
+    fibonacci,
+    fibonacci2,
+    fibonacci3,
+    fibonacci_sequence,
+    fibonacci_with_array,
+)
 
 
 def test_fibonacci():

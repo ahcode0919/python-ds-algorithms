@@ -1,8 +1,11 @@
 from typing import Optional
+
 from data_structures.singly_linked_list_node import SinglyLinkedListNode
 
 
-def rotate_list(head: Optional[SinglyLinkedListNode], amount: int) -> Optional[SinglyLinkedListNode]:
+def rotate_list(
+    head: Optional[SinglyLinkedListNode], amount: int
+) -> Optional[SinglyLinkedListNode]:
     if not head:
         return None
 

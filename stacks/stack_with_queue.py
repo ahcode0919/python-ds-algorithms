@@ -1,11 +1,10 @@
-from typing import Deque, Generic, TypeVar
 from collections import deque
+from typing import Deque, Generic, TypeVar
 
-T = TypeVar('T')
+T = TypeVar("T")
 
 
 class Stack(Generic[T]):
-
     def __init__(self):
         self.stack: Deque[T] = deque()
 

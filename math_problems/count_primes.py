@@ -1,5 +1,3 @@
-
-
 def count_primes(number: int) -> int:
     is_prime = [True] * number
 

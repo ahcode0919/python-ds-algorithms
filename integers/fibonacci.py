@@ -3,16 +3,16 @@ from typing import Dict, Generator
 
 
 def fibonacci(number: int, memo: Dict[int, int] = None) -> int:
-    """
-    Generate the fibonacci number for n
+    """Generate the fibonacci number for n
+
     Uses a dictionary to store previously computed values
 
     0, 1, 1, 2, 3, 5, 8, 13, .... 0 = 0 , 1 = 1, 3 = 2, etc
     :param number: iteration of the Fibonacci sequence
     :param memo: memoization store, will be cached since it is mutable
     :return: Fibonacci number
-    """
 
+    """
     if not memo:
         memo = {0: 0, 1: 1}
 
@@ -24,13 +24,14 @@ def fibonacci(number: int, memo: Dict[int, int] = None) -> int:
 
 @lru_cache(maxsize=None)
 def fibonacci2(number: int) -> int:
-    """
-    Generate the fibonacci number for n
+    """Generate the fibonacci number for n
+
     Utilizes caching to mimic literal memoization, has lower recursive limit...
 
     0, 1, 1, 2, 3, 5, 8, 13, .... 0 = 0 , 1 = 1, 3 = 2, etc
     :param number: iteration of the Fibonacci sequence
     :return: Fibonacci number
+
     """
     if number < 2:
         return number
@@ -38,15 +39,15 @@ def fibonacci2(number: int) -> int:
 
 
 def fibonacci3(number: int) -> int:
-    """
-    Generate the fibonacci number for n
+    """Generate the fibonacci number for n
+
     iterative approach, no recursion constraints
 
     0, 1, 1, 2, 3, 5, 8, 13, .... 0 = 0 , 1 = 1, 3 = 2, etc
     :param number: iteration of the Fibonacci sequence
     :return: Fibonacci number
-    """
 
+    """
     if number == 0:
         return 0
     last_nbr: int = 0
@@ -71,15 +72,14 @@ def fibonacci_with_array(number: int, memo=None) -> int:
 
 
 def fibonacci_sequence(number: int) -> Generator[int, None, None]:
-    """
-    Generate the fibonacci number for n
+    """Generate the fibonacci number for n
+
     Utilizes a generator
 
     0, 1, 1, 2, 3, 5, 8, 13, .... 0 = 0 , 1 = 1, 3 = 2, etc
     :param number: iteration of the Fibonacci sequence
     :return: Fibonacci number Generator
     """
-
     yield 0
     if number > 0:
         yield 1

@@ -1,5 +1,7 @@
-from arrays.largest_number_at_least_twice_of_others import largest_number_at_least_twice_of_others, \
-    largest_number_at_least_twice_of_others2
+from arrays.largest_number_at_least_twice_of_others import (
+    largest_number_at_least_twice_of_others,
+    largest_number_at_least_twice_of_others2,
+)
 
 
 def test_largest_number_at_least_twice_of_others():

@@ -1,5 +1,5 @@
-from singly_linked_lists.find_middle_node import find_middle_node
 from data_structures.singly_linked_list_node import SinglyLinkedListNode
+from singly_linked_lists.find_middle_node import find_middle_node
 
 
 def test_find_middle_node():

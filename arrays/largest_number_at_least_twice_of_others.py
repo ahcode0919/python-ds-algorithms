@@ -1,9 +1,12 @@
+from typing import List
 
-def largest_number_at_least_twice_of_others(nums: [int]) -> int:
-    """
-    Find largest number that is atleast twice the size of any other number
+
+def largest_number_at_least_twice_of_others(nums: List[int]) -> int:
+    """Find largest number that is atleast twice the size of any other number
+
     :param nums: array of numbers
     :return: index of number, -1 if none exists
+
     """
     largest = None
     next_largest = None
@@ -25,10 +28,11 @@ def largest_number_at_least_twice_of_others(nums: [int]) -> int:
 
 
 def largest_number_at_least_twice_of_others2(nums: [int]) -> int:
-    """
-    Find largest number that is atleast twice the size of any other number
+    """Find largest number that is atleast twice the size of any other number
+
     :param nums: array of numbers
     :return: index of number, -1 if none exists
+
     """
     if len(nums) == 1:
         return 0

@@ -1,10 +1,11 @@
 from collections import deque
 from typing import List, TypeVar
-from data_structures.singly_linked_list_node import SinglyLinkedListNode
+
 from binary_tree.tree_node import TreeNode
+from data_structures.singly_linked_list_node import SinglyLinkedListNode
 from n_ary_tree.nary_tree_node import NaryTreeNode
 
-T = TypeVar('T')
+T = TypeVar("T")
 
 
 def get_binary_search_tree():
