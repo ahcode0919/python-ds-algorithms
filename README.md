@@ -37,14 +37,12 @@ to prevent obscuring the function and logic of the algorithms / data-structures.
 
 ## Project Setup
 
-### Local development
+### Local Development Installation
 
-* Install `pyenv`
-* Install current Python version: `pyenv install 3.12`
-* Set global Python version: `pyenv global 3.12`
-* Initialize virtual environment: `python -m venv .venv`
-* Activate: `source .venv/bin/activate`
-* Install packages: `pip install -r requirements.txt`
+Note: Project uses `uv` and `just` to manage project configuration and commands
+
+* Install dependencies via Homebrew - `brew bundle install`
+* Sync project - `just sync`
 
 ### VS Code Dev Container
 
@@ -54,5 +52,6 @@ to prevent obscuring the function and logic of the algorithms / data-structures.
 
 ## Project Commands
 
-* Lint project - `flake8`
-* Run Unit Tests - `pytest`
+* Lint project - `just lint`
+* Sync uv environment - `just sync`
+* Run Unit Tests - `just test`

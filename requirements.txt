@@ -1,3 +1,0 @@
-pytest==9.0.3
-ruff==0.15.9
-rust-just==1.48.1
