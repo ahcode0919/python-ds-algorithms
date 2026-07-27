@@ -55,3 +55,4 @@ Note: Project uses `uv` and `just` to manage project configuration and commands
 * Lint project - `just lint`
 * Sync uv environment - `just sync`
 * Run Unit Tests - `just test`
+* Install dependency: `uv add {package}`

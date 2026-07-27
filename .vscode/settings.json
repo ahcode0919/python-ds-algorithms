@@ -1,8 +1,14 @@
 {
-    "python.linting.pylintEnabled": false,
-    "python.linting.flake8Enabled": true,
-    "python.linting.enabled": true,
-    "python.linting.flake8Args": [
-        "--max-line-length=120",
-    ]
+    "editor.tabSize": 4,
+    "files.autoSave": "afterDelay",
+    "files.trimTrailingWhitespace": true,
+    "terminal.integrated.localEchoStyle": "dim",
+    "[python]": {
+      "editor.defaultFormatter": "charliermarsh.ruff",
+      "editor.formatOnSave": true,
+      "editor.codeActionsOnSave": {
+        "source.fixAll.ruff": "explicit",
+        "source.organizeImports.ruff": "explicit"
+    }
+  }
 }
