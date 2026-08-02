@@ -1,4 +1,11 @@
 def string_to_integer(string: str) -> int:
+    """String to Integer.
+
+    Convert a string to an integer. The string may include spaces before and after the number, and may end in
+    words, which should be ignored.
+
+    Skip leading spaces and an optional minus sign, then parse and return the leading run of digits.
+    """
     length = len(string)
     numbers = set(list("1234567890"))
     positive = True

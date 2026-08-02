@@ -4,6 +4,12 @@ T = TypeVar("T")
 
 
 class DoublyLinkedListNode(Generic[T]):
+    """Doubly Linked List Node.
+
+    (https://en.wikipedia.org/wiki/Doubly_linked_list): In a 'doubly linked list', each node contains,
+    besides the next-node link, a second link field pointing to the 'previous' node in the sequence.
+    """
+
     def __init__(
         self,
         data: T = None,

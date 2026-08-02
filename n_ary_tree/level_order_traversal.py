@@ -4,6 +4,12 @@ from n_ary_tree.nary_tree_node import NaryTreeNode
 
 
 def level_order_traversal(root: NaryTreeNode) -> List[List[int]]:
+    """Level Order Traversal.
+
+    Traverse the tree breadth-first, collecting each level's values into its own list.
+
+    Example: `[[A], [B, C, D], [E, F, H, I, J], [K, L]]`
+    """
     levels = []
 
     if not root:

@@ -1,8 +1,19 @@
+"""Max Depth.
+
+Given an n-ary tree, find its maximum depth.
+
+The maximum depth is the number of nodes along the longest path from the root node down to the
+farthest leaf node.
+"""
+
 from n_ary_tree.nary_tree_node import NaryTreeNode
 
 
 def max_depth_top_down(root: NaryTreeNode) -> int:
+    """Recurse top-down, threading the current depth through each call as an argument."""
+
     def traverse(node, depth):
+        """Return the deepest depth reached among node's descendants, starting from depth."""
         if not node:
             return depth
 
@@ -20,6 +31,7 @@ def max_depth_top_down(root: NaryTreeNode) -> int:
 
 
 def max_depth_bottom_up(root: NaryTreeNode) -> int:
+    """Recurse bottom-up, computing each subtree's depth from its children's returned depths."""
     if not root:
         return 0
 

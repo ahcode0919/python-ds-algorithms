@@ -1,4 +1,10 @@
 def count_primes(number: int) -> int:
+    """Count Primes.
+
+    Count the number of prime numbers less than a non-negative number.
+
+    Example: `Input: 10` -> `Output: 4`
+    """
     is_prime = [True] * number
 
     for num in range(2, number):

@@ -4,6 +4,13 @@ from data_structures.singly_linked_list_node import SinglyLinkedListNode
 
 
 def delete_duplicates(head: Optional[SinglyLinkedListNode]) -> Optional[SinglyLinkedListNode]:
+    """Delete Duplicates.
+
+    Given the head of a sorted linked list, delete all duplicates such that each element appears only once.
+    Return the linked list sorted as well.
+
+    Walks the sorted list, skipping over any node whose value repeats the next node's value.
+    """
     node = head
 
     while node:

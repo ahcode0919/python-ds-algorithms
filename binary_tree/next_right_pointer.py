@@ -2,6 +2,8 @@ from collections import deque
 
 
 class Node:
+    """Binary tree node with an extra `next` pointer to its right neighbor at the same level."""
+
     def __init__(self, value):
         self.value = value
         self.left = None
@@ -10,6 +12,14 @@ class Node:
 
 
 def next_right_pointer(root: Node) -> Node:
+    """Next Right Pointer.
+
+    You are given a perfect binary tree where all leaves are on the same level, and every parent has
+    two children. Populate each next pointer to point to its next right node. If there is no next
+    right node, the next pointer should be set to `None`.
+
+    Breadth-first traverses level by level, linking each node's `next` pointer to its right sibling.
+    """
     if not root:
         return root
 

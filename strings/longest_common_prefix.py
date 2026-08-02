@@ -1,7 +1,16 @@
+"""Longest Common Prefix.
+
+Write a function to find the longest common prefix string amongst an array of strings. If there is no common
+prefix, return an empty string.
+
+Example: `["flower", "flow", "flight"]` -> `"fl"`
+"""
+
 from typing import List
 
 
 def longest_common_prefix_horizontal(strings: List[str]) -> str:
+    """Compare each string in turn against the running prefix, shrinking it as soon as characters diverge."""
     if not strings or len(strings[0]) == 0:
         return ""
 
@@ -21,6 +30,7 @@ def longest_common_prefix_horizontal(strings: List[str]) -> str:
 
 
 def longest_common_prefix_vertical(strings: List[str]) -> str:
+    """Compare characters column by column across all strings, exiting as soon as a column mismatches."""
     if not strings:
         return ""
 

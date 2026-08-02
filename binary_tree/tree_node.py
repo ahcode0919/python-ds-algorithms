@@ -4,6 +4,11 @@ T = TypeVar("T")
 
 
 class TreeNode(Generic[T]):
+    """Shared binary tree node type used by the problems in this package.
+
+    A single binary tree node holding a value and optional left/right children.
+    """
+
     def __init__(
         self, val: T, left: Optional["TreeNode"] = None, right: Optional["TreeNode"] = None
     ):

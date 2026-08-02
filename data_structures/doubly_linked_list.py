@@ -6,6 +6,14 @@ T = TypeVar("T")
 
 
 class DoublyLinkedList(Generic[T]):
+    """Doubly Linked List.
+
+    (https://en.wikipedia.org/wiki/Doubly_linked_list): In a 'doubly linked list', each node contains,
+    besides the next-node link, a second link field pointing to the 'previous' node in the sequence. This
+    implementation uses sentinel head and tail nodes so insertion and removal never need to special-case an
+    empty list.
+    """
+
     def __init__(self):
         self.__head: DoublyLinkedListNode = DoublyLinkedListNode()
         self.__tail: DoublyLinkedListNode = DoublyLinkedListNode()
@@ -15,6 +23,7 @@ class DoublyLinkedList(Generic[T]):
 
     # O(N)
     def all_values(self) -> [T]:
+        """Return a list of every value in the list, in order from head to tail."""
         values = []
         node = self.__head.next
 
@@ -26,6 +35,7 @@ class DoublyLinkedList(Generic[T]):
 
     # O(1)
     def append(self, data: T):
+        """Add a new node containing data to the end of the list, just before the sentinel tail."""
         # Last <-> Tail --> Last <-> New <-> Tail
         node = DoublyLinkedListNode(data)
         last_node = self.__tail.previous
@@ -38,6 +48,7 @@ class DoublyLinkedList(Generic[T]):
 
     # O(N)
     def get_node(self, index: int) -> Optional[DoublyLinkedListNode]:
+        """Return the node at index, or None if the index is out of bounds."""
         current_node = self.__head.next
         count = 0
 
@@ -50,6 +61,7 @@ class DoublyLinkedList(Generic[T]):
 
     # O(N)
     def get(self, index: int) -> Optional[T]:
+        """Return the data stored at index, or None if the index is out of bounds."""
         node = self.get_node(index)
         if node:
             return node.data
@@ -57,6 +69,7 @@ class DoublyLinkedList(Generic[T]):
 
     # O(N)
     def insert(self, data: T, index: int):
+        """Insert a new node containing data before the node currently at index."""
         node = DoublyLinkedListNode(data)
         current_node: DoublyLinkedListNode = self.get_node(index)
 
@@ -78,6 +91,7 @@ class DoublyLinkedList(Generic[T]):
 
     # O(N)
     def remove(self, index: int) -> Optional[T]:
+        """Remove the node at index by linking its neighbors directly to each other and return its data."""
         node = self.get_node(index)
         if not node:
             return None
@@ -90,6 +104,7 @@ class DoublyLinkedList(Generic[T]):
 
     # O(N)
     def size(self) -> int:
+        """Return the number of nodes in the list."""
         count = 0
         node = self.__head.next
 

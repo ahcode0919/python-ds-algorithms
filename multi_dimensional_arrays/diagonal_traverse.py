@@ -2,16 +2,13 @@ from typing import List
 
 
 def diagonal_traverse(matrix: List[List[int]]) -> List[int]:
-    """Given a matrix of M x N elements (M rows, N columns), return all elements of the matrix in diagonal order.
+    """Diagonal Traverse.
 
-    Input:
-    [[1, 2, 3],
-     [4, 5, 6],
-     [7, 8, 9]]
+    Given a matrix of M x N elements (M rows, N columns), return all elements of the matrix in
+    diagonal order by zigzagging along each diagonal, reversing every other one, and flattening
+    the results into a single list.
 
-    Output: 1, 2, 4, 7, 5, 3, 6, 8, 9
-    :param matrix: square matrix
-    :return: list of diagonal transversed values
+    Example: `[[1, 2, 3], [4, 5, 6], [7, 8, 9]]` -> `[1, 2, 4, 7, 5, 3, 6, 8, 9]`
     """
     result = []
     temp = []  # to reverse odd rows

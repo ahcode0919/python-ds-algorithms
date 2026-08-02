@@ -4,6 +4,12 @@ from n_ary_tree.nary_tree_node import NaryTreeNode
 
 
 def postorder_traversal(root: Optional[NaryTreeNode]) -> List:
+    """Postorder Traversal.
+
+    Given the root of an n-ary tree, return the postorder traversal of its nodes' values — a
+    node's children are all visited before the node itself. Recursively visit each child before
+    appending the current node's value.
+    """
     values = []
 
     if not root:

@@ -5,6 +5,14 @@ from binary_tree.tree_node import TreeNode
 
 
 def find_mode(root: TreeNode) -> List:
+    """Find Mode.
+
+    Given a binary search tree (BST) with duplicates, find all the mode(s) (the most frequently
+    occurred element) in the given BST.
+
+    Counts occurrences of every value with a full traversal and returns the value(s) with the highest
+    count.
+    """
     counter = Counter()
     values = []
 

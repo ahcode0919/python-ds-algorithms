@@ -2,7 +2,17 @@ from typing import List
 
 
 def reverse_words(sentence: str) -> str:
+    """Reverse Words In A Sentence.
+
+    Reverse the words in a sentence while keeping the words themselves in their original order.
+
+    Example: `"The fox is red"` -> `"ehT xof si der"`
+
+    Reverse the characters within each space-delimited word, left to right.
+    """
+
     def reverse(array: List[str], left: int, right: int):
+        """Reverse array[left:right] in place using a two-pointer swap."""
         while left < right:
             array[left], array[right] = array[right], array[left]
             left += 1

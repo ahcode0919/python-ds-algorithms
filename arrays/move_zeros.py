@@ -2,6 +2,16 @@ from typing import List
 
 
 def move_zeros(nums: List[int]) -> None:
+    """Move Zeros.
+
+    Given an array nums, write a function to move all 0's to the end of it while maintaining the relative order of
+    the non-zero elements. You must do this in-place without making a copy of the array, and minimize the total
+    number of operations.
+
+    Example: `[0, 1, 0, 3, 12]` -> `[1, 3, 12, 0, 0]`
+
+    Two-pointer in-place compaction: write non-zero values forward, then pad the remainder with zeros.
+    """
     length = len(nums)
 
     read_index = 0

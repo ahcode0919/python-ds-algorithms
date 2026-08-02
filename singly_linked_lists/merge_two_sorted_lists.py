@@ -6,6 +6,15 @@ from data_structures.singly_linked_list_node import SinglyLinkedListNode
 def merge_two_lists(
     head1: Optional[SinglyLinkedListNode], head2: Optional[SinglyLinkedListNode]
 ) -> Optional[SinglyLinkedListNode]:
+    """Merge Two Sorted Lists.
+
+    Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together
+    the nodes of the first two lists.
+
+    Example: `1->2->4`, `1->3->4` -> `1->1->2->3->4->4`
+
+    Splices the two sorted lists together node by node, always taking the smaller current head.
+    """
     if not head1 and not head2:
         return None
 
