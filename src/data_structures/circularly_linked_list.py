@@ -1,7 +1,7 @@
 from src.data_structures.singly_linked_list_node import SinglyLinkedListNode
 
 
-class CircularlyLinkedList:
+class CircularlyLinkedList[T]:
     """Circularly Linked List.
 
     In the last node of a list, the link field often contains a null reference, a special value used to
@@ -12,22 +12,22 @@ class CircularlyLinkedList:
     This is more of an example. It can be optimized in a variety of ways depending on its intended usage.
     """
 
-    def __init__(self, node: SinglyLinkedListNode | None = None):
-        self.__head: SinglyLinkedListNode = node
+    def __init__(self, node: SinglyLinkedListNode[T] | None = None):
+        self._head: SinglyLinkedListNode[T] | None = node
         if node:
-            node.next = self.__head
+            node.next = self._head
 
     @property
-    def head(self) -> SinglyLinkedListNode:
-        return self.__head
+    def head(self) -> SinglyLinkedListNode[T] | None:
+        return self._head
 
     @head.setter
-    def head(self, node: SinglyLinkedListNode):
-        self.__head = node
+    def head(self, node: SinglyLinkedListNode[T] | None):
+        self._head = node
         if node:
-            node.next = self.__head
+            node.next = self._head
 
-    def all_values(self) -> []:
+    def all_values(self) -> list[T]:
         """Return a list of every value in the list, starting from head and stopping once head is seen again."""
         values = []
         node = self.head
@@ -39,18 +39,20 @@ class CircularlyLinkedList:
                 break
         return values
 
-    def append(self, node: SinglyLinkedListNode):
+    def append(self, node: SinglyLinkedListNode[T]):
         """Insert node just before head, so the list stays circular with head as the last-linked node."""
-        previous_node = self.head
-
-        if not previous_node:
+        if not self.head:
             self.head = node
             node.next = self.head
             return
 
-        while previous_node.next != self.head:
+        previous_node = self.head
+
+        while previous_node and previous_node.next != self.head:
             previous_node = previous_node.next
 
+        if not previous_node:
+            return
         next_node = previous_node.next
         previous_node.next = node
         node.next = next_node
@@ -66,17 +68,17 @@ class CircularlyLinkedList:
             self.head = None
             return
 
-        if index == 0:
+        if index == 0 and self.head:
             previous_node.next = self.head.next
             self.head = previous_node.next
             return
 
         list_index = 1
-        while previous_node.next is not self.head and list_index < index:
+        while previous_node and previous_node.next is not self.head and list_index < index:
             previous_node = previous_node.next
             list_index += 1
 
-        if list_index == index:
+        if list_index == index and previous_node and previous_node.next:
             next_node = previous_node.next
             previous_node.next = next_node.next
         else:

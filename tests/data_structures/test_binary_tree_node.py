@@ -2,28 +2,28 @@ from src.data_structures.binary_tree_node import BinaryTreeNode
 
 
 def test_init():
-    tree = BinaryTreeNode(1)
-    left_node = BinaryTreeNode(2)
-    right_node = BinaryTreeNode(3)
+    root = BinaryTreeNode(1)
+    left = BinaryTreeNode(2)
+    right = BinaryTreeNode(3)
 
-    assert tree.data == 1
-    assert not tree.left_node
-    assert not tree.right_node
+    assert root.data == 1
+    assert not root.left
+    assert not root.right
 
-    tree = BinaryTreeNode(1, left_node, right_node)
-    assert tree.left_node.data == 2
-    assert tree.right_node.data == 3
+    root = BinaryTreeNode(1, left, right)
+    assert root.left and root.left.data == 2
+    assert root.right and root.right.data == 3
 
 
 def test_left_node():
-    left_node = BinaryTreeNode(2)
-    tree = BinaryTreeNode(1)
-    tree.left_node = left_node
-    assert tree.left_node.data == 2
+    left = BinaryTreeNode(2)
+    root = BinaryTreeNode(1)
+    root.left = left
+    assert root.left and root.left.data == 2
 
 
 def test_right_node():
-    right_node = BinaryTreeNode(2)
-    tree = BinaryTreeNode(1)
-    tree.right_node = right_node
-    assert tree.right_node.data == 2
+    right = BinaryTreeNode(2)
+    root = BinaryTreeNode(1)
+    root.right = right
+    assert root.right.data == 2

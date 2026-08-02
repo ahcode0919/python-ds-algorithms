@@ -11,19 +11,19 @@ class DoublyLinkedList[T]:
     """
 
     def __init__(self):
-        self.__head: DoublyLinkedListNode[T] = DoublyLinkedListNode[T](None)
-        self.__tail: DoublyLinkedListNode[T] = DoublyLinkedListNode[T](None)
+        self._head: DoublyLinkedListNode[T] = DoublyLinkedListNode[T](None)
+        self._tail: DoublyLinkedListNode[T] = DoublyLinkedListNode[T](None)
 
-        self.__head.next = self.__tail
-        self.__tail.previous = self.__head
+        self._head.next = self._tail
+        self._tail.previous = self._head
 
     # O(N)
     def all_values(self) -> list[T | None]:
         """Return a list of every value in the list, in order from head to tail."""
         values = []
-        node = self.__head.next
+        node = self._head.next
 
-        while node and node is not self.__tail:
+        while node and node is not self._tail:
             values.append(node.data)
             node = node.next
 
@@ -34,22 +34,22 @@ class DoublyLinkedList[T]:
         """Add a new node containing data to the end of the list, just before the sentinel tail."""
         # Last <-> Tail --> Last <-> New <-> Tail
         node = DoublyLinkedListNode(data)
-        last_node = self.__tail.previous
+        last_node = self._tail.previous
 
         if last_node:
             last_node.next = node
             node.previous = last_node
 
-            node.next = self.__tail
-            self.__tail.previous = node
+            node.next = self._tail
+            self._tail.previous = node
 
     # O(N)
     def get_node(self, index: int) -> DoublyLinkedListNode | None:
         """Return the node at index, or None if the index is out of bounds."""
-        current_node = self.__head.next
+        current_node = self._head.next
         count = 0
 
-        while current_node and current_node is not self.__tail:
+        while current_node and current_node is not self._tail:
             if count == index:
                 return current_node
             current_node = current_node.next
@@ -71,10 +71,10 @@ class DoublyLinkedList[T]:
         current_node: DoublyLinkedListNode[T] | None = self.get_node(index)
 
         if not current_node and index == 0:
-            self.__head.next = node
-            node.previous = self.__head
-            node.next = self.__tail
-            self.__tail.previous = node
+            self._head.next = node
+            node.previous = self._head
+            node.next = self._tail
+            self._tail.previous = node
             return
 
         if not current_node or not current_node.previous:
@@ -103,9 +103,9 @@ class DoublyLinkedList[T]:
     def size(self) -> int:
         """Return the number of nodes in the list."""
         count = 0
-        node = self.__head.next
+        node = self._head.next
 
-        while node and node != self.__tail:
+        while node and node != self._tail:
             count += 1
             node = node.next
         return count
