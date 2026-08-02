@@ -1,25 +1,30 @@
-# Given a binary tree, return all root-to-leaf paths.
-#
-# Note: A leaf is a node with no children.
-#
-# Example:
-#
-# Input:
-#
-#    1
-#  /   \
-# 2     3
-#  \
-#   5
-#
-# Output: ["1->2->5", "1->3"]
-#
-# Explanation: All root-to-leaf paths are: 1->2->5, 1->3
+r"""Binary Tree Path.
 
-# Definition for a binary tree node.
+Given a binary tree, return all root-to-leaf paths.
+
+Note: A leaf is a node with no children.
+
+Example:
+Input:
+
+```text
+   1
+ /   \
+2     3
+ \
+  5
+```
+
+Output: `["1->2->5", "1->3"]`
+
+Explanation: All root-to-leaf paths are: `1->2->5`, `1->3`
+
+"""
 
 
 class TreeNode:
+    """Minimal binary tree node used by this module's examples."""
+
     def __init__(self, x):
         self.val = x
         self.left = None
@@ -27,6 +32,7 @@ class TreeNode:
 
 
 def binary_tree_paths(root_node: TreeNode) -> [str]:
+    """Collect every root-to-leaf path into a list of `"parent->child"` strings."""
     paths = []
     if not root_node:
         return paths
@@ -34,6 +40,7 @@ def binary_tree_paths(root_node: TreeNode) -> [str]:
 
 
 def get_path(node: TreeNode, path: str, paths: [str]) -> [str]:
+    """Recurse left and right, appending a completed path string whenever a leaf is reached."""
     new_paths = list(paths)
 
     if not node.left and not node.right:

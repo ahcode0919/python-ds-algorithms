@@ -1,8 +1,33 @@
+"""Walls and Gates (BFS).
+
+You are given a m x n 2D grid initialized with these three possible values: `-1` - a wall or an
+obstacle; `0` - a gate; `INF` - infinity, meaning an empty room. We use the value
+`2^31 - 1 = 2147483647` to represent INF as you may assume that the distance to a gate is less
+than `2147483647`. Fill each empty room with the distance to its nearest gate. If it is impossible
+to reach a gate, it should be filled with INF.
+
+Example: given the 2D grid
+```
+INF  -1  0  INF
+INF INF INF  -1
+INF  -1 INF  -1
+  0  -1 INF INF
+```
+after running the function, the 2D grid should be
+```
+3  -1   0   1
+2   2   1  -1
+1  -1   2  -1
+0  -1   3   4
+```
+"""
+
 from collections import deque
 from typing import List
 
 
 def walls_and_gates(rooms_input: List[List[int]]) -> List[List[int]]:
+    """Run a multi-source BFS from every gate to fill each empty room with its distance to the nearest gate."""
     rooms = rooms_input[:]
     height = len(rooms)
     if height == 0:

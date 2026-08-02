@@ -1,7 +1,14 @@
+"""Two Sum IV.
+
+Given the root of a Binary Tree and a target number, return `True` if there exist two elements in the BST such
+that their sum is equal to the given target.
+"""
+
 from binary_tree.tree_node import TreeNode
 
 
 def two_sum_iv(root: TreeNode, target: int) -> bool:
+    """Traverse the tree while tracking seen values, returning True as soon as a complementary value is found."""
     if not root:
         return False
 

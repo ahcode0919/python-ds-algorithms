@@ -1,7 +1,15 @@
+"""Sorted Squares.
+
+Given a sorted array of numbers, return the squares of each number in ascending order.
+
+Example: `[-2, -1, 0, 1, 3]` -> `[0, 1, 1, 4, 9]`
+"""
+
 from typing import List
 
 
 def sorted_squares(nums: List[int]) -> List[int]:
+    """Two-pointer merge from the point where values turn non-negative, comparing magnitudes outward."""
     length = len(nums)
     first_positive = None
 

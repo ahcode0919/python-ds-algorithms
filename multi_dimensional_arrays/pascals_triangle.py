@@ -1,7 +1,16 @@
+"""Pascal's Triangle.
+
+Given a non-negative integer numRows, generate the first numRows of Pascal's triangle. In Pascal's triangle, each
+number is the sum of the two numbers directly above it.
+
+Example: `5` -> `[[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1]]`
+"""
+
 from typing import List
 
 
 def pascals_triangle(rows: int) -> List[List[int]]:
+    """Build each row from the previous row's adjacent sums, bounded by the leading and trailing 1s."""
     output = []
     if rows <= 0:
         return output

@@ -1,15 +1,28 @@
+r"""Pre-order Traversal.
+
+Pre-order traversal is to visit the root first. Then traverse the left subtree. Finally, traverse the right
+subtree.
+
+Example:
+```text
+     1
+    / \
+   2   3
+  / \
+ 4   5
+```
+
+Output: `[1, 2, 4, 5, 3]`
+
+"""
+
 from typing import List
 
 from binary_tree.tree_node import TreeNode
 
-# class TreeNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
-
 
 def preorder_traversal_iterative(root: TreeNode) -> List[int]:
+    """Traverse iteratively with an explicit stack. Time: O(N), Space: O(N)."""
     output = []
 
     if root is None:
@@ -28,6 +41,7 @@ def preorder_traversal_iterative(root: TreeNode) -> List[int]:
 
 
 def preorder_traversal_morris(root: TreeNode) -> List[int]:
+    """Traverse using threaded links through predecessors, avoiding a stack. Time: O(N), Space: O(1)."""
     node, output = root, []
     while node:
         if not node.left:
@@ -51,6 +65,7 @@ def preorder_traversal_morris(root: TreeNode) -> List[int]:
 
 
 def preorder_traversal_recursive(root: TreeNode) -> List[int]:
+    """Recursively visit the node, then traverse left, then traverse right. Time: O(N), Space: O(N)."""
     values = []
     if not root:
         return values

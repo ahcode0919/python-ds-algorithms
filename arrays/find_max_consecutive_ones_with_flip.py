@@ -1,7 +1,15 @@
+"""Find Max Consecutive Ones With One Flip.
+
+Given a binary array, find the maximum number of consecutive 1s in this array if you can flip at most one 0.
+
+Example: `[1, 0, 1, 1, 0]` -> `4` (flipping the first zero yields a run of four consecutive 1s)
+"""
+
 from typing import List
 
 
 def find_max_consecutive_ones_with_flip(nums: List[int]) -> int:
+    """Single pass tracking the most recent flipped zero to extend the current run."""
     zero = -1
     ones = 0
     highest = 0

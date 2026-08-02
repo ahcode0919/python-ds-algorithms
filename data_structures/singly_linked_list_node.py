@@ -1,3 +1,9 @@
+"""Singly Linked List Node.
+
+A node in a singly linked list. It has a data field as well as a 'next' field, which points to the next
+node in the list.
+"""
+
 from typing import Generic, Optional, TypeVar
 
 T = TypeVar("T")

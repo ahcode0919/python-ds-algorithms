@@ -1,12 +1,20 @@
+"""Largest Number At Least Twice of Others.
+
+In a given integer array nums, there is always exactly one largest element. Determine whether the largest
+element is at least twice as large as every other number in the array. If it is, return the index of the largest
+element; otherwise return -1.
+
+Example: `[3, 6, 1, 0]` -> `1`
+"""
+
 from typing import List
 
 
 def largest_number_at_least_twice_of_others(nums: List[int]) -> int:
-    """Find largest number that is atleast twice the size of any other number
+    """Single pass tracking the largest and second-largest indices.
 
     :param nums: array of numbers
     :return: index of number, -1 if none exists
-
     """
     largest = None
     next_largest = None
@@ -28,11 +36,10 @@ def largest_number_at_least_twice_of_others(nums: List[int]) -> int:
 
 
 def largest_number_at_least_twice_of_others2(nums: [int]) -> int:
-    """Find largest number that is atleast twice the size of any other number
+    """Array-manipulation approach using built-in max()/index(); simpler but mutates the input via pop().
 
     :param nums: array of numbers
     :return: index of number, -1 if none exists
-
     """
     if len(nums) == 1:
         return 0

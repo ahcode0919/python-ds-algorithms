@@ -1,9 +1,31 @@
+r"""Post-order Traversal.
+
+Algorithm Postorder(tree):
+
+1. Traverse the left subtree.
+2. Traverse the right subtree.
+3. Visit the root.
+
+Example:
+```text
+     1
+    / \
+   2   3
+  / \
+ 4   5
+```
+
+Output: `[4, 5, 2, 3, 1]`
+
+"""
+
 from typing import List
 
 from binary_tree.tree_node import TreeNode
 
 
 def postorder_traversal_recursive(root: TreeNode) -> List[int]:
+    """Recursively traverse left, traverse right, then visit the node."""
     values = []
     if not root:
         return values
@@ -19,6 +41,7 @@ def postorder_traversal_recursive(root: TreeNode) -> List[int]:
 
 
 def postorder_traversal_iterative(root: TreeNode) -> List[int]:
+    """Traverse iteratively with an explicit stack, visiting a node only after both children are handled."""
     values = []
     stack = []
 

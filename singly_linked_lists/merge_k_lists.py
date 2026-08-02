@@ -1,9 +1,17 @@
+"""Merge K Sorted Lists.
+
+You are given an array of k linked lists, each linked list sorted in ascending order.
+
+Merge all the linked lists into one sorted linked list and return it.
+"""
+
 from typing import List, Optional
 
 from data_structures.singly_linked_list_node import SinglyLinkedListNode
 
 
 def merge_k_lists(lists: Optional[List[SinglyLinkedListNode]]) -> Optional[SinglyLinkedListNode]:
+    """Repeatedly scan the current head of every list, appending the smallest one found each round."""
     dummy = SinglyLinkedListNode()
     current = dummy
 

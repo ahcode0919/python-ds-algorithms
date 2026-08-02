@@ -1,14 +1,11 @@
-"""Bubble Sort
-
-The simplest sorting algorithm, working by repeatedly swapping the adjacent elements if they are
-in wrong order.
-
-Example: `[2, 1, 3] -> [1, 2, 3]`
-"""
-
-
 def bubble_sort(array: [int]) -> []:
-    """Repeatedly swap adjacent out-of-order elements, shrinking the unsorted upper bound each pass."""
+    """Bubble Sort.
+
+    The simplest sorting algorithm, working by repeatedly swapping the adjacent elements if they are
+    in wrong order.
+
+    Example: `[2, 1, 3] -> [1, 2, 3]`
+    """
     length = len(array)
 
     # Return if nothing to sort

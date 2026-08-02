@@ -1,9 +1,20 @@
+"""Daily Temperatures.
+
+Given a list of daily temperatures, return a list such that, for each day in the input, tells you how many days you
+would have to wait until a warmer temperature. If there is no future day for which this is possible, put 0 instead.
+The length of temperatures will be in the range [1, 30000]; each temperature will be an integer in the range
+[30, 100].
+
+Example: `T = [73, 74, 75, 71, 69, 72, 76, 73]` -> `[1, 1, 4, 2, 1, 1, 0, 0]`
+"""
+
 from collections import deque
 from queue import LifoQueue
 from typing import List
 
 
 def daily_temperatures_brute_force(temps: List[int]) -> List[int]:
+    """Brute-force: for each day, scan forward until a warmer temperature is found."""
     daily_temps = []
     for index, temp in enumerate(temps):
         count = 0
@@ -18,6 +29,7 @@ def daily_temperatures_brute_force(temps: List[int]) -> List[int]:
 
 
 def daily_temperatures(temps: List[int]) -> List[int]:
+    """Optimized: process right to left using a monotonic decreasing stack of indices."""
     daily_temps = deque()
     stack = LifoQueue()
 

@@ -1,7 +1,17 @@
+"""Palindrome Permutation.
+
+Given a string, determine if a permutation of the string could form a palindrome.
+
+Example: `"code"` -> `False`
+Example: `"aab"` -> `True`
+Example: `"carerac"` -> `True`
+"""
+
 from collections import Counter
 
 
 def palindrome_permutation(palindrome: str) -> bool:
+    """Count character frequencies and check that at most one character has an odd count."""
     length = len(palindrome)
     counter = Counter(list(palindrome))
 

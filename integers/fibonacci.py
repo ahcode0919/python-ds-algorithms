@@ -1,3 +1,12 @@
+"""Fibonacci.
+
+A sequence that starts with `[0, 1]`. Each additional number is the sum of the last two numbers.
+
+Example: `[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, ...]`
+
+`fibonacci(5) -> 5`
+"""
+
 from functools import lru_cache
 from typing import Dict, Generator
 
@@ -60,6 +69,7 @@ def fibonacci3(number: int) -> int:
 
 
 def fibonacci_with_array(number: int, memo=None) -> int:
+    """Generate the fibonacci number for n using an array-based memo, appending iteratively via recursion."""
     if memo is None:
         memo = [0, 1]
 

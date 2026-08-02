@@ -1,7 +1,15 @@
+"""Spiral Matrix.
+
+Given a matrix of m x n elements (m rows, n columns), return all elements of the matrix in spiral order.
+
+Example: `[[1, 2, 3], [4, 5, 6], [7, 8, 9]]` -> `[1, 2, 3, 6, 9, 8, 7, 4, 5]`
+"""
+
 from typing import List
 
 
 def spiral_matrix(matrix: List[List[int]]) -> List[int]:
+    """Peel off the outer ring of the matrix layer by layer, shrinking the bounds after each pass."""
     if not matrix or not matrix[0]:
         return []
 

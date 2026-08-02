@@ -1,3 +1,19 @@
+r"""Binary Tree.
+
+A Binary tree is a non-linear tree data structure with one "root" node. Each node has only two child nodes.
+These are denoted "left" and "right".
+
+::
+
+         Root
+          / \\
+         L   R
+        / \\
+       L   R
+
+Further Reading - https://en.wikipedia.org/wiki/Binary_tree
+"""
+
 from data_structures.binary_tree_node import BinaryTreeNode
 
 

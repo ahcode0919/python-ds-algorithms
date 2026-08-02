@@ -1,9 +1,28 @@
+r"""In-order Traversal.
+
+In-order traversal is to traverse the left subtree first. Then visit the root. Finally, traverse the right
+subtree.
+
+Example:
+```text
+     1
+    / \
+   2   3
+  / \
+ 4   5
+```
+
+Output: `[4, 2, 5, 1, 3]`
+
+"""
+
 from typing import List
 
 from binary_tree.tree_node import TreeNode
 
 
 def inorder_traversal(root: TreeNode) -> List[int]:
+    """Recursively traverse left, visit the node, then traverse right."""
     values = []
 
     if not root:
@@ -20,6 +39,7 @@ def inorder_traversal(root: TreeNode) -> List[int]:
 
 
 def inorder_traversal_stack(root: TreeNode) -> List[int]:
+    """Traverse iteratively using an explicit stack to walk down the left spine before visiting a node."""
     output = []
     stack = []
     current_node = root

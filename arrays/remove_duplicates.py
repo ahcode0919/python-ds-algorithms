@@ -1,7 +1,17 @@
+"""Remove Duplicates.
+
+Given a sorted array nums, remove the duplicates in-place such that each element appears only once, and return
+the new length. Do not allocate extra space for another array; modify the input array in-place with O(1) extra
+memory.
+
+Example: `[1, 1, 2]` -> `[1, 2, 2], count: 2`
+"""
+
 from typing import List
 
 
 def remove_duplicates(nums: List[int]) -> int:
+    """Two-pointer in-place compaction over an already-sorted array."""
     length = len(nums)
     if length <= 1:
         return length

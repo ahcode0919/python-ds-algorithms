@@ -1,3 +1,9 @@
+"""Binary Tree Node.
+
+A node in a binary tree, holding data plus references to its left and right child nodes.
+"""
+
+
 class BinaryTreeNode:
     def __init__(self, data, left_node=None, right_node=None):
         self.__data = data

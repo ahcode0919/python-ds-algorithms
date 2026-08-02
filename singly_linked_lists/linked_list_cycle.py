@@ -1,3 +1,11 @@
+"""Linked List Cycle.
+
+Given a linked list, determine if it has a cycle in it.
+
+To represent a cycle in the given linked list, we use an integer pos which represents the position (0-indexed) in
+the linked list where the tail connects to. If pos is -1, then there is no cycle in the linked list.
+"""
+
 from typing import Optional, Set, TypeVar
 
 from data_structures.singly_linked_list_node import SinglyLinkedListNode
@@ -7,6 +15,7 @@ T = TypeVar("T")
 
 # Time: O(N + K) -> O(N), Space: O(1)
 def has_cycle(head: Optional[SinglyLinkedListNode]) -> bool:
+    """Detect a cycle with slow/fast pointers, returning True once they meet."""
     if not head or not head.next:
         return False
 
@@ -22,6 +31,7 @@ def has_cycle(head: Optional[SinglyLinkedListNode]) -> bool:
 
 # Time: O(N), Space: O(N)
 def has_cycle_with_set(head: Optional[SinglyLinkedListNode]) -> bool:
+    """Detect a cycle by tracking visited nodes in a set, returning True on the first repeat."""
     if not head or not head.next:
         return False
 

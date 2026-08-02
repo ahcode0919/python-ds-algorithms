@@ -1,8 +1,18 @@
+"""Valid Palindrome.
+
+A string that is the same forwards and backwards. The naive solution simply reverses and compares; the second
+solution accounts for punctuation and case by skipping non-alphanumeric characters and lowercasing before
+comparing.
+"""
+
+
 def valid_palindrome_naive(string: str) -> bool:
+    """Reverse the string and compare it to the original, with no handling of punctuation or case."""
     return string == string[::-1]
 
 
 def valid_palindrome(string: str) -> bool:
+    """Walk inward from both ends, skipping non-alphanumeric characters, comparing lowercased characters."""
     length = len(string)
 
     if length < 2:

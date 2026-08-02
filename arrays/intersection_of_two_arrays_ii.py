@@ -1,7 +1,15 @@
+"""Intersection of Two Arrays.
+
+Given two arrays, write a function that computes their intersection, including duplicate matches.
+
+Example: `nums1 = [1, 2, 2, 1], nums2 = [2, 2]` -> `[2, 2]`
+"""
+
 from typing import List
 
 
 def intersection_of_two_arrays(nums1: List[int], nums2: List[int]) -> List[int]:
+    """Count nums1 occurrences in a hash map, then consume matches while scanning nums2."""
     intersection = []
     nums1_map = {}
 

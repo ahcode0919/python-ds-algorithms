@@ -1,9 +1,35 @@
+r"""Symmetric Binary Tree.
+
+Given a binary tree, check whether it is a mirror of itself (i.e., symmetric around its center).
+
+For example, this binary tree `[1, 2, 2, 3, 4, 4, 3]` is symmetric:
+
+```text
+    1
+   / \
+  2   2
+ / \ / \
+3  4 4  3
+```
+
+But the following `[1, 2, 2, null, 3, null, 3]` is not:
+
+```text
+    1
+   / \
+  2   2
+   \   \
+   3    3
+```
+"""
+
 from typing import Optional
 
 from binary_tree.tree_node import TreeNode
 
 
 def symmetric_binary_tree(root: Optional[TreeNode]) -> bool:
+    """Compare each level from the outside in, mirroring left and right positions, to check for symmetry."""
     level = [root]
 
     while level:

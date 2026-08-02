@@ -1,3 +1,8 @@
+"""Encode / Decode Tree.
+
+Encode an n-ary tree to a binary tree and decode it back to a matching n-ary tree.
+"""
+
 from collections import deque
 from typing import Optional
 
@@ -6,6 +11,7 @@ from n_ary_tree.nary_tree_node import NaryTreeNode
 
 
 def encode(root: NaryTreeNode) -> Optional[TreeNode]:
+    """Encode an n-ary tree into a binary tree using a left-child/right-sibling representation."""
     if not root:
         return None
 
@@ -34,6 +40,7 @@ def encode(root: NaryTreeNode) -> Optional[TreeNode]:
 
 
 def decode(data: TreeNode) -> Optional[NaryTreeNode]:
+    """Decode a binary tree produced by encode() back into a matching n-ary tree."""
     if not data:
         return None
 

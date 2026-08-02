@@ -1,4 +1,12 @@
+"""Implement strStr.
+
+Implement `strStr()`. Return the index of the first occurrence of needle in haystack, or -1 if needle is not part
+of haystack. If needle is empty, return 0.
+"""
+
+
 def str_str(haystack: str, needle: str) -> int:
+    """Slide a window the length of needle across haystack, returning the first index where it matches."""
     if not needle:
         return 0
 

@@ -1,7 +1,15 @@
+"""Peaks.
+
+Given an array of integers, return the values that are between two smaller values.
+
+Example: `[1, 3, 2]` -> `[3]`
+"""
+
 from typing import List
 
 
 def peaks(numbers: List[int]) -> List[int]:
+    """Single pass comparing each interior element against its neighbors."""
     length = len(numbers)
     peak_nums = []
 
