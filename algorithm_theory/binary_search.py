@@ -1,11 +1,16 @@
-# Binary Search: Search a sorted array by repeatedly dividing the search interval in half. Begin with an interval
-# covering the whole array. If the value of the search key is less than the item in the middle of the interval, narrow
-# the interval to the lower half. Otherwise narrow it to the upper half. Repeatedly check until the value is found or
-# the interval is empty.
+"""Binary Search
+
+Search a sorted array by repeatedly dividing the search interval in half. Begin with an interval
+covering the whole array. If the value of the search key is less than the item in the middle of the interval, narrow
+the interval to the lower half. Otherwise narrow it to the upper half. Repeatedly check until the value is found or
+the interval is empty.
+"""
+
 from typing import Optional
 
 
 def binary_search_iterative(array: [int], target: int) -> Optional[int]:
+    """Narrow the [left, right] bounds by half each iteration until target is found or the bounds cross."""
     left = 0
     right = len(array) - 1
 
@@ -22,6 +27,7 @@ def binary_search_iterative(array: [int], target: int) -> Optional[int]:
 
 
 def binary_search_recursive(array: [int], left: int, right: int, target: int) -> Optional[int]:
+    """Recurse into the left or right sub-array each call until target is found or the bounds cross."""
     if right >= left:
         mid = int((left + right) / 2)
 

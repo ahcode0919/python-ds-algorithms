@@ -64,7 +64,7 @@ class MapSum:
 class MapSumNode:
     def __init__(self, value: int = 0):
         self.value = value
-        self.nodes: Dict[str: MapSumNode] = dict()
+        self.nodes: Dict[str:MapSumNode] = dict()
 ```
 
 ## Replace Words
@@ -85,7 +85,7 @@ Output: `"the cat was rat by the bat"`
 
 ```python
 def replace_words(dictionary: List[str], sentence: str) -> str:
-    words = sentence.split(' ')
+    words = sentence.split(" ")
     updated_sentence: [str] = []
     prefix_trie = TrieNode()
 
@@ -95,12 +95,12 @@ def replace_words(dictionary: List[str], sentence: str) -> str:
     for word in words:
         updated_sentence.append(prefix_trie.replace_word(word))
 
-    return ' '.join(updated_sentence)
+    return " ".join(updated_sentence)
 
 
 class TrieNode:
     def __init__(self):
-        self.nodes: Dict[str: TrieNode] = dict()
+        self.nodes: Dict[str:TrieNode] = dict()
 
     def insert(self, word: str) -> None:
         current_node = self

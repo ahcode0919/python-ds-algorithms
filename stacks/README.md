@@ -73,11 +73,11 @@ Example:
 def decode_string(value: str) -> str:
     stack = []
     for char in value:
-        if char != ']':
+        if char != "]":
             stack.append(char)
         else:
-            temp_string, num = '', ''
-            while stack and stack[-1] != '[':
+            temp_string, num = "", ""
+            while stack and stack[-1] != "[":
                 temp_string = stack.pop() + temp_string
 
             stack.pop()
@@ -87,7 +87,7 @@ def decode_string(value: str) -> str:
             num = int(num)
             stack.append(temp_string * num)
 
-    return ''.join(stack)
+    return "".join(stack)
 ```
 
 ## Evaluate Reverse Polish Notation
@@ -135,7 +135,7 @@ def evaluate_rpn(tokens: List[str]) -> int:
     stack = LifoQueue()
 
     for token in tokens:
-        if token.lstrip('-').isdigit():
+        if token.lstrip("-").isdigit():
             stack.put(token)
         else:
             right = int(stack.get())
@@ -146,11 +146,11 @@ def evaluate_rpn(tokens: List[str]) -> int:
 
 
 def compute(left: int, right: int, operator: str) -> int:
-    if operator == '-':
+    if operator == "-":
         return left - right
-    if operator == '+':
+    if operator == "+":
         return left + right
-    if operator == '/':
+    if operator == "/":
         return trunc(float(left) / right)
     return left * right
 ```
@@ -168,15 +168,14 @@ Example:
 
 ```python
 stack.push(1)
-stack.push(2)  
-stack.top()   # returns 2
-stack.pop()   # returns 2
-stack.empty() # returns false
+stack.push(2)
+stack.top()  # returns 2
+stack.pop()  # returns 2
+stack.empty()  # returns false
 ```
 
 ```python
 class Stack(Generic[T]):
-
     def __init__(self):
         self.stack: Deque[T] = deque()
 
@@ -247,15 +246,7 @@ Input: `"MCMXCIV"`
 Output: `1994`
 
 ```python
-ROMAN_NUMERALS = {
-    'I': 1,
-    'V': 5,
-    'X': 10,
-    'L': 50,
-    'C': 100,
-    'D': 500,
-    'M': 1000
-}
+ROMAN_NUMERALS = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}
 
 
 def roman_to_integer(roman: str) -> int:
@@ -298,7 +289,7 @@ def valid_parentheses(value: str) -> bool:
     if len(value) % 2 != 0:
         return False
 
-    closing_values = {'(': ')', '{': '}', '[': ']'}
+    closing_values = {"(": ")", "{": "}", "[": "]"}
     stack = []
 
     for char in value:

@@ -50,9 +50,9 @@ def add_binary(num1: str, num2: str) -> str:
     num2 = ("0" * (max_length - length_b)) + num2
 
     for index in range(max_length - 1, -1, -1):
-        if num1[index] == '1':
+        if num1[index] == "1":
             carry += 1
-        if num2[index] == '1':
+        if num2[index] == "1":
             carry += 1
 
         if carry % 2 == 1:
@@ -63,9 +63,9 @@ def add_binary(num1: str, num2: str) -> str:
         carry //= 2
 
     if carry == 1:
-        output.appendleft('1')
+        output.appendleft("1")
 
-    return ''.join(output)
+    return "".join(output)
 
 
 def add_binary_with_builtins(num1: str, num2: str) -> str:
@@ -83,7 +83,6 @@ Input will not start or end with spaces
 If rules cannot be met return an empty string
 
 ```python
-
 def crop_string(string: str, new_length: int) -> str:
     length = len(string)
     last_valid_index = 0
@@ -92,7 +91,7 @@ def crop_string(string: str, new_length: int) -> str:
         return string
 
     for i in range(new_length):
-        if string[i] == ' ':
+        if string[i] == " ":
             last_valid_index = i
 
     return string[:last_valid_index]
@@ -160,7 +159,7 @@ def str_str(haystack: str, needle: str) -> int:
     length_needle = len(needle)
 
     for index in range(length_haystack):
-        if haystack[index:index + length_needle] == needle:
+        if haystack[index : index + length_needle] == needle:
             return index
     return -1
 ```
@@ -214,7 +213,7 @@ Output: `5F-3Z2-E9W`
 
 ```python
 def license_key_formatter(license_str: str, group_length: int) -> str:
-    license_keys = license_str.replace('-', '').upper()
+    license_keys = license_str.replace("-", "").upper()
     remainder = len(license_keys) % group_length
 
     start = 0
@@ -226,7 +225,7 @@ def license_key_formatter(license_str: str, group_length: int) -> str:
         start = end
         end += group_length
 
-    return '-'.join(license_groups)
+    return "-".join(license_groups)
 ```
 
 ## Longest Common Prefix
@@ -256,7 +255,7 @@ def longest_common_prefix_horizontal(strings: List[str]) -> str:
                 break
             last_match = char_index
         # Add 1 to end index since last index in slice is exclusive
-        longest = strings[index][0:last_match + 1]
+        longest = strings[index][0 : last_match + 1]
     return longest
 
 
@@ -273,13 +272,12 @@ def longest_common_prefix_vertical(strings: List[str]) -> str:
             if index > len(prefix) - 1:
                 return prefix
             if index > len(strings[string_index]) - 1:
-                prefix = prefix[:len(strings[string_index])]
+                prefix = prefix[: len(strings[string_index])]
                 continue
             if strings[string_index][index] != prefix[index]:
                 prefix = strings[string_index][:index]
 
     return prefix
-
 ```
 
 ## Longest Substring Without Duplicates
@@ -326,7 +324,7 @@ Output: `"56088"`
 def multiply_strings(num1: str, num2: str) -> str:
     def string_to_int(string: str) -> int:
         length = len(string)
-        zero = ord('0')
+        zero = ord("0")
         value = 0
 
         for index in range(length):
@@ -393,6 +391,7 @@ Reverse a string
 def reverse_string(string: str) -> str:
     return string[::-1]
 
+
 def reverse_string_in_place(string: [str]):
     index = 0
     length = len(string)
@@ -401,14 +400,16 @@ def reverse_string_in_place(string: [str]):
         string[index], string[length - 1 - index] = string[length - 1 - index], string[index]
         index += 1
 
+
 def reverse_string_with_list_comprehension(string: str) -> str:
-    return ''.join([string[i] for i in range(len(string) - 1, -1, -1)])
+    return "".join([string[i] for i in range(len(string) - 1, -1, -1)])
+
 
 def reverse_string_with_loop(string: str) -> str:
     reversed_str: List[Optional[str]] = [None] * len(string)
     for index in range(len(string) - 1, -1, -1):
         reversed_str[len(string) - 1 - index] = string[index]
-    return ''.join(reversed_str)
+    return "".join(reversed_str)
 ```
 
 ## Reverse Words In A Sentence
@@ -431,14 +432,14 @@ def reverse_words(sentence: str) -> str:
     left_index = 0
 
     for index in range(length):
-        if sentence_array[index] == ' ':
+        if sentence_array[index] == " ":
             reverse(sentence_array, left_index, index - 1)
             left_index = index + 1
 
     # reverse last word, or sentence if one word
     reverse(sentence_array, left_index, length - 1)
 
-    return ''.join(sentence_array)
+    return "".join(sentence_array)
 ```
 
 ## Reverse Words In A Sentence II
@@ -490,14 +491,14 @@ def run_length_encoding(string: str) -> str:
             counter += 1
         else:
             if current_character:
-                output.append(current_character + str(counter if counter > 1 else ''))
+                output.append(current_character + str(counter if counter > 1 else ""))
             current_character = character
             counter = 1
 
     if current_character:
-        output.append(current_character + str(counter if counter > 1 else ''))
+        output.append(current_character + str(counter if counter > 1 else ""))
 
-    return ''.join(output)
+    return "".join(output)
 ```
 
 ## String to Integer
@@ -507,7 +508,7 @@ Convert a string to an integer. String may include spaces before the number and 
 ```python
 def string_to_integer(string: str) -> int:
     length = len(string)
-    numbers = set(list('1234567890'))
+    numbers = set(list("1234567890"))
     positive = True
     start_index = -1
 
@@ -515,10 +516,10 @@ def string_to_integer(string: str) -> int:
         return 0
 
     for index in range(length):
-        if string[index] in ' ':
+        if string[index] in " ":
             continue
 
-        if string[index] in '-':
+        if string[index] in "-":
             positive = False
             continue
 
@@ -541,7 +542,7 @@ def string_to_integer(string: str) -> int:
         else:
             break
 
-    return int(string[start_index: end_index]) if positive else -int(string[start_index: end_index])
+    return int(string[start_index:end_index]) if positive else -int(string[start_index:end_index])
 ```
 
 ## String to Integer II
@@ -554,7 +555,7 @@ Example:
 
 ```python
 def string_to_integer_ii(string: str) -> int:
-    zero = ord('0')
+    zero = ord("0")
     positive = True
     length = len(string)
     start = 0
@@ -564,10 +565,10 @@ def string_to_integer_ii(string: str) -> int:
         return 0
 
     # Determine Positive / Negative
-    if string[0] == '-':
+    if string[0] == "-":
         start = 1
         positive = False
-    elif string[0] == '+':
+    elif string[0] == "+":
         start = 1
 
     # Iterate over remaining characters
@@ -609,16 +610,16 @@ def unique_email_addresses(emails: List[str]) -> int:
         normalized_email = []
 
         for index, string in enumerate(email):
-            if string == '+':
-                at_index = email.index('@', index)
+            if string == "+":
+                at_index = email.index("@", index)
                 normalized_email.append(email[at_index:])
-                unique_emails.add(''.join(normalized_email))
+                unique_emails.add("".join(normalized_email))
                 break
-            if string == '.':
+            if string == ".":
                 continue
-            if string == '@':
+            if string == "@":
                 normalized_email.append(email[index:])
-                unique_emails.add(''.join(normalized_email))
+                unique_emails.add("".join(normalized_email))
                 break
             normalized_email.append(string)
 

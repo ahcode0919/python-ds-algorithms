@@ -207,10 +207,12 @@ Solution using two pointers:
 Time: O(N), Space: O(1)
       
 ```python
-def get_intersection_node(head_a: SinglyLinkedListNode, head_b: SinglyLinkedListNode) -> Optional[SinglyLinkedListNode]:
+def get_intersection_node(
+    head_a: SinglyLinkedListNode, head_b: SinglyLinkedListNode
+) -> Optional[SinglyLinkedListNode]:
     if not head_a or not head_b:
         return None
-    
+
     node_a: SinglyLinkedListNode = head_a
     node_b: SinglyLinkedListNode = head_b
 
@@ -235,7 +237,9 @@ Solution using Set (less optimal)
 Time: O(N), Space: O(N)
 
 ```python
-def get_intersection_node_with_set(head_a: SinglyLinkedListNode, head_b: SinglyLinkedListNode) -> Optional[SinglyLinkedListNode]:
+def get_intersection_node_with_set(
+    head_a: SinglyLinkedListNode, head_b: SinglyLinkedListNode
+) -> Optional[SinglyLinkedListNode]:
     nodes: Set[SinglyLinkedListNode] = set()
     node_a: SinglyLinkedListNode = head_a
     node_b: SinglyLinkedListNode = head_b
@@ -265,7 +269,7 @@ linked list where tail connects to. If pos is -1, then there is no cycle in the 
 
 ```python
 # Time: O(N + K) -> O(N), Space: O(1)
-def has_cycle(head: Optional['SinglyLinkedListNode']) -> bool:
+def has_cycle(head: Optional["SinglyLinkedListNode"]) -> bool:
     if not head or not head.next:
         return False
 
@@ -283,7 +287,7 @@ Solution with set (less optimal)
 
 ```python
 # Time: O(N), Space: O(N)
-def has_cycle_with_set(head: Optional['SinglyLinkedListNode']) -> bool:
+def has_cycle_with_set(head: Optional["SinglyLinkedListNode"]) -> bool:
     if not head or not head.next:
         return False
 
@@ -313,7 +317,7 @@ def merge_k_lists(lists: Optional[List[SinglyLinkedListNode]]) -> Optional[Singl
 
     while lists:
         min_node = None
-        smallest = float('inf')
+        smallest = float("inf")
 
         for index, head in enumerate(lists):
             if head and head.val <= smallest:
@@ -343,7 +347,9 @@ Input: `1->2->4`, `1->3->4`
 Output: `1->1->2->3->4->4`
 
 ```python
-def merge_two_lists(head1: Optional[SinglyLinkedListNode], head2: Optional[SinglyLinkedListNode]) -> Optional[SinglyLinkedListNode]:
+def merge_two_lists(
+    head1: Optional[SinglyLinkedListNode], head2: Optional[SinglyLinkedListNode]
+) -> Optional[SinglyLinkedListNode]:
     if not head1 and not head2:
         return None
 
@@ -457,7 +463,9 @@ Output: `1->2->3->4->5`
 Time: O(N), Space: O(1)
 
 ```python
-def remove_elements(head: Optional[SinglyLinkedListNode], val: int) -> Optional[SinglyLinkedListNode]:
+def remove_elements(
+    head: Optional[SinglyLinkedListNode], val: int
+) -> Optional[SinglyLinkedListNode]:
     dummy_node: SinglyLinkedListNode = SinglyLinkedListNode(0)
     dummy_node.next = head
 
@@ -550,7 +558,9 @@ Output: `4->5->1->2->3->NULL`
 
 
 ```python
-def rotate_list(head: Optional[SinglyLinkedListNode], amount: int) -> Optional[SinglyLinkedListNode]:
+def rotate_list(
+    head: Optional[SinglyLinkedListNode], amount: int
+) -> Optional[SinglyLinkedListNode]:
     if not head:
         return None
 

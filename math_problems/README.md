@@ -55,13 +55,13 @@ def fizz_buzz(iterations: int) -> List[str]:
         three = num % 3 == 0
         five = num % 5 == 0
         if three and five:
-            output.append('FizzBuzz')
+            output.append("FizzBuzz")
         elif three:
-            output.append('Fizz')
+            output.append("Fizz")
         elif five:
-            output.append('Buzz')
+            output.append("Buzz")
         else:
-            output.append(f'{num}')
+            output.append(f"{num}")
 
     return output
 ```

@@ -352,7 +352,7 @@ def first_not_repeating_character(s: str) -> str:
         if char not in checked_chars and s.index(char) == s.rindex(char):
             return char
         checked_chars.add(char)
-    return '_'
+    return "_"
 ```
 
 With Array Slices (less optimal):
@@ -362,10 +362,10 @@ def first_not_repeating_character(s: str) -> str:
     length = len(s)
     index = 0
     while index < length:
-        if s[index] not in s[:index] and s[index] not in s[index + 1:]:
+        if s[index] not in s[:index] and s[index] not in s[index + 1 :]:
             return s[index]
         index += 1
-    return '_'
+    return "_"
 ```
 
 ## First Pivot Index
@@ -500,7 +500,6 @@ def largest_number_at_least_twice_of_others(nums: [int]) -> int:
     if next_largest is None or (nums[next_largest] * 2) <= nums[largest]:
         return largest
     return -1
-
 ```
 
 With array manipulation and built-in functions. Slightly slower but easier to read
@@ -596,7 +595,9 @@ Input:
 Output: `[1,2,2,3,5,6]`
 
 ```python
-def merge_sorted_array(nums1: List[int], nums1_length: int, nums2: List[int], nums2_length: int) -> List[int]:
+def merge_sorted_array(
+    nums1: List[int], nums1_length: int, nums2: List[int], nums2_length: int
+) -> List[int]:
     index_nums1 = nums1_length - 1
     index_nums2 = nums2_length - 1
     current_index = nums1_length + nums2_length - 1
@@ -905,6 +906,7 @@ def rotate_array_in_place(nums: List[int], k: int) -> List[int]:
     reverse(nums, k, length - 1)
     return nums
 
+
 def reverse(arr: List, start, end):
     while start < end:
         arr[start], arr[end] = arr[end], arr[start]
@@ -1095,9 +1097,9 @@ def third_max(nums: List[int]) -> int:
     if len(unique_nums) < 3:
         return max(unique_nums)
 
-    unique_nums.remove(max(unique_nums))    # 1st
-    unique_nums.remove(max(unique_nums))    # 2nd
-    return max(unique_nums)                 # 3rd
+    unique_nums.remove(max(unique_nums))  # 1st
+    unique_nums.remove(max(unique_nums))  # 2nd
+    return max(unique_nums)  # 3rd
 ```
 
 ## Two Sum

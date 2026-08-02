@@ -20,10 +20,10 @@ Example:
 queue = MyQueue()
 
 queue.push(1)
-queue.push(2)  
+queue.push(2)
 queue.peek()  # returns 1
-queue.pop()   # returns 1
-queue.empty() # returns false
+queue.pop()  # returns 1
+queue.empty()  # returns false
 ```
 
 ```python
@@ -63,7 +63,6 @@ m.next(5) = (10 + 3 + 5) / 3
 
 ```python
 class MovingAverage:
-
     def __init__(self, max_size: int):
         self.max_size = max_size
         self.queue = deque()

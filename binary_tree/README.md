@@ -41,17 +41,18 @@ def binary_tree_paths(root_node: TreeNode) -> str:
     paths = []
     if not root_node:
         return paths
-    get_path(root_node, '', paths)
+    get_path(root_node, "", paths)
     return paths
+
 
 def get_path(node: TreeNode, path: str, paths: []) -> str:
     if not node.left and not node.right:
         paths.append(path + str(node.val))
         return
     if node.left:
-        get_path(node.left, path + str(node.val) + '->', paths)
+        get_path(node.left, path + str(node.val) + "->", paths)
     if node.right:
-        get_path(node.right, path + str(node.val) + '->', paths)
+        get_path(node.right, path + str(node.val) + "->", paths)
 ```
 
 ## Find Mode
@@ -701,7 +702,7 @@ Assume a BST is defined as follows:
 - Both the left and right subtrees must also be binary search trees.
 
 ```python
-def valid_bst(root: TreeNode, min_value=float('-inf'), max_value=float('inf')) -> bool:
+def valid_bst(root: TreeNode, min_value=float("-inf"), max_value=float("inf")) -> bool:
     if not root:
         return True
 

@@ -30,7 +30,7 @@ Node Implementation:
 
 ```python
 class SinglyLinkedListNode(Generic[T]):
-    def __init__(self, data: T = None, next_node: Optional['SinglyLinkedListNode'] = None):
+    def __init__(self, data: T = None, next_node: Optional["SinglyLinkedListNode"] = None):
         self.data = data
         self.next = next_node
 ```
@@ -39,7 +39,6 @@ Singly Linked List Implementation:
 
 ```python
 class SinglyLinkedList(Generic[T]):
-
     def __init__(self):
         self.__head: SinglyLinkedListNode = SinglyLinkedListNode()
 
@@ -91,7 +90,7 @@ class SinglyLinkedList(Generic[T]):
             current_node = current_node.next
             count += 1
         if count < index:
-            IndexError('Index out of bounds')
+            IndexError("Index out of bounds")
 
     def remove(self, index: int) -> None:
         count = 0
@@ -127,9 +126,12 @@ Doubly Linked List Node:
 
 ```python
 class DoublyLinkedListNode(Generic[T]):
-    def __init__(self, data: T = None,
-                 previous_node: Optional['DoublyLinkedListNode'] = None,
-                 next_node: Optional['DoublyLinkedListNode'] = None):
+    def __init__(
+        self,
+        data: T = None,
+        previous_node: Optional["DoublyLinkedListNode"] = None,
+        next_node: Optional["DoublyLinkedListNode"] = None,
+    ):
         self.data: T = data
         self.previous: Optional[DoublyLinkedListNode] = previous_node
         self.next: Optional[DoublyLinkedListNode] = next_node
@@ -139,7 +141,6 @@ Implementation:
 
 ```python
 class DoublyLinkedList(Generic[T]):
-
     def __init__(self):
         self.__head: DoublyLinkedListNode = DoublyLinkedListNode()
         self.__tail: DoublyLinkedListNode = DoublyLinkedListNode()
@@ -344,20 +345,18 @@ Binary Tree Node
 
 ```python
 class BinaryTreeNode:
-
     def __init__(self, data, left_node=None, right_node=None):
         self._data = data
         self._left_node = left_node
         self._right_node = right_node
-        
-     # ... Getters and Setters #
+
+    # ... Getters and Setters #
 ```
 
 Binary Tree
 
 ```python
 class BinaryTree(object):
-
     def __init__(self, root: BinaryTreeNode = None):
         self._root = root
 
@@ -388,8 +387,7 @@ beginning of the list
 
 ```python
 class QueueList:
-
-    T = TypeVar('T')
+    T = TypeVar("T")
 
     def __init__(self):
         self.queue = []
@@ -431,7 +429,6 @@ Circular Queue - Similar to linked-list in time complexity but uses an array to 
 
 ```python
 class CircularQueue(Generic[T]):
-
     def __init__(self, k: int):
         self.queue = [0] * k
         self.count = 0
@@ -484,7 +481,7 @@ from collections import deque
 
 queue = deque()
 queue.append(1)
-queue.popleft() # 1
+queue.popleft()  # 1
 ```
 
 ## Stack
@@ -493,7 +490,6 @@ A stack is a FIFO (first in first out) data structure. It can be backed by a lis
 
 ```python
 class StackList(Generic[T]):
-
     def __init__(self):
         self.__list = []
 
@@ -539,7 +535,7 @@ class TrieWithArray:
         """
         current_trie = self.head
         for index in range(1, len(word) + 1):
-            node_index = ord(word[:index][-1]) - ord('a')
+            node_index = ord(word[:index][-1]) - ord("a")
             if current_trie.child_nodes[node_index]:
                 current_trie = current_trie.child_nodes[node_index]
             else:
@@ -552,7 +548,7 @@ class TrieWithArray:
         """
         current_trie = self.head
         for index in range(1, len(word) + 1):
-            node_index = ord(word[:index][-1]) - ord('a')
+            node_index = ord(word[:index][-1]) - ord("a")
             if current_trie.child_nodes[node_index]:
                 current_trie = current_trie.child_nodes[node_index]
             else:
@@ -565,7 +561,7 @@ class TrieWithArray:
         """
         current_trie = self.head
         for index in range(1, len(prefix) + 1):
-            node_index = ord(prefix[:index][-1]) - ord('a')
+            node_index = ord(prefix[:index][-1]) - ord("a")
             if current_trie.child_nodes[node_index]:
                 current_trie = current_trie.child_nodes[node_index]
             else:
@@ -628,7 +624,7 @@ class TrieWithDictionary:
 
 class TrieNode:
     def __init__(self):
-        self.child_nodes: Dict[str: TrieNode] = dict()
+        self.child_nodes: Dict[str:TrieNode] = dict()
 ```
 
 ## Min Heap
@@ -690,7 +686,7 @@ class TrieWithFlatDictionary:
         """
         Initialize your data structure here.
         """
-        self.nodes: Dict[str: bool] = dict()
+        self.nodes: Dict[str:bool] = dict()
 
     def insert(self, word: str) -> None:
         """
