@@ -1,11 +1,7 @@
-from typing import Generic, Optional, TypeVar
-
 from data_structures.singly_linked_list_node import SinglyLinkedListNode
 
-T = TypeVar("T")
 
-
-class SinglyLinkedList(Generic[T]):
+class SinglyLinkedList[T]:
     """Singly Linked List.
 
     (https://en.wikipedia.org/wiki/Linked_list): Singly linked lists contain nodes which have a data field
@@ -25,9 +21,9 @@ class SinglyLinkedList(Generic[T]):
     """
 
     def __init__(self):
-        self.__head: SinglyLinkedListNode = SinglyLinkedListNode()
+        self.__head: SinglyLinkedListNode[T] = SinglyLinkedListNode[T](None)
 
-    def all_values(self) -> [T]:
+    def all_values(self) -> list[T]:
         """Return a list of every value in the list, in order from head to tail."""
         values = []
         node = self.__head.next
@@ -51,7 +47,7 @@ class SinglyLinkedList(Generic[T]):
         last_node.next = node
 
     # O(N)
-    def get(self, index: int) -> Optional[T]:
+    def get(self, index: int) -> T | None:
         """Return the data stored at index, or None if the index is out of bounds."""
         current_node = self.__head.next
         count = 0

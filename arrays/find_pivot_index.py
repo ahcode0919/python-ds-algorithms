@@ -1,4 +1,4 @@
-def find_pivot_index(nums: [int]) -> int:
+def find_pivot_index(nums: list[int]) -> int:
     """First Pivot Index.
 
     Given an array of integers nums, return the "pivot" index of this array. The pivot index is the index where the

@@ -1,9 +1,7 @@
-from typing import List, Optional
-
 from n_ary_tree.nary_tree_node import NaryTreeNode
 
 
-def postorder_traversal(root: Optional[NaryTreeNode]) -> List:
+def postorder_traversal[T](root: NaryTreeNode[T] | None) -> list[T]:
     """Postorder Traversal.
 
     Given the root of an n-ary tree, return the postorder traversal of its nodes' values — a

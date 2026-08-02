@@ -11,10 +11,9 @@ Example: `["4", "13", "5", "/", "+"]` -> `6`, since `(4 + (13 / 5)) = 6`
 
 from math import trunc
 from queue import LifoQueue
-from typing import List
 
 
-def evaluate_rpn(tokens: List[str]) -> int:
+def evaluate_rpn(tokens: list[str]) -> int:
     """Evaluate RPN tokens using a stack, applying each operator to the two most recent operands."""
     stack = LifoQueue()
 

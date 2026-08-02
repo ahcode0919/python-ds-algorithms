@@ -1,10 +1,9 @@
 from collections import deque
-from typing import List
 
 from binary_tree.tree_node import TreeNode
 
 
-def level_order_traversal(root: TreeNode) -> List[List[int]]:
+def level_order_traversal(root: TreeNode) -> list[list[int]]:
     r"""Level-order Traversal.
 
     Given a binary tree, return the level order traversal of its nodes' values (i.e., from left to

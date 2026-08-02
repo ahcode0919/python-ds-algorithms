@@ -1,6 +1,3 @@
-from typing import Dict
-
-
 class TrieWithDictionary:
     r"""Trie (Dictionary-backed).
 
@@ -62,4 +59,4 @@ class TrieWithDictionary:
 
 class TrieNode:
     def __init__(self):
-        self.child_nodes: Dict[str:TrieNode] = dict()
+        self.child_nodes: dict[str:TrieNode] = dict()

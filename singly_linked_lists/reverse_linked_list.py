@@ -1,9 +1,7 @@
-from typing import Optional
-
 from data_structures.singly_linked_list_node import SinglyLinkedListNode
 
 
-def reverse_linked_list(head: SinglyLinkedListNode) -> Optional[SinglyLinkedListNode]:
+def reverse_linked_list(head: SinglyLinkedListNode) -> SinglyLinkedListNode | None:
     """Reverse Linked List.
 
     Reverse a singly linked list.
@@ -13,8 +11,8 @@ def reverse_linked_list(head: SinglyLinkedListNode) -> Optional[SinglyLinkedList
     """
     if not head:
         return None
-    previous: Optional[SinglyLinkedListNode] = None
-    current: Optional[SinglyLinkedListNode] = head
+    previous: SinglyLinkedListNode | None = None
+    current: SinglyLinkedListNode | None = head
 
     while current:
         temp = current.next

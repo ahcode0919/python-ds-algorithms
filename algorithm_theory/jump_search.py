@@ -1,10 +1,9 @@
 import math
-from typing import Optional
 
 from algorithm_theory.linear_search import linear_search
 
 
-def jump_search(array: [int], target: int) -> Optional[int]:
+def jump_search(array: list[int], target: int) -> int | None:
     """Jump Search (https://www.geeksforgeeks.org/jump-search/).
 
     A searching algorithm for sorted arrays. The basic idea is to check fewer elements (than linear

@@ -1,9 +1,7 @@
-from typing import Optional
-
 from data_structures.singly_linked_list_node import SinglyLinkedListNode
 
 
-def insert(head: Optional[SinglyLinkedListNode], value: int) -> Optional[SinglyLinkedListNode]:
+def insert(head: SinglyLinkedListNode | None, value: int) -> SinglyLinkedListNode | None:
     """Insert into a Cyclic Sorted List.
 
     Given a node from a Circular Linked List which is sorted in ascending order, write a function to

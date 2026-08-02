@@ -1,8 +1,7 @@
 from collections import deque
-from typing import List
 
 
-def walls_and_gates(rooms_input: List[List[int]]) -> List[List[int]]:
+def walls_and_gates(rooms_input: list[list[int]]) -> list[list[int]]:
     """Walls and Gates (BFS).
 
     Run a multi-source BFS from every gate to fill each empty room with its distance to the

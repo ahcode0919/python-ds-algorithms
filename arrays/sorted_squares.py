@@ -1,7 +1,4 @@
-from typing import List
-
-
-def sorted_squares(nums: List[int]) -> List[int]:
+def sorted_squares(nums: list[int]) -> list[int]:
     """Sorted Squares.
 
     Given a sorted array of numbers, return the squares of each number in ascending order.

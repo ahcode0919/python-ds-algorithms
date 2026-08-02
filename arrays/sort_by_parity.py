@@ -1,7 +1,4 @@
-from typing import List
-
-
-def sort_by_parity(nums: List[int]) -> List[int]:
+def sort_by_parity(nums: list[int]) -> list[int]:
     """Sort By Parity.
 
     Given an array of non-negative integers, return an array consisting of all the even elements, followed by all

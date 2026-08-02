@@ -1,7 +1,4 @@
-from typing import List
-
-
-def remove_element(nums: List[int], val: int) -> int:
+def remove_element(nums: list[int], val: int) -> int:
     """Remove Element.
 
     Given an array nums and a value val, remove all instances of that value in-place and return the new length. Do

@@ -1,11 +1,8 @@
 from collections import deque
-from typing import List, TypeVar
 
 from binary_tree.tree_node import TreeNode
 from data_structures.singly_linked_list_node import SinglyLinkedListNode
 from n_ary_tree.nary_tree_node import NaryTreeNode
-
-T = TypeVar("T")
 
 
 def get_binary_search_tree():
@@ -28,7 +25,7 @@ def get_binary_tree() -> TreeNode:
     return head
 
 
-def get_binary_tree_values(root: TreeNode) -> List:
+def get_binary_tree_values[T](root: TreeNode[T]) -> list[T]:
     values = []
     queue = deque([root])
 
@@ -53,14 +50,14 @@ def get_list_values(head):
     return values
 
 
-def get_cyclic_list_values(head: SinglyLinkedListNode):
+def get_cyclic_list_values[T](head: SinglyLinkedListNode[T]):
     if not head:
         return []
 
     values = [head.data]
     node = head.next
 
-    while node is not head:
+    while node and node is not head:
         values.append(node.data)
         node = node.next
     return values
@@ -93,7 +90,7 @@ def get_n_nary_tree():
     return root
 
 
-def get_n_ary_tree_values(root: NaryTreeNode) -> List:
+def get_n_ary_tree_values[T](root: NaryTreeNode[T]) -> list[T]:
     queue = deque([root])
     values = []
 
@@ -110,8 +107,8 @@ def get_n_ary_tree_values(root: NaryTreeNode) -> List:
     return values
 
 
-def get_singly_linked_list(values: List[T]) -> SinglyLinkedListNode[T]:
-    dummy = SinglyLinkedListNode()
+def get_singly_linked_list[T](values: list[T]) -> SinglyLinkedListNode[T] | None:
+    dummy = SinglyLinkedListNode[T]()
     current = dummy
 
     for value in values:

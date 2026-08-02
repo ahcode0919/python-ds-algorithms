@@ -1,7 +1,4 @@
-from typing import List
-
-
-def unique_email_addresses(emails: List[str]) -> int:
+def unique_email_addresses(emails: list[str]) -> int:
     """Unique Email Addresses.
 
     Every email consists of a local name and a domain name, separated by the `@` sign. For example, in

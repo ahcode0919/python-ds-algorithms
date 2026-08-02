@@ -1,7 +1,4 @@
-from typing import List
-
-
-def peaks(numbers: List[int]) -> List[int]:
+def peaks(numbers: list[int]) -> list[int]:
     """Peaks.
 
     Given an array of integers, return the values that are between two smaller values.

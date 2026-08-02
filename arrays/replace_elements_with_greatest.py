@@ -1,7 +1,4 @@
-from typing import List
-
-
-def replace_elements_with_greatest(arr: List[int]) -> List[int]:
+def replace_elements_with_greatest(arr: list[int]) -> list[int]:
     """Replace Elements with Greatest Element on Right Side.
 
     Given an array arr, replace every element in that array with the greatest element among the elements to its

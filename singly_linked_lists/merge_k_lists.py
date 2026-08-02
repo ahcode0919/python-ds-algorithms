@@ -1,9 +1,7 @@
-from typing import List, Optional
-
 from data_structures.singly_linked_list_node import SinglyLinkedListNode
 
 
-def merge_k_lists(lists: Optional[List[SinglyLinkedListNode]]) -> Optional[SinglyLinkedListNode]:
+def merge_k_lists[T](lists) -> SinglyLinkedListNode | None:
     """Merge K Sorted Lists.
 
     You are given an array of k linked lists, each linked list sorted in ascending order.
@@ -13,25 +11,29 @@ def merge_k_lists(lists: Optional[List[SinglyLinkedListNode]]) -> Optional[Singl
     Repeatedly scans the current head of every list, appending the smallest one found each round.
     """
     dummy = SinglyLinkedListNode()
-    current = dummy
+    current: SinglyLinkedListNode = dummy
 
-    lists = [val for val in lists if val]
+    if not lists:
+        return None
 
-    while lists:
-        min_node = None
+    filtered_lists: list[SinglyLinkedListNode] = [val for val in lists if val]
+
+    while filtered_lists:
+        min_node = 0
         smallest = float("inf")
 
-        for index, head in enumerate(lists):
-            if head and head.data <= smallest:
+        for index, head in enumerate(filtered_lists):
+            if head.data and head.data <= smallest:
                 smallest = head.data
                 min_node = index
 
-        current.next = lists[min_node]
+        node = filtered_lists[min_node]
+        current.next = node
 
-        if not lists[min_node].next:
-            lists.pop(min_node)
+        if node.next:
+            filtered_lists[min_node] = node.next
         else:
-            lists[min_node] = lists[min_node].next
+            filtered_lists.pop(min_node)
         current = current.next
 
     return dummy.next

@@ -1,7 +1,4 @@
-from typing import List
-
-
-def count_elements(arr: List[int]) -> int:
+def count_elements(arr: list[int]) -> int:
     """Count Elements.
 
     Given an integer array arr, count how many elements x there are such that x + 1 is also in arr. If there are

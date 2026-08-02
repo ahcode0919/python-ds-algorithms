@@ -1,7 +1,4 @@
-from typing import List
-
-
-def group_anagrams(strings: List[str]) -> List[List[str]]:
+def group_anagrams(strings: list[str]) -> list[list[str]]:
     """Group Anagrams.
 
     Given an array of strings, group the anagrams together. An anagram is a word or phrase formed by rearranging

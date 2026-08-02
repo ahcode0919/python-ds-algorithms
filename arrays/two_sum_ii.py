@@ -1,7 +1,4 @@
-from typing import List
-
-
-def two_sum_ii(numbers: List[int], target: int) -> List[int]:
+def two_sum_ii(numbers: list[int], target: int) -> list[int]:
     """Two Sum II.
 
     Given an array of integers that is already sorted in ascending order, find two numbers such that they add up to

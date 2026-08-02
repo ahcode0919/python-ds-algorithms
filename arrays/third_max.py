@@ -1,7 +1,4 @@
-from typing import List
-
-
-def third_max(nums: List[int]) -> int:
+def third_max(nums: list[int]) -> int:
     """Third Max.
 
     Given a non-empty array of integers, return the third maximum number in this array. If it does not exist, return

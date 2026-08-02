@@ -1,7 +1,4 @@
-from typing import List
-
-
-def duplicate_zeros(arr: List[int]) -> List[int]:
+def duplicate_zeros(arr: list[int]) -> list[int]:
     """Duplicate Zeros.
 
     Duplicate the zeros in the supplied array. Excess values should be discarded so that the array remains the same

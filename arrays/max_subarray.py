@@ -1,7 +1,4 @@
-from typing import List
-
-
-def max_subarray(nums: List[int]) -> int:
+def max_subarray(nums: list[int]) -> int:
     """Max Subarray.
 
     Given an integer array nums, find the contiguous subarray (containing at least one number) that has the largest

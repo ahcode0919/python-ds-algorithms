@@ -1,7 +1,4 @@
-from typing import List
-
-
-def check_double(arr: List[int]) -> bool:
+def check_double(arr: list[int]) -> bool:
     """Check Double.
 
     Given an array arr of integers, check if there exist two integers N and M such that N is the double of M (i.e.

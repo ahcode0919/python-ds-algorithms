@@ -6,22 +6,19 @@ To represent a cycle in the given linked list, we use an integer pos which repre
 the linked list where the tail connects to. If pos is -1, then there is no cycle in the linked list.
 """
 
-from typing import Optional, Set, TypeVar
-
 from data_structures.singly_linked_list_node import SinglyLinkedListNode
-
-T = TypeVar("T")
 
 
 # Time: O(N + K) -> O(N), Space: O(1)
-def has_cycle(head: Optional[SinglyLinkedListNode]) -> bool:
+def has_cycle(head: SinglyLinkedListNode | None) -> bool:
     """Detect a cycle with slow/fast pointers, returning True once they meet."""
     if not head or not head.next:
         return False
 
-    slow: SinglyLinkedListNode = head
-    fast: SinglyLinkedListNode = head.next.next
-    while slow != fast:
+    slow: SinglyLinkedListNode | None = head
+    fast: SinglyLinkedListNode | None = head.next.next
+
+    while slow and slow != fast:
         if fast is None or fast.next is None:
             return False
         slow = slow.next
@@ -30,13 +27,13 @@ def has_cycle(head: Optional[SinglyLinkedListNode]) -> bool:
 
 
 # Time: O(N), Space: O(N)
-def has_cycle_with_set(head: Optional[SinglyLinkedListNode]) -> bool:
+def has_cycle_with_set(head: SinglyLinkedListNode | None) -> bool:
     """Detect a cycle by tracking visited nodes in a set, returning True on the first repeat."""
     if not head or not head.next:
         return False
 
-    node_set: Set[SinglyLinkedListNode] = set()
-    node: SinglyLinkedListNode = head
+    node_set: set[SinglyLinkedListNode] = set()
+    node: SinglyLinkedListNode | None = head
 
     while node:
         if not node or node in node_set:

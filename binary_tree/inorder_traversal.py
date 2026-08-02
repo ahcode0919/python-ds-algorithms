@@ -16,12 +16,10 @@ Output: `[4, 2, 5, 1, 3]`
 
 """
 
-from typing import List
-
 from binary_tree.tree_node import TreeNode
 
 
-def inorder_traversal(root: TreeNode) -> List[int]:
+def inorder_traversal(root: TreeNode) -> list[int]:
     """Recursively traverse left, visit the node, then traverse right."""
     values = []
 
@@ -38,7 +36,7 @@ def inorder_traversal(root: TreeNode) -> List[int]:
     return values
 
 
-def inorder_traversal_stack(root: TreeNode) -> List[int]:
+def inorder_traversal_stack(root: TreeNode) -> list[int]:
     """Traverse iteratively using an explicit stack to walk down the left spine before visiting a node."""
     output = []
     stack = []

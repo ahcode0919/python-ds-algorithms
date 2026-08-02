@@ -1,4 +1,4 @@
-def search_insert(nums: [int], target: int) -> int:
+def search_insert(nums: list[int], target: int) -> int:
     """Search Insert Position.
 
     Given a sorted array and a target value, return the index if the target is found. If not, return the

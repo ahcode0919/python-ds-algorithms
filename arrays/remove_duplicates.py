@@ -1,7 +1,4 @@
-from typing import List
-
-
-def remove_duplicates(nums: List[int]) -> int:
+def remove_duplicates(nums: list[int]) -> int:
     """Remove Duplicates.
 
     Given a sorted array nums, remove the duplicates in-place such that each element appears only once, and return

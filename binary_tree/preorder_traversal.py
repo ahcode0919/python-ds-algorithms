@@ -16,12 +16,10 @@ Output: `[1, 2, 4, 5, 3]`
 
 """
 
-from typing import List
-
 from binary_tree.tree_node import TreeNode
 
 
-def preorder_traversal_iterative(root: TreeNode) -> List[int]:
+def preorder_traversal_iterative(root: TreeNode) -> list[int]:
     """Traverse iteratively with an explicit stack. Time: O(N), Space: O(N)."""
     output = []
 
@@ -40,7 +38,7 @@ def preorder_traversal_iterative(root: TreeNode) -> List[int]:
     return output
 
 
-def preorder_traversal_morris(root: TreeNode) -> List[int]:
+def preorder_traversal_morris(root: TreeNode) -> list[int]:
     """Traverse using threaded links through predecessors, avoiding a stack. Time: O(N), Space: O(1)."""
     node, output = root, []
     while node:
@@ -64,7 +62,7 @@ def preorder_traversal_morris(root: TreeNode) -> List[int]:
     return output
 
 
-def preorder_traversal_recursive(root: TreeNode) -> List[int]:
+def preorder_traversal_recursive(root: TreeNode) -> list[int]:
     """Recursively visit the node, then traverse left, then traverse right. Time: O(N), Space: O(N)."""
     values = []
     if not root:

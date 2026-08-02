@@ -1,9 +1,7 @@
-from typing import Optional
-
 from data_structures.singly_linked_list_node import SinglyLinkedListNode
 
 
-def remove_nth_from_end(head: SinglyLinkedListNode, nth: int) -> Optional[SinglyLinkedListNode]:
+def remove_nth_from_end(head: SinglyLinkedListNode, nth: int) -> SinglyLinkedListNode | None:
     """Remove Nth Node From End of List.
 
     Given a linked list, remove the n-th node from the end of the list and return its head.

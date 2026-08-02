@@ -1,5 +1,3 @@
-from typing import Optional
-
 from data_structures.singly_linked_list_node import SinglyLinkedListNode
 
 
@@ -14,7 +12,7 @@ class CircularlyLinkedList:
     This is more of an example. It can be optimized in a variety of ways depending on its intended usage.
     """
 
-    def __init__(self, node: Optional[SinglyLinkedListNode] = None):
+    def __init__(self, node: SinglyLinkedListNode | None = None):
         self.__head: SinglyLinkedListNode = node
         if node:
             node.next = self.__head

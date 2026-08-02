@@ -1,7 +1,4 @@
-from typing import List
-
-
-def container_with_max_area(height: List[int]) -> int:
+def container_with_max_area(height: list[int]) -> int:
     """Container With Max Area.
 
     Given n non-negative integers a1, a2, ..., an, where each represents a point at coordinate (i, ai), n vertical

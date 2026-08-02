@@ -7,7 +7,7 @@ there are no such elements, return -1.
 """
 
 
-def first_duplicate(array: [int]) -> int:
+def first_duplicate(array: list[int]) -> int:
     """Count occurrences with a dict, then return the first value whose count exceeds one."""
     number_counter = dict()
     for value in array:
@@ -22,7 +22,7 @@ def first_duplicate(array: [int]) -> int:
     return -1
 
 
-def first_duplicate_in_place(array: [int]) -> int:
+def first_duplicate_in_place(array: list[int]) -> int:
     """Repeatedly pop the front element and check membership in the remaining array."""
     while len(array) > 0:
         value = array.pop(0)

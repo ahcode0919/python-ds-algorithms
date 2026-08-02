@@ -7,11 +7,11 @@ Example: `[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, ...]`
 `fibonacci(5) -> 5`
 """
 
+from collections.abc import Generator
 from functools import lru_cache
-from typing import Dict, Generator
 
 
-def fibonacci(number: int, memo: Dict[int, int] = None) -> int:
+def fibonacci(number: int, memo: dict[int, int] = None) -> int:
     """Generate the fibonacci number for n
 
     Uses a dictionary to store previously computed values
