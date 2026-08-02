@@ -1,22 +1,22 @@
-"""Moving Average from Data Stream (Leetcode).
-
-Given a stream of integers and a window size, calculate the moving average of all integers in the
-sliding window.
-
-Example:
-`m = MovingAverage(3)`
-`m.next(1) -> 1`
-`m.next(10) -> (1 + 10) / 2`
-`m.next(3) -> (1 + 10 + 3) / 3`
-`m.next(5) -> (10 + 3 + 5) / 3`
-
-"""
-
 from collections import deque
 
 
 class MovingAverage:
-    """Maintain a fixed-size sliding window of numbers and report their running average."""
+    """Moving Average from Data Stream (Leetcode).
+
+    Maintain a fixed-size sliding window of numbers and report their running average.
+
+    Given a stream of integers and a window size, calculate the moving average of all integers in
+    the sliding window.
+
+    Example:
+    `m = MovingAverage(3)`
+    `m.next(1) -> 1`
+    `m.next(10) -> (1 + 10) / 2`
+    `m.next(3) -> (1 + 10 + 3) / 3`
+    `m.next(5) -> (10 + 3 + 5) / 3`
+
+    """
 
     def __init__(self, max_size: int):
         """Initialize the window with the given maximum size."""

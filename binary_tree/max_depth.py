@@ -1,16 +1,16 @@
-"""Max Depth.
-
-Given a binary tree, find its maximum depth.
-
-The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf
-node.
-"""
-
 from binary_tree.tree_node import TreeNode
 
 
 def max_depth(root: TreeNode) -> int:
-    """Breadth-first traverse level by level, counting levels until the queue is exhausted."""
+    """Max Depth.
+
+    Given a binary tree, find its maximum depth.
+
+    The maximum depth is the number of nodes along the longest path from the root node down to the
+    farthest leaf node.
+
+    Breadth-first traverses level by level, counting levels until the queue is exhausted.
+    """
     max_level = 0
 
     if not root:

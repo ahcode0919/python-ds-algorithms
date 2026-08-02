@@ -1,11 +1,10 @@
-"""Min Stack.
-
-Design a stack that supports push, pop, top, and retrieving the minimum element, all in constant time.
-"""
-
-
 class MinStack:
-    """Stack that tracks the running minimum alongside each pushed value for O(1) getMin."""
+    """Min Stack.
+
+    Design a stack that supports push, pop, top, and retrieving the minimum element, all in constant time.
+
+    Tracks the running minimum alongside each pushed value for O(1) getMin.
+    """
 
     def __init__(self):
         # Tuple (value, current_min)

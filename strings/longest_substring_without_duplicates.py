@@ -1,13 +1,12 @@
-"""Longest Substring Without Duplicates.
-
-Find the length of the longest substring of a string that contains no repeated characters.
-
-Example: `"abcabedfg"` -> `7` (the length of `"cabedfg"`)
-"""
-
-
 def longest_substring_without_duplicates(string: str) -> int:
-    """Slide a window with two pointers, expanding right while characters are unique and shrinking left otherwise."""
+    """Longest Substring Without Duplicates.
+
+    Find the length of the longest substring of a string that contains no repeated characters.
+
+    Example: `"abcabedfg"` -> `7` (the length of `"cabedfg"`)
+
+    Slide a window with two pointers, expanding right while characters are unique and shrinking left otherwise.
+    """
     length = len(string)
     if length <= 1:
         return length

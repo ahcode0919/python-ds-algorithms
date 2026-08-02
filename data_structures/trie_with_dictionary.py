@@ -1,29 +1,29 @@
-r"""Trie (Dictionary-backed).
-
-A Trie is a special form of an N-ary tree. Typically, a trie is used to store strings. Each Trie node
-represents a string (a prefix). Each node might have several children nodes while the paths to different
-children nodes represent different characters. And the strings the child nodes represent will be the
-origin string represented by the node itself plus the character on the path. - Leetcode
-
-::
-
-     head
-     /  \\
-    a    b
-   /    /  \\
- am    ba  be
-      /
-    bad
-
-This implementation backs each node's children with a dictionary (hash table) keyed by the prefix string
-represented so far, rather than a fixed-size array. This avoids reserving space for unused characters and
-is not limited to a fixed alphabet, at the cost of hashing overhead per lookup.
-"""
-
 from typing import Dict
 
 
 class TrieWithDictionary:
+    r"""Trie (Dictionary-backed).
+
+    A Trie is a special form of an N-ary tree. Typically, a trie is used to store strings. Each Trie node
+    represents a string (a prefix). Each node might have several children nodes while the paths to
+    different children nodes represent different characters. And the strings the child nodes represent
+    will be the origin string represented by the node itself plus the character on the path. - Leetcode
+
+    ::
+
+         head
+         /  \\
+        a    b
+       /    /  \\
+     am    ba  be
+          /
+        bad
+
+    This implementation backs each node's children with a dictionary (hash table) keyed by the prefix
+    string represented so far, rather than a fixed-size array. This avoids reserving space for unused
+    characters and is not limited to a fixed alphabet, at the cost of hashing overhead per lookup.
+    """
+
     def __init__(self):
         """Initialize your data structure here."""
         self.head: TrieNode = TrieNode()

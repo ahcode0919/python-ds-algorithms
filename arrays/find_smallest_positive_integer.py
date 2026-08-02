@@ -1,15 +1,15 @@
-"""Find Smallest Positive Integer.
-
-Find the smallest positive integer in an array. Return zero if there are no positive integers.
-
-Example: `[1, -2, 3]` -> `1`
-"""
-
 from typing import List
 
 
 def find_smallest_positive_integer(arr: List[int]) -> int:
-    """Single pass tracking the smallest positive value seen so far."""
+    """Find Smallest Positive Integer.
+
+    Find the smallest positive integer in an array. Return zero if there are no positive integers.
+
+    Example: `[1, -2, 3]` -> `1`
+
+    Single pass tracking the smallest positive value seen so far.
+    """
     length = len(arr)
 
     if length == 0:

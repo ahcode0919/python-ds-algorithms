@@ -1,21 +1,3 @@
-"""Level-order Traversal.
-
-Given a binary tree, return the level order traversal of its nodes' values (i.e., from left to right, level by
-level).
-
-Example:
-```text
-    1
-   / \
-  2   3
-    /   \
-   4     5
-```
-
-Output: `[[1], [2, 3], [4, 5]]`
-
-"""
-
 from collections import deque
 from typing import List
 
@@ -23,7 +5,25 @@ from binary_tree.tree_node import TreeNode
 
 
 def level_order_traversal(root: TreeNode) -> List[List[int]]:
-    """Breadth-first traverse the tree with a queue, grouping node values by depth level."""
+    r"""Level-order Traversal.
+
+    Given a binary tree, return the level order traversal of its nodes' values (i.e., from left to
+    right, level by level).
+
+    Breadth-first traverses the tree with a queue, grouping node values by depth level.
+
+    Example:
+    ```text
+        1
+       / \
+      2   3
+        /   \
+       4     5
+    ```
+
+    Output: `[[1], [2, 3], [4, 5]]`
+
+    """
     values = []
 
     if not root:

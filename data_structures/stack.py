@@ -1,16 +1,14 @@
-"""Stack.
-
-A stack is a LIFO (last in first out) data structure. It can be backed by a list since append and pop are
-O(1).
-"""
-
 from typing import Generic, TypeVar
 
 T = TypeVar("T")
 
 
 class StackList(Generic[T]):
-    """Stack backed by a list. List append and pop are O(1)."""
+    """Stack.
+
+    A stack is a LIFO (last in first out) data structure. It is backed here by a list, since list append
+    and pop are both O(1).
+    """
 
     def __init__(self):
         self.__list = []

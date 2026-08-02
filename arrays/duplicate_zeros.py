@@ -1,18 +1,18 @@
-"""Duplicate Zeros.
-
-Duplicate the zeros in the supplied array. Excess values should be discarded so that the array remains the same
-size.
-
-Example: `[1, 0, 2, 3, 0, 4, 5, 6]` -> `[1, 0, 0, 2, 3, 0, 0, 4]`
-
-Time: O(N), Space: O(N)
-"""
-
 from typing import List
 
 
 def duplicate_zeros(arr: List[int]) -> List[int]:
-    """Build a shifted stack of values with zeros duplicated, then write it back in place."""
+    """Duplicate Zeros.
+
+    Duplicate the zeros in the supplied array. Excess values should be discarded so that the array remains the same
+    size.
+
+    Example: `[1, 0, 2, 3, 0, 4, 5, 6]` -> `[1, 0, 0, 2, 3, 0, 0, 4]`
+
+    Time: O(N), Space: O(N)
+
+    Build a shifted stack of values with zeros duplicated, then write it back in place.
+    """
     stack = []
     index = 0
     length = len(arr)

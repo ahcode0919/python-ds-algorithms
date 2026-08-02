@@ -1,12 +1,11 @@
-"""Pangram.
-
-Determine if a string has all characters a-z. Should handle uppercase, lowercase, whitespace, and special
-characters.
-"""
-
-
 def pangram(string: str) -> bool:
-    """Collect the lowercased set of alphabetic characters and check if all 26 letters are present."""
+    """Pangram.
+
+    Determine if a string has all characters a-z. Should handle uppercase, lowercase, whitespace, and special
+    characters.
+
+    Collect the lowercased set of alphabetic characters and check if all 26 letters are present.
+    """
     alpha_set = set()
 
     for char in string:

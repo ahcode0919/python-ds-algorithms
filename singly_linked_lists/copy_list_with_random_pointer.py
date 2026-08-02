@@ -1,11 +1,3 @@
-"""Copy List with Random Pointer.
-
-A linked list is given such that each node contains an additional random pointer which could point to any node in
-the list or None.
-
-Return a deep copy of the list.
-"""
-
 from typing import Dict, Optional
 
 
@@ -19,7 +11,15 @@ class Node:
 
 
 def copy_random_list(head: Node) -> Node:
-    """Walk the list once, cloning each node and its `random` target via a visited-node lookup."""
+    """Copy List with Random Pointer.
+
+    A linked list is given such that each node contains an additional random pointer which could point to any
+    node in the list or None.
+
+    Return a deep copy of the list.
+
+    Walks the list once, cloning each node and its `random` target via a visited-node lookup.
+    """
     if not head:
         return None
 

@@ -1,10 +1,3 @@
-"""Doubly Linked List.
-
-(https://en.wikipedia.org/wiki/Doubly_linked_list): In a 'doubly linked list', each node contains, besides
-the next-node link, a second link field pointing to the 'previous' node in the sequence. This implementation
-uses sentinel head and tail nodes so insertion and removal never need to special-case an empty list.
-"""
-
 from typing import Generic, Optional, TypeVar
 
 from data_structures.doubly_linked_list_node import DoublyLinkedListNode
@@ -13,6 +6,14 @@ T = TypeVar("T")
 
 
 class DoublyLinkedList(Generic[T]):
+    """Doubly Linked List.
+
+    (https://en.wikipedia.org/wiki/Doubly_linked_list): In a 'doubly linked list', each node contains,
+    besides the next-node link, a second link field pointing to the 'previous' node in the sequence. This
+    implementation uses sentinel head and tail nodes so insertion and removal never need to special-case an
+    empty list.
+    """
+
     def __init__(self):
         self.__head: DoublyLinkedListNode = DoublyLinkedListNode()
         self.__tail: DoublyLinkedListNode = DoublyLinkedListNode()

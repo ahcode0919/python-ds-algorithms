@@ -1,21 +1,22 @@
-"""Replace Words.
-
-In English, we have a concept called root, which can be followed by some other words to form another longer word -
-let's call this word successor. For example, the root "an", followed by "other", can form another word "another".
-
-Now, given a dictionary consisting of many roots and a sentence, replace all the successors in the sentence with the
-root forming it. If a successor has many roots that can form it, replace it with the root with the shortest length.
-Output the sentence after the replacement.
-
-Example: `dictionary = ["cat", "bat", "rat"]`, `sentence = "the cattle was rattled by the battery"` ->
-`"the cat was rat by the bat"`
-"""
-
 from typing import Dict, List
 
 
 def replace_words(dictionary: List[str], sentence: str) -> str:
-    """Build a prefix trie from dictionary roots, then replace each sentence word with its shortest matching root."""
+    """Replace Words.
+
+    Build a prefix trie from dictionary roots, then replace each sentence word with its shortest matching root.
+
+    In English, we have a concept called root, which can be followed by some other words to form another longer
+    word - let's call this word successor. For example, the root "an", followed by "other", can form another word
+    "another".
+
+    Now, given a dictionary consisting of many roots and a sentence, replace all the successors in the sentence
+    with the root forming it. If a successor has many roots that can form it, replace it with the root with the
+    shortest length. Output the sentence after the replacement.
+
+    Example: `dictionary = ["cat", "bat", "rat"]`, `sentence = "the cattle was rattled by the battery"` ->
+    `"the cat was rat by the bat"`
+    """
     words = sentence.split(" ")
     updated_sentence: [str] = []
     prefix_trie = TrieNode()

@@ -1,29 +1,30 @@
-r"""Trie (Array-backed).
-
-A Trie is a special form of an N-ary tree. Typically, a trie is used to store strings. Each Trie node
-represents a string (a prefix). Each node might have several children nodes while the paths to different
-children nodes represent different characters. And the strings the child nodes represent will be the
-origin string represented by the node itself plus the character on the path. - Leetcode
-
-::
-
-     head
-     /  \\
-    a    b
-   /    /  \\
- am    ba  be
-      /
-    bad
-
-This implementation backs each node's children with a fixed-size array of 26 slots (one per lowercase
-letter a-z), indexed by `ord(char) - ord("a")`. Lookups are O(1) per character since the child slot is
-computed directly, but every node reserves space for all 26 possible children whether or not they are used.
-"""
-
 from typing import List, Optional
 
 
 class TrieWithArray:
+    r"""Trie (Array-backed).
+
+    A Trie is a special form of an N-ary tree. Typically, a trie is used to store strings. Each Trie node
+    represents a string (a prefix). Each node might have several children nodes while the paths to
+    different children nodes represent different characters. And the strings the child nodes represent
+    will be the origin string represented by the node itself plus the character on the path. - Leetcode
+
+    ::
+
+         head
+         /  \\
+        a    b
+       /    /  \\
+     am    ba  be
+          /
+        bad
+
+    This implementation backs each node's children with a fixed-size array of 26 slots (one per lowercase
+    letter a-z), indexed by `ord(char) - ord("a")`. Lookups are O(1) per character since the child slot is
+    computed directly, but every node reserves space for all 26 possible children whether or not they are
+    used.
+    """
+
     def __init__(self):
         self.head: TrieNode = TrieNode()
 

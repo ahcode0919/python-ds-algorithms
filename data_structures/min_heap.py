@@ -1,15 +1,14 @@
-"""Min Heap.
-
-A Min Heap is a complete binary tree where every parent node is smaller than or equal to its children. The
-smallest element is always at the root. It is commonly backed by an array where for a node at index `i`,
-its parent is at `(i - 1) // 2` and its children are at `2i + 1` and `2i + 2`.
-
-New values are inserted at the end of the array and then "sifted up" - repeatedly swapped with their parent
-until the heap property is restored.
-"""
-
-
 class MinHeap:
+    """Min Heap.
+
+    A Min Heap is a complete binary tree where every parent node is smaller than or equal to its children.
+    The smallest element is always at the root. It is commonly backed by an array where for a node at
+    index `i`, its parent is at `(i - 1) // 2` and its children are at `2i + 1` and `2i + 2`.
+
+    New values are inserted at the end of the array and then "sifted up" - repeatedly swapped with their
+    parent until the heap property is restored.
+    """
+
     def __init__(self):
         self.list = []
 

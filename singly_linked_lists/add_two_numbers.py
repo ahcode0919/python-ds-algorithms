@@ -1,13 +1,3 @@
-"""Add Two Numbers.
-
-You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse
-order and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
-
-You may assume the two numbers do not contain any leading zero, except the number 0 itself.
-
-Example: `(2 -> 4 -> 3) + (5 -> 6 -> 4)` -> `7 -> 0 -> 8` (`342 + 465 = 807`)
-"""
-
 from typing import Optional
 
 from data_structures.singly_linked_list_node import SinglyLinkedListNode
@@ -16,7 +6,18 @@ from data_structures.singly_linked_list_node import SinglyLinkedListNode
 def add_two_numbers(
     head1: Optional[SinglyLinkedListNode], head2: Optional[SinglyLinkedListNode]
 ) -> Optional[SinglyLinkedListNode]:
-    """Sum the two numbers digit-by-digit from the least significant node, carrying into the next node."""
+    """Add Two Numbers.
+
+    You are given two non-empty linked lists representing two non-negative integers. The digits are stored in
+    reverse order and each of their nodes contains a single digit. Add the two numbers and return the sum as a
+    linked list.
+
+    You may assume the two numbers do not contain any leading zero, except the number 0 itself.
+
+    Example: `(2 -> 4 -> 3) + (5 -> 6 -> 4)` -> `7 -> 0 -> 8` (`342 + 465 = 807`)
+
+    Sums the two numbers digit-by-digit from the least significant node, carrying into the next node.
+    """
     node1 = head1
     node2 = head2
     dummy_node = SinglyLinkedListNode(0)

@@ -1,13 +1,11 @@
-"""Reverse Number.
-
-Given a 32-bit signed integer, reverse digits of an integer.
-
-Example 1: `123` -> `321`
-"""
-
-
 def reverse_number(number: int) -> int:
-    """Reverse the digits of the absolute value, then reapply the sign, checking for 32-bit overflow."""
+    """Reverse the digits of a 32-bit signed integer.
+
+    Given a 32-bit signed integer, reverses the digits of its absolute value, then reapplies the
+    sign, returning 0 if the reversed value overflows a 32-bit signed integer.
+
+    Example 1: `123` -> `321`
+    """
     reversed_number = int(str(abs(number))[::-1])
 
     if reversed_number > 2**31 - 1:  # Check for integer overflow (per question)

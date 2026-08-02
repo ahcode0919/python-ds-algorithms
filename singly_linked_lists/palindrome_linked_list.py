@@ -1,10 +1,3 @@
-"""Palindrome Linked List.
-
-Given a singly linked list, determine if it is a palindrome.
-
-Example: `1->2` -> `False`. `1->2->2->1` -> `True`.
-"""
-
 from typing import Optional
 
 from data_structures.singly_linked_list_node import SinglyLinkedListNode
@@ -13,7 +6,14 @@ from singly_linked_lists.reverse_linked_list import reverse_linked_list
 
 
 def is_palindrome(head: Optional[SinglyLinkedListNode]) -> bool:
-    """Reverse the second half of the list and compare it against the first half, then restore the list."""
+    """Palindrome Linked List.
+
+    Given a singly linked list, determine if it is a palindrome.
+
+    Example: `1->2` -> `False`. `1->2->2->1` -> `True`.
+
+    Reverses the second half of the list and compares it against the first half, then restores the list.
+    """
     if not head:
         return False
 

@@ -1,21 +1,3 @@
-"""Singly Linked List.
-
-(https://en.wikipedia.org/wiki/Linked_list): Singly linked lists contain nodes which have a data field as
-well as 'next' field, which points to the next node in line of nodes. Operations that can be performed on
-singly linked lists include insertion, deletion and traversal.
-
-Benefits:
-
-* Dynamic data structure that can expand or shrink as needed
-* Requires no extra space (memory efficient)
-* Does not require a continuous block of memory like arrays
-
-Drawbacks:
-
-* Operations take O(N) time (Ex: Search)
-* Tracking of pointers takes up additional memory
-"""
-
 from typing import Generic, Optional, TypeVar
 
 from data_structures.singly_linked_list_node import SinglyLinkedListNode
@@ -24,6 +6,24 @@ T = TypeVar("T")
 
 
 class SinglyLinkedList(Generic[T]):
+    """Singly Linked List.
+
+    (https://en.wikipedia.org/wiki/Linked_list): Singly linked lists contain nodes which have a data field
+    as well as 'next' field, which points to the next node in line of nodes. Operations that can be
+    performed on singly linked lists include insertion, deletion and traversal.
+
+    Benefits:
+
+    * Dynamic data structure that can expand or shrink as needed
+    * Requires no extra space (memory efficient)
+    * Does not require a continuous block of memory like arrays
+
+    Drawbacks:
+
+    * Operations take O(N) time (Ex: Search)
+    * Tracking of pointers takes up additional memory
+    """
+
     def __init__(self):
         self.__head: SinglyLinkedListNode = SinglyLinkedListNode()
 

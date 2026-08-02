@@ -1,19 +1,19 @@
-"""Circularly Linked List.
-
-In the last node of a list, the link field often contains a null reference, a special value used to
-indicate the lack of further nodes. A less common convention is to make it point to the first node of the
-list; in that case the list is said to be 'circular' or 'circularly linked'; otherwise it is said to be
-'open' or 'linear'. It is a list where the last pointer points to the first node.
-
-This is more of an example. It can be optimized in a variety of ways depending on its intended usage.
-"""
-
 from typing import Optional
 
 from data_structures.singly_linked_list_node import SinglyLinkedListNode
 
 
 class CircularlyLinkedList:
+    """Circularly Linked List.
+
+    In the last node of a list, the link field often contains a null reference, a special value used to
+    indicate the lack of further nodes. A less common convention is to make it point to the first node of
+    the list; in that case the list is said to be 'circular' or 'circularly linked'; otherwise it is said
+    to be 'open' or 'linear'. It is a list where the last pointer points to the first node.
+
+    This is more of an example. It can be optimized in a variety of ways depending on its intended usage.
+    """
+
     def __init__(self, node: Optional[SinglyLinkedListNode] = None):
         self.__head: SinglyLinkedListNode = node
         if node:

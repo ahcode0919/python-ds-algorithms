@@ -1,13 +1,3 @@
-"""Implement Stack with Queue.
-
-Implement the following operations of a stack using queues: `push(x)` pushes element x onto the stack, `pop()`
-removes the element on top of the stack, `top()` gets the top element, and `empty()` returns whether the stack is
-empty.
-
-Example: `stack.push(1)`, `stack.push(2)`, then `stack.top()` returns `2`, `stack.pop()` returns `2`, and
-`stack.empty()` returns `False`.
-"""
-
 from collections import deque
 from typing import Deque, Generic, TypeVar
 
@@ -15,7 +5,17 @@ T = TypeVar("T")
 
 
 class Stack(Generic[T]):
-    """LIFO stack implemented on top of a deque used as the underlying queue-like structure."""
+    """Implement Stack with Queue.
+
+    Implement the following operations of a stack using queues: `push(x)` pushes element x onto the stack, `pop()`
+    removes the element on top of the stack, `top()` gets the top element, and `empty()` returns whether the stack
+    is empty.
+
+    LIFO stack implemented on top of a deque used as the underlying queue-like structure.
+
+    Example: `stack.push(1)`, `stack.push(2)`, then `stack.top()` returns `2`, `stack.pop()` returns `2`, and
+    `stack.empty()` returns `False`.
+    """
 
     def __init__(self):
         self.stack: Deque[T] = deque()
