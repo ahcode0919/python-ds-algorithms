@@ -21,12 +21,12 @@ class SinglyLinkedList[T]:
     """
 
     def __init__(self):
-        self.__head: SinglyLinkedListNode[T] = SinglyLinkedListNode[T](None)
+        self._head: SinglyLinkedListNode[T] = SinglyLinkedListNode[T](None)
 
     def all_values(self) -> list[T]:
         """Return a list of every value in the list, in order from head to tail."""
         values = []
-        node = self.__head.next
+        node = self._head.next
 
         while node:
             values.append(node.data)
@@ -38,7 +38,7 @@ class SinglyLinkedList[T]:
     def append(self, data: T) -> None:
         """Add a new node containing data to the end of the list."""
         node = SinglyLinkedListNode(data)
-        last_node = self.__head
+        last_node = self._head
 
         while last_node:
             if not last_node.next:
@@ -49,7 +49,7 @@ class SinglyLinkedList[T]:
     # O(N)
     def get(self, index: int) -> T | None:
         """Return the data stored at index, or None if the index is out of bounds."""
-        current_node = self.__head.next
+        current_node = self._head.next
         count = 0
 
         while current_node:
@@ -64,7 +64,7 @@ class SinglyLinkedList[T]:
     def insert(self, data: T, index: int) -> None:
         """Insert a new node containing data before the node currently at index."""
         node = SinglyLinkedListNode(data)
-        current_node = self.__head
+        current_node = self._head
         count = 0
         while current_node:
             if count == index:
@@ -80,7 +80,7 @@ class SinglyLinkedList[T]:
     def remove(self, index: int) -> None:
         """Remove the node at index by linking its predecessor directly to its successor."""
         count = 0
-        current_node = self.__head
+        current_node = self._head
 
         while current_node:
             if count == index:
@@ -96,7 +96,7 @@ class SinglyLinkedList[T]:
     def size(self) -> int:
         """Return the number of nodes in the list."""
         count = 0
-        current_node = self.__head.next
+        current_node = self._head.next
 
         while current_node:
             count += 1

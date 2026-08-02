@@ -7,10 +7,10 @@ class DoublyLinkedListNode[T]:
 
     def __init__(
         self,
-        data: T | None = None,
+        data: T,
         previous_node: "DoublyLinkedListNode[T] | None" = None,
         next_node: "DoublyLinkedListNode[T] | None" = None,
     ):
-        self.data: T | None = data
+        self.data: T = data
         self.previous: "DoublyLinkedListNode[T] | None" = previous_node
         self.next: "DoublyLinkedListNode[T] | None" = next_node

@@ -43,7 +43,9 @@ def test_get_value():
 def test_get_node():
     doubly_linked_list = DoublyLinkedList()
     doubly_linked_list.insert(3, 0)
-    assert doubly_linked_list.get_node(0).data == 3
+    node = doubly_linked_list.get_node(0)
+    assert node is not None
+    assert node.data == 3
 
 
 def test_insert_empty():
