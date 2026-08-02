@@ -1,7 +1,4 @@
-from typing import List
-
-
-def pascals_triangle(rows: int) -> List[List[int]]:
+def pascals_triangle(rows: int) -> list[list[int]]:
     """Pascal's Triangle.
 
     Given a non-negative integer numRows, generate the first numRows of Pascal's triangle. In

@@ -1,9 +1,6 @@
-from typing import List
-
-
 def merge_sorted_array(
-    nums1: List[int], nums1_length: int, nums2: List[int], nums2_length: int
-) -> List[int]:
+    nums1: list[int], nums1_length: int, nums2: list[int], nums2_length: int
+) -> list[int]:
     """Merge Sorted Array.
 
     Given two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array. The number of

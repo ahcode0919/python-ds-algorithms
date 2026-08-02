@@ -1,7 +1,4 @@
-from typing import List
-
-
-def intersection_of_two_arrays(nums1: List[int], nums2: List[int]) -> List[int]:
+def intersection_of_two_arrays(nums1: list[int], nums2: list[int]) -> list[int]:
     """Intersection of Two Arrays.
 
     Given two arrays, write a function that computes their intersection, including duplicate matches.

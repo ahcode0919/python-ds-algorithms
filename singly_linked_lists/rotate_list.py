@@ -1,11 +1,7 @@
-from typing import Optional
-
 from data_structures.singly_linked_list_node import SinglyLinkedListNode
 
 
-def rotate_list(
-    head: Optional[SinglyLinkedListNode], amount: int
-) -> Optional[SinglyLinkedListNode]:
+def rotate_list(head: SinglyLinkedListNode | None, amount: int) -> SinglyLinkedListNode | None:
     """Rotate List.
 
     Given a linked list, rotate the list to the right by k places, where k is non-negative.

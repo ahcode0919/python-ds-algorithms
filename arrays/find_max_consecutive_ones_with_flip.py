@@ -1,7 +1,4 @@
-from typing import List
-
-
-def find_max_consecutive_ones_with_flip(nums: List[int]) -> int:
+def find_max_consecutive_ones_with_flip(nums: list[int]) -> int:
     """Find Max Consecutive Ones With One Flip.
 
     Given a binary array, find the maximum number of consecutive 1s in this array if you can flip at most one 0.

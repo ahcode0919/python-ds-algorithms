@@ -1,9 +1,7 @@
-from typing import Optional
-
 from data_structures.singly_linked_list_node import SinglyLinkedListNode
 
 
-def delete_duplicates(head: Optional[SinglyLinkedListNode]) -> Optional[SinglyLinkedListNode]:
+def delete_duplicates(head: SinglyLinkedListNode | None) -> SinglyLinkedListNode | None:
     """Delete Duplicates.
 
     Given the head of a sorted linked list, delete all duplicates such that each element appears only once.

@@ -19,12 +19,10 @@ Output: `[4, 5, 2, 3, 1]`
 
 """
 
-from typing import List
-
 from binary_tree.tree_node import TreeNode
 
 
-def postorder_traversal_recursive(root: TreeNode) -> List[int]:
+def postorder_traversal_recursive(root: TreeNode) -> list[int]:
     """Recursively traverse left, traverse right, then visit the node."""
     values = []
     if not root:
@@ -40,7 +38,7 @@ def postorder_traversal_recursive(root: TreeNode) -> List[int]:
     return values
 
 
-def postorder_traversal_iterative(root: TreeNode) -> List[int]:
+def postorder_traversal_iterative(root: TreeNode) -> list[int]:
     """Traverse iteratively with an explicit stack, visiting a node only after both children are handled."""
     values = []
     stack = []

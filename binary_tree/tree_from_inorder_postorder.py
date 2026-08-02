@@ -1,9 +1,7 @@
-from typing import List
-
 from binary_tree.tree_node import TreeNode
 
 
-def tree_from_inorder_and_postorder(inorder: List[int], postorder: List[int]) -> TreeNode:
+def tree_from_inorder_and_postorder(inorder: list[int], postorder: list[int]) -> TreeNode:
     r"""Tree from Inorder and Postorder Traversal.
 
     Given inorder and postorder traversal of a tree, construct the binary tree.

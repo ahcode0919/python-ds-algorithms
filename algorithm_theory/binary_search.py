@@ -6,10 +6,8 @@ the interval to the lower half. Otherwise narrow it to the upper half. Repeatedl
 the interval is empty.
 """
 
-from typing import Optional
 
-
-def binary_search_iterative(array: [int], target: int) -> Optional[int]:
+def binary_search_iterative(array: list[int], target: int) -> int | None:
     """Narrow the [left, right] bounds by half each iteration until target is found or the bounds cross."""
     left = 0
     right = len(array) - 1
@@ -26,7 +24,7 @@ def binary_search_iterative(array: [int], target: int) -> Optional[int]:
     return None
 
 
-def binary_search_recursive(array: [int], left: int, right: int, target: int) -> Optional[int]:
+def binary_search_recursive(array: list[int], left: int, right: int, target: int) -> int | None:
     """Recurse into the left or right sub-array each call until target is found or the bounds cross."""
     if right >= left:
         mid = int((left + right) / 2)

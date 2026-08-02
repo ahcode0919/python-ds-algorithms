@@ -1,9 +1,7 @@
-from typing import Optional
-
 from data_structures.singly_linked_list_node import SinglyLinkedListNode
 
 
-def find_middle_node(head: Optional[SinglyLinkedListNode]) -> Optional[SinglyLinkedListNode]:
+def find_middle_node(head: SinglyLinkedListNode | None) -> SinglyLinkedListNode | None:
     """Find Middle Node.
 
     Find the node that comes before the middle node of a singly linked list.

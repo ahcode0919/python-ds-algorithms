@@ -9,10 +9,8 @@ space.
 Example: `[4, 3, 2, 7, 8, 2, 3, 1]` -> `[5, 6]`
 """
 
-from typing import List
 
-
-def find_disappeared_numbers(nums: List[int]) -> List[int]:
+def find_disappeared_numbers(nums: list[int]) -> list[int]:
     """O(N) time, O(N) space using a set of seen values."""
     unique_nums = set(nums)
     length = len(nums)
@@ -24,7 +22,7 @@ def find_disappeared_numbers(nums: List[int]) -> List[int]:
     return disappeared_nums
 
 
-def find_disappeared_numbers_ii(nums: List[int]) -> List[int]:
+def find_disappeared_numbers_ii(nums: list[int]) -> list[int]:
     """O(N) time, O(1) extra space by negating values at visited indices in place."""
     length = len(nums)
 

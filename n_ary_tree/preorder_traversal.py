@@ -1,9 +1,7 @@
-from typing import List
-
 from n_ary_tree import nary_tree_node
 
 
-def preorder_traversal(root: nary_tree_node) -> List:
+def preorder_traversal(root: nary_tree_node) -> list:
     """Preorder Traversal.
 
     Given the root of an n-ary tree, return the preorder traversal of its nodes' values — a

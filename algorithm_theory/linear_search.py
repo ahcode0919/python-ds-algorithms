@@ -1,7 +1,4 @@
-from typing import Optional
-
-
-def linear_search(array: [int], left: int, right: int, target: int) -> Optional[int]:
+def linear_search(array: list[int], left: int, right: int, target: int) -> int | None:
     """Linear Search.
 
     The most basic search. Start from the leftmost element of the array and one by one compare the target

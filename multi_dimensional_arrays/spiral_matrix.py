@@ -1,7 +1,4 @@
-from typing import List
-
-
-def spiral_matrix(matrix: List[List[int]]) -> List[int]:
+def spiral_matrix(matrix: list[list[int]]) -> list[int]:
     """Spiral Matrix.
 
     Given a matrix of m x n elements (m rows, n columns), return all elements of the matrix in

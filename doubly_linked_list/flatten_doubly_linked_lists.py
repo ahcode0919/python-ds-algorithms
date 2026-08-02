@@ -13,8 +13,6 @@ Both solutions run in O(N) time. The recursive solution uses O(N) space for the 
 iterative solution uses O(N) space for the explicit stack.
 """
 
-from typing import Optional
-
 
 class Node:
     """A doubly linked list node that may additionally point to a child sub-list."""
@@ -22,14 +20,14 @@ class Node:
     def __init__(
         self,
         val: int,
-        previous_node: Optional["Node"],
-        next_node: Optional["Node"],
-        child_node: Optional["Node"],
+        previous_node: "Node" | None,
+        next_node: "Node" | None,
+        child_node: "Node" | None,
     ):
         self.data: int = val
-        self.previous: Optional["Node"] = previous_node
-        self.next: Optional["Node"] = next_node
-        self.child: Optional["Node"] = child_node
+        self.previous: "Node" | None = previous_node
+        self.next: "Node" | None = next_node
+        self.child: "Node" | None = child_node
 
 
 def flatten(head: Node) -> Node:

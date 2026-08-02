@@ -1,11 +1,9 @@
-from typing import Optional
-
 from data_structures.singly_linked_list_node import SinglyLinkedListNode
 
 
 def get_intersection_node(
     head_a: SinglyLinkedListNode, head_b: SinglyLinkedListNode
-) -> Optional[SinglyLinkedListNode]:
+) -> SinglyLinkedListNode | None:
     """Intersection of Two Linked Lists.
 
     Find the node at which two singly linked lists intersect.

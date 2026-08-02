@@ -1,9 +1,7 @@
-from typing import Optional
-
 from data_structures.singly_linked_list_node import SinglyLinkedListNode
 
 
-def odd_even_list(head: Optional[SinglyLinkedListNode]) -> Optional[SinglyLinkedListNode]:
+def odd_even_list(head: SinglyLinkedListNode | None) -> SinglyLinkedListNode | None:
     """Odd Even Linked List.
 
     Given a singly linked list, group all odd nodes together followed by the even nodes. Here we are talking

@@ -1,7 +1,4 @@
-from typing import List
-
-
-def pascals_triangle_ii(row_index: int) -> List[int]:
+def pascals_triangle_ii(row_index: int) -> list[int]:
     """Pascal's Triangle II.
 
     Given an integer row_index, return the row of Pascal's triangle at that index (0-indexed).

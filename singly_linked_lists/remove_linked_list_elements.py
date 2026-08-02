@@ -1,11 +1,7 @@
-from typing import Optional
-
 from data_structures.singly_linked_list_node import SinglyLinkedListNode
 
 
-def remove_elements(
-    head: Optional[SinglyLinkedListNode], data: int
-) -> Optional[SinglyLinkedListNode]:
+def remove_elements(head: SinglyLinkedListNode | None, data: int) -> SinglyLinkedListNode | None:
     """Remove Linked List Elements.
 
     Remove all elements from a linked list of integers that have a given value.
@@ -18,7 +14,7 @@ def remove_elements(
     dummy_node.next = head
 
     previous: SinglyLinkedListNode = dummy_node
-    current: Optional[SinglyLinkedListNode] = head
+    current: SinglyLinkedListNode | None = head
 
     while current:
         if current.data == data:

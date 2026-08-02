@@ -1,11 +1,9 @@
-from typing import Optional
-
 from data_structures.singly_linked_list_node import SinglyLinkedListNode
 
 
 def add_two_numbers(
-    head1: Optional[SinglyLinkedListNode], head2: Optional[SinglyLinkedListNode]
-) -> Optional[SinglyLinkedListNode]:
+    head1: SinglyLinkedListNode | None, head2: SinglyLinkedListNode | None
+) -> SinglyLinkedListNode | None:
     """Add Two Numbers.
 
     You are given two non-empty linked lists representing two non-negative integers. The digits are stored in

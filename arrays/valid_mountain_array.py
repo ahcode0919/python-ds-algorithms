@@ -1,7 +1,4 @@
-from typing import List
-
-
-def valid_mountain_array(arr: List[int]) -> bool:
+def valid_mountain_array(arr: list[int]) -> bool:
     """Valid Mountain Array.
 
     Given an array of integers, return True if it is a valid mountain array. A valid mountain array has length >= 3,

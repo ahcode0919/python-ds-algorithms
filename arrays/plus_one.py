@@ -1,7 +1,4 @@
-from typing import List
-
-
-def plus_one(digits: List[int]) -> List[int]:
+def plus_one(digits: list[int]) -> list[int]:
     """Plus One.
 
     Given a non-empty array of digits representing a non-negative integer, add one to the integer. The digits are

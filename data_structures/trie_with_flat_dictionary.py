@@ -1,6 +1,3 @@
-from typing import Dict
-
-
 class TrieWithFlatDictionary:
     """Trie (Flat Dictionary-backed).
 
@@ -20,7 +17,7 @@ class TrieWithFlatDictionary:
 
     def __init__(self):
         """Initialize your data structure here."""
-        self.nodes: Dict[str:bool] = dict()
+        self.nodes: dict[str:bool] = dict()
 
     def insert(self, word: str) -> None:
         """Inserts a word into the trie."""

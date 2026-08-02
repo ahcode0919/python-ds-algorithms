@@ -1,9 +1,7 @@
-from typing import Optional
-
 from binary_tree.tree_node import TreeNode
 
 
-def symmetric_binary_tree(root: Optional[TreeNode]) -> bool:
+def symmetric_binary_tree(root: TreeNode | None) -> bool:
     r"""Symmetric Binary Tree.
 
     Given a binary tree, check whether it is a mirror of itself (i.e., symmetric around its center).

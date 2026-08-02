@@ -1,7 +1,4 @@
-from typing import List
-
-
-def minimum_subarray_length(target: int, numbers: List[int]) -> int:
+def minimum_subarray_length(target: int, numbers: list[int]) -> int:
     """Minimum Subarray Length.
 
     Find the minimal length of a contiguous subarray whose sum is greater than or equal to target. If there isn't

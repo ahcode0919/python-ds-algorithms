@@ -1,7 +1,4 @@
-from typing import Dict, List
-
-
-def replace_words(dictionary: List[str], sentence: str) -> str:
+def replace_words(dictionary: list[str], sentence: str) -> str:
     """Replace Words.
 
     Build a prefix trie from dictionary roots, then replace each sentence word with its shortest matching root.
@@ -34,7 +31,7 @@ class TrieNode:
     """A prefix trie node used to store dictionary roots and match sentence words against them."""
 
     def __init__(self):
-        self.nodes: Dict[str:TrieNode] = dict()
+        self.nodes: dict[str:TrieNode] = dict()
 
     def insert(self, word: str) -> None:
         """Insert word into the trie, stopping early if a shorter existing root already covers it."""

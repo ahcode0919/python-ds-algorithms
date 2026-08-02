@@ -1,11 +1,7 @@
-from typing import Generic, Optional, TypeVar
-
 from data_structures.doubly_linked_list_node import DoublyLinkedListNode
 
-T = TypeVar("T")
 
-
-class DoublyLinkedList(Generic[T]):
+class DoublyLinkedList[T]:
     """Doubly Linked List.
 
     (https://en.wikipedia.org/wiki/Doubly_linked_list): In a 'doubly linked list', each node contains,
@@ -15,19 +11,19 @@ class DoublyLinkedList(Generic[T]):
     """
 
     def __init__(self):
-        self.__head: DoublyLinkedListNode = DoublyLinkedListNode()
-        self.__tail: DoublyLinkedListNode = DoublyLinkedListNode()
+        self.__head: DoublyLinkedListNode[T] = DoublyLinkedListNode[T](None)
+        self.__tail: DoublyLinkedListNode[T] = DoublyLinkedListNode[T](None)
 
         self.__head.next = self.__tail
         self.__tail.previous = self.__head
 
     # O(N)
-    def all_values(self) -> [T]:
+    def all_values(self) -> list[T | None]:
         """Return a list of every value in the list, in order from head to tail."""
         values = []
         node = self.__head.next
 
-        while node is not self.__tail:
+        while node and node is not self.__tail:
             values.append(node.data)
             node = node.next
 
@@ -40,19 +36,20 @@ class DoublyLinkedList(Generic[T]):
         node = DoublyLinkedListNode(data)
         last_node = self.__tail.previous
 
-        last_node.next = node
-        node.previous = last_node
+        if last_node:
+            last_node.next = node
+            node.previous = last_node
 
-        node.next = self.__tail
-        self.__tail.previous = node
+            node.next = self.__tail
+            self.__tail.previous = node
 
     # O(N)
-    def get_node(self, index: int) -> Optional[DoublyLinkedListNode]:
+    def get_node(self, index: int) -> DoublyLinkedListNode | None:
         """Return the node at index, or None if the index is out of bounds."""
         current_node = self.__head.next
         count = 0
 
-        while current_node is not self.__tail:
+        while current_node and current_node is not self.__tail:
             if count == index:
                 return current_node
             current_node = current_node.next
@@ -60,7 +57,7 @@ class DoublyLinkedList(Generic[T]):
         return None
 
     # O(N)
-    def get(self, index: int) -> Optional[T]:
+    def get(self, index: int) -> T | None:
         """Return the data stored at index, or None if the index is out of bounds."""
         node = self.get_node(index)
         if node:
@@ -70,8 +67,8 @@ class DoublyLinkedList(Generic[T]):
     # O(N)
     def insert(self, data: T, index: int):
         """Insert a new node containing data before the node currently at index."""
-        node = DoublyLinkedListNode(data)
-        current_node: DoublyLinkedListNode = self.get_node(index)
+        node = DoublyLinkedListNode[T](data)
+        current_node: DoublyLinkedListNode[T] | None = self.get_node(index)
 
         if not current_node and index == 0:
             self.__head.next = node
@@ -80,7 +77,7 @@ class DoublyLinkedList(Generic[T]):
             self.__tail.previous = node
             return
 
-        if not current_node:
+        if not current_node or not current_node.previous:
             raise IndexError("Index out of bounds")
 
         # Previous <-> Original --> Previous <-> New <-> Original
@@ -90,10 +87,10 @@ class DoublyLinkedList(Generic[T]):
         current_node.previous = node
 
     # O(N)
-    def remove(self, index: int) -> Optional[T]:
+    def remove(self, index: int) -> T | None:
         """Remove the node at index by linking its neighbors directly to each other and return its data."""
         node = self.get_node(index)
-        if not node:
+        if not node or not node.previous or not node.next:
             return None
 
         # Previous <-> Node <-> Next --> Previous <-> Next
@@ -108,7 +105,7 @@ class DoublyLinkedList(Generic[T]):
         count = 0
         node = self.__head.next
 
-        while node != self.__tail:
+        while node and node != self.__tail:
             count += 1
             node = node.next
         return count

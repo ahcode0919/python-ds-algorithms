@@ -1,10 +1,7 @@
 from collections import deque
-from typing import Deque, Generic, TypeVar
-
-T = TypeVar("T")
 
 
-class Stack(Generic[T]):
+class Stack:
     """Implement Stack with Queue.
 
     Implement the following operations of a stack using queues: `push(x)` pushes element x onto the stack, `pop()`
@@ -18,17 +15,17 @@ class Stack(Generic[T]):
     """
 
     def __init__(self):
-        self.stack: Deque[T] = deque()
+        self.stack: deque[object] = deque()
 
-    def push(self, item: T) -> None:
+    def push(self, item: object) -> None:
         """Push item onto the top of the stack."""
         self.stack.append(item)
 
-    def pop(self) -> T:
+    def pop(self) -> object:
         """Remove and return the item on top of the stack."""
         return self.stack.pop()
 
-    def top(self) -> T:
+    def top(self) -> object:
         """Return the item on top of the stack without removing it."""
         return self.stack[-1]
 

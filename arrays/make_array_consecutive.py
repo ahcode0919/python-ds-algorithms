@@ -1,4 +1,4 @@
-def make_array_consecutive(values: [int]) -> int:
+def make_array_consecutive(values: list[int]) -> int:
     """Make Array Consecutive.
 
     Find the number of elements that would need to be added so that each array value is separated by exactly one.

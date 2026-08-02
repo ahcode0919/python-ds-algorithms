@@ -1,7 +1,4 @@
-from typing import List
-
-
-def find_max_consecutive_ones(nums: List[int]) -> int:
+def find_max_consecutive_ones(nums: list[int]) -> int:
     """Find Max Consecutive Ones.
 
     You are given a binary array nums; return the maximum number of consecutive 1's in the array.

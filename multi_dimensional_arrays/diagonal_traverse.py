@@ -1,7 +1,4 @@
-from typing import List
-
-
-def diagonal_traverse(matrix: List[List[int]]) -> List[int]:
+def diagonal_traverse(matrix: list[list[int]]) -> list[int]:
     """Diagonal Traverse.
 
     Given a matrix of M x N elements (M rows, N columns), return all elements of the matrix in

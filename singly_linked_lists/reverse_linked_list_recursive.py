@@ -1,9 +1,7 @@
-from typing import Optional
-
 from data_structures.singly_linked_list_node import SinglyLinkedListNode
 
 
-def reverse_linked_list_recursive(head: SinglyLinkedListNode) -> Optional[SinglyLinkedListNode]:
+def reverse_linked_list_recursive(head: SinglyLinkedListNode) -> SinglyLinkedListNode | None:
     """Reverse Linked List (recursive).
 
     Reverse a singly linked list.

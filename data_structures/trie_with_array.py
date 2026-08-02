@@ -1,7 +1,4 @@
-from typing import List, Optional
-
-
-class TrieWithArray:
+class TrieWithArray[T]:
     r"""Trie (Array-backed).
 
     A Trie is a special form of an N-ary tree. Typically, a trie is used to store strings. Each Trie node
@@ -26,26 +23,31 @@ class TrieWithArray:
     """
 
     def __init__(self):
-        self.head: TrieNode = TrieNode()
+        self.head: TrieNode[T] = TrieNode[T]()
 
     def insert(self, word: str) -> None:
         """Inserts a word into the trie."""
         current_trie = self.head
+
         for index in range(1, len(word) + 1):
             node_index = ord(word[:index][-1]) - ord("a")
-            if current_trie.child_nodes[node_index]:
-                current_trie = current_trie.child_nodes[node_index]
+            next_node = current_trie.child_nodes[node_index]
+            if next_node is not None:
+                current_trie = next_node
             else:
-                current_trie.child_nodes[node_index] = TrieNode()
-                current_trie = current_trie.child_nodes[node_index]
+                new_node = TrieNode()
+                current_trie.child_nodes[node_index] = new_node
+                current_trie = new_node
 
     def search(self, word: str) -> bool:
         """Returns True if the word is in the trie."""
         current_trie = self.head
+
         for index in range(1, len(word) + 1):
             node_index = ord(word[:index][-1]) - ord("a")
-            if current_trie.child_nodes[node_index]:
-                current_trie = current_trie.child_nodes[node_index]
+            next_node = current_trie.child_nodes[node_index]
+            if next_node is not None:
+                current_trie = next_node
             else:
                 return False
         return current_trie.child_nodes == [None] * 26
@@ -53,15 +55,17 @@ class TrieWithArray:
     def starts_with(self, prefix: str) -> bool:
         """Returns True if there is any word in the trie that starts with the given prefix."""
         current_trie = self.head
+
         for index in range(1, len(prefix) + 1):
             node_index = ord(prefix[:index][-1]) - ord("a")
-            if current_trie.child_nodes[node_index]:
-                current_trie = current_trie.child_nodes[node_index]
+            next_node = current_trie.child_nodes[node_index]
+            if next_node is not None:
+                current_trie = next_node
             else:
                 return False
         return True
 
 
-class TrieNode:
+class TrieNode[T]:
     def __init__(self):
-        self.child_nodes: List[Optional[TrieNode]] = [None] * 26
+        self.child_nodes: list[TrieNode[T] | None] = [None] * 26

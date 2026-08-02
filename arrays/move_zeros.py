@@ -1,7 +1,4 @@
-from typing import List
-
-
-def move_zeros(nums: List[int]) -> None:
+def move_zeros(nums: list[int]) -> None:
     """Move Zeros.
 
     Given an array nums, write a function to move all 0's to the end of it while maintaining the relative order of

@@ -1,11 +1,9 @@
-from typing import Optional
-
 from data_structures.singly_linked_list_node import SinglyLinkedListNode
 
 
 def merge_two_lists(
-    head1: Optional[SinglyLinkedListNode], head2: Optional[SinglyLinkedListNode]
-) -> Optional[SinglyLinkedListNode]:
+    head1: SinglyLinkedListNode | None, head2: SinglyLinkedListNode | None
+) -> SinglyLinkedListNode | None:
     """Merge Two Sorted Lists.
 
     Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together

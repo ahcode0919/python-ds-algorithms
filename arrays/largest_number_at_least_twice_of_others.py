@@ -7,10 +7,8 @@ element; otherwise return -1.
 Example: `[3, 6, 1, 0]` -> `1`
 """
 
-from typing import List
 
-
-def largest_number_at_least_twice_of_others(nums: List[int]) -> int:
+def largest_number_at_least_twice_of_others(nums: list[int]) -> int:
     """Single pass tracking the largest and second-largest indices.
 
     :param nums: array of numbers
@@ -35,7 +33,7 @@ def largest_number_at_least_twice_of_others(nums: List[int]) -> int:
     return -1
 
 
-def largest_number_at_least_twice_of_others2(nums: [int]) -> int:
+def largest_number_at_least_twice_of_others2(nums: list[int]) -> int:
     """Array-manipulation approach using built-in max()/index(); simpler but mutates the input via pop().
 
     :param nums: array of numbers

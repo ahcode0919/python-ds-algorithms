@@ -1,4 +1,4 @@
-def bubble_sort(array: [int]) -> []:
+def bubble_sort(array: list[int]) -> list[int]:
     """Bubble Sort.
 
     The simplest sorting algorithm, working by repeatedly swapping the adjacent elements if they are

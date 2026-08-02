@@ -1,7 +1,4 @@
-from typing import List
-
-
-def fizz_buzz(iterations: int) -> List[str]:
+def fizz_buzz(iterations: int) -> list[str]:
     """Fizz Buzz.
 
     Write a program that outputs the string representation of numbers from 1 to n.

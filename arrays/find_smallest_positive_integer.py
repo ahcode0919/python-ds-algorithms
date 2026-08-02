@@ -1,7 +1,4 @@
-from typing import List
-
-
-def find_smallest_positive_integer(arr: List[int]) -> int:
+def find_smallest_positive_integer(arr: list[int]) -> int:
     """Find Smallest Positive Integer.
 
     Find the smallest positive integer in an array. Return zero if there are no positive integers.

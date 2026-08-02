@@ -6,10 +6,8 @@ prefix, return an empty string.
 Example: `["flower", "flow", "flight"]` -> `"fl"`
 """
 
-from typing import List
 
-
-def longest_common_prefix_horizontal(strings: List[str]) -> str:
+def longest_common_prefix_horizontal(strings: list[str]) -> str:
     """Compare each string in turn against the running prefix, shrinking it as soon as characters diverge."""
     if not strings or len(strings[0]) == 0:
         return ""
@@ -29,7 +27,7 @@ def longest_common_prefix_horizontal(strings: List[str]) -> str:
     return longest
 
 
-def longest_common_prefix_vertical(strings: List[str]) -> str:
+def longest_common_prefix_vertical(strings: list[str]) -> str:
     """Compare characters column by column across all strings, exiting as soon as a column mismatches."""
     if not strings:
         return ""

@@ -14,35 +14,31 @@ Three implementations are provided below, plus the built-in `collections.deque` 
 directly as a queue (`queue.append(1)` to enqueue, `queue.popleft()` to dequeue).
 """
 
-from typing import Generic, List, TypeVar
-
 from data_structures.doubly_linked_list import DoublyLinkedList
 
-T = TypeVar("T")
 
-
-class QueueList(Generic[T]):
+class QueueList:
     """Basic queue backed with a list.
 
     Not optimal since list has O(N) complexity for inserting and removing elements at the beginning
     """
 
     def __init__(self):
-        self.queue: List[T] = []
+        self.queue: list[object] = []
 
     def __len__(self):
         return len(self.queue)
 
-    def dequeue(self) -> T:
+    def dequeue(self) -> object:
         """Remove and return the element at the front of the queue."""
         return self.queue.pop(0)
 
-    def enqueue(self, element: T):
+    def enqueue(self, element: object):
         """Add element to the back of the queue."""
         self.queue.append(element)
 
 
-class QueueLinkedList(Generic[T]):
+class QueueLinkedList:
     """Queue backed by a doubly linked list."""
 
     def __init__(self):
@@ -52,29 +48,29 @@ class QueueLinkedList(Generic[T]):
         return self.linked_list.size()
 
     # O(1)
-    def dequeue(self) -> T:
+    def dequeue(self) -> object:
         """Remove and return the element at the front of the queue."""
         return self.linked_list.remove(0)
 
     # O(1)
-    def enqueue(self, element: T):
+    def enqueue(self, element: object):
         """Add element to the back of the queue."""
         self.linked_list.append(element)
 
 
-class CircularQueue(Generic[T]):
+class CircularQueue:
     """Queue backed by a fixed-size array, wrapping the head/tail indices to reuse freed slots.
 
     Similar to the linked-list queue in time complexity but uses an array to mimic the same functionality.
     """
 
     def __init__(self, k: int):
-        self.queue = [0] * k
+        self.queue: list[int] = [0] * k
         self.count = 0
         self.size = k
         self.head = 0
 
-    def enqueue(self, value: T) -> bool:
+    def enqueue(self, value: int) -> bool:
         """Add value to the back of the queue. Return False if the queue is full."""
         if self.isfull():
             return False
@@ -91,13 +87,13 @@ class CircularQueue(Generic[T]):
         self.count -= 1
         return True
 
-    def front(self) -> T:
+    def front(self) -> int:
         """Get the front item from the queue."""
         if self.isempty():
             return -1
         return self.queue[self.head]
 
-    def rear(self) -> T:
+    def rear(self) -> int:
         """Get the last item from the queue."""
         if self.isempty():
             return -1

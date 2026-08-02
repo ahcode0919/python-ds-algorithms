@@ -10,10 +10,9 @@ Example: `T = [73, 74, 75, 71, 69, 72, 76, 73]` -> `[1, 1, 4, 2, 1, 1, 0, 0]`
 
 from collections import deque
 from queue import LifoQueue
-from typing import List
 
 
-def daily_temperatures_brute_force(temps: List[int]) -> List[int]:
+def daily_temperatures_brute_force(temps: list[int]) -> list[int]:
     """Brute-force: for each day, scan forward until a warmer temperature is found."""
     daily_temps = []
     for index, temp in enumerate(temps):
@@ -28,7 +27,7 @@ def daily_temperatures_brute_force(temps: List[int]) -> List[int]:
     return daily_temps
 
 
-def daily_temperatures(temps: List[int]) -> List[int]:
+def daily_temperatures(temps: list[int]) -> list[int]:
     """Optimized: process right to left using a monotonic decreasing stack of indices."""
     daily_temps = deque()
     stack = LifoQueue()
