@@ -1,4 +1,4 @@
-from stacks.polish_notation import evaluate_rpn
+from src.stacks.polish_notation import evaluate_rpn
 
 
 def test_evaluate_reverse_polish_notation():

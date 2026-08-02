@@ -1,4 +1,4 @@
-from singly_linked_lists.copy_list_with_random_pointer import Node, copy_random_list
+from src.singly_linked_lists.copy_list_with_random_pointer import Node, copy_random_list
 
 
 def test_copy_random_list():

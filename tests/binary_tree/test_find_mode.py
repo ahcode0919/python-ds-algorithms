@@ -1,5 +1,5 @@
-from binary_tree.find_mode import find_mode
-from test_helpers.test_helpers import TreeNode, get_binary_tree
+from src.binary_tree.find_mode import find_mode
+from tests.test_helpers.test_helpers import TreeNode, get_binary_tree
 
 
 def test_find_mode():

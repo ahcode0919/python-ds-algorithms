@@ -1,9 +1,9 @@
-from binary_tree.preorder_traversal import (
+from src.binary_tree.preorder_traversal import (
     preorder_traversal_iterative,
     preorder_traversal_morris,
     preorder_traversal_recursive,
 )
-from test_helpers.test_helpers import get_binary_tree
+from tests.test_helpers.test_helpers import get_binary_tree
 
 
 def test_preorder_traversal_iterative():

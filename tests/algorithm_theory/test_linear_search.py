@@ -1,4 +1,4 @@
-from algorithm_theory.linear_search import linear_search
+from src.algorithm_theory.linear_search import linear_search
 
 
 def test_linear_search():

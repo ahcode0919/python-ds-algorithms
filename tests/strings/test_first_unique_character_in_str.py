@@ -1,4 +1,4 @@
-from strings.first_unique_character_in_str import first_unique_character_in_str
+from src.strings.first_unique_character_in_str import first_unique_character_in_str
 
 
 def test_first_unique_character():

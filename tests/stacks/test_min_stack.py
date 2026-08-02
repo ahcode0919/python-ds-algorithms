@@ -1,4 +1,4 @@
-from stacks.min_stack import MinStack
+from src.stacks.min_stack import MinStack
 
 
 def test_min_stack():

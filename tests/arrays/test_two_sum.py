@@ -1,4 +1,4 @@
-from arrays.two_sum import two_sum
+from src.arrays.two_sum import two_sum
 
 
 def test_two_sum():

@@ -1,5 +1,5 @@
-from data_structures.binary_tree import BinaryTree
-from data_structures.binary_tree_node import BinaryTreeNode
+from src.data_structures.binary_tree import BinaryTree
+from src.data_structures.binary_tree_node import BinaryTreeNode
 
 
 def test_init():

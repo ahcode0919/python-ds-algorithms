@@ -1,5 +1,5 @@
-from data_structures.singly_linked_list_node import SinglyLinkedListNode
-from singly_linked_lists.palindrome_linked_list import is_palindrome
+from src.data_structures.singly_linked_list_node import SinglyLinkedListNode
+from src.singly_linked_lists.palindrome_linked_list import is_palindrome
 
 
 def test_is_palindrome():

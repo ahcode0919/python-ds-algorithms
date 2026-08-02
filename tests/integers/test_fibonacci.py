@@ -1,4 +1,4 @@
-from integers.fibonacci import (
+from src.integers.fibonacci import (
     fibonacci,
     fibonacci2,
     fibonacci3,

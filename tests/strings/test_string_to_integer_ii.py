@@ -1,4 +1,4 @@
-from strings.string_to_integer_ii import string_to_integer_ii
+from src.strings.string_to_integer_ii import string_to_integer_ii
 
 
 def test_string_to_integer_ii():

@@ -1,4 +1,4 @@
-from arrays.move_zeros import move_zeros
+from src.arrays.move_zeros import move_zeros
 
 
 def test_move_zeros():

@@ -1,5 +1,5 @@
-from data_structures.circularly_linked_list import CircularlyLinkedList
-from data_structures.singly_linked_list_node import SinglyLinkedListNode
+from src.data_structures.circularly_linked_list import CircularlyLinkedList
+from src.data_structures.singly_linked_list_node import SinglyLinkedListNode
 
 EMPTY_LIST = CircularlyLinkedList()
 ONE_NODE_LIST = CircularlyLinkedList(SinglyLinkedListNode(1))

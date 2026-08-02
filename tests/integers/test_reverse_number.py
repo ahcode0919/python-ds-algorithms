@@ -1,4 +1,4 @@
-from integers.reverse_number import reverse_number
+from src.integers.reverse_number import reverse_number
 
 
 def test_reverse_number():

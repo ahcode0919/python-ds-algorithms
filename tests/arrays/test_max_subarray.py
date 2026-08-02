@@ -1,4 +1,4 @@
-from arrays.max_subarray import max_subarray
+from src.arrays.max_subarray import max_subarray
 
 
 def test_max_subarray():

@@ -1,4 +1,4 @@
-from arrays.plus_one import plus_one
+from src.arrays.plus_one import plus_one
 
 
 def test_plus_one():

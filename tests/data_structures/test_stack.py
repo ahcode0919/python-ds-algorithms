@@ -1,4 +1,4 @@
-from data_structures.stack import StackList
+from src.data_structures.stack import StackList
 
 
 def test_stack():

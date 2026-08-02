@@ -1,4 +1,4 @@
-from arrays.find_pivot_index import find_pivot_index
+from src.arrays.find_pivot_index import find_pivot_index
 
 
 def test_find_pivot_index():

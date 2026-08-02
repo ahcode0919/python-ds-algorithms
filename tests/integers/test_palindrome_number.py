@@ -1,4 +1,4 @@
-from integers.palindrome_number import is_palindrome
+from src.integers.palindrome_number import is_palindrome
 
 
 def test_is_palindrome():

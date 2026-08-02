@@ -1,27 +1,27 @@
 # Python Data Structures and Algorithms ![](https://github.com/ahcode0919/python-ds-algorithms/actions/workflows/Python.yml/badge.svg?branch=main) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Various Data Structures and Algorithm Solutions in Python (3.x). Succinct Python one-liners are avoided in most solutions
-to prevent obscuring the function and logic of the algorithms / data-structures.  
+to prevent obscuring the function and logic of the algorithms / data-structures.
 
-* [Algorithm Theory](algorithm_theory/)
-* [Data Structures](data_structures/)
+* [Algorithm Theory](src/algorithm_theory/)
+* [Data Structures](src/data_structures/)
 
 ## Algorithms
 
-* [Arrays](arrays/)
-* [Binary Search](binary_search/)
-* [Binary Tree](binary_tree/)
-* [Circularly Linked Lists](circularly_linked_list/)
-* [Doubly Linked Lists](doubly_linked_list/)
-* [Integers](integers/)
-* [Math Problems](math_problems/)
-* [Matrices](multi_dimensional_arrays/)
-* [N-ary Tree](n_ary_tree/)
-* [Queues](queues/)
-* [Singly Linked Lists](singly_linked_lists/)
-* [Stacks](stacks/)
-* [Strings](strings/)
-* [Trie](trie/)
+* [Arrays](src/arrays/)
+* [Binary Search](src/binary_search/)
+* [Binary Tree](src/binary_tree/)
+* [Circularly Linked Lists](src/circularly_linked_list/)
+* [Doubly Linked Lists](src/doubly_linked_list/)
+* [Integers](src/integers/)
+* [Math Problems](src/math_problems/)
+* [Matrices](src/multi_dimensional_arrays/)
+* [N-ary Tree](src/n_ary_tree/)
+* [Queues](src/queues/)
+* [Singly Linked Lists](src/singly_linked_lists/)
+* [Stacks](src/stacks/)
+* [Strings](src/strings/)
+* [Trie](src/trie/)
 
 Each directory's problems and approaches are documented as doc comments directly in the corresponding `.py` files.
 

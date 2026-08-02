@@ -1,4 +1,4 @@
-from stacks.daily_temperatures import daily_temperatures, daily_temperatures_brute_force
+from src.stacks.daily_temperatures import daily_temperatures, daily_temperatures_brute_force
 
 
 def test_daily_temperatures_brute_force():

@@ -1,5 +1,5 @@
-from binary_tree.min_depth import min_depth, min_depth_bfs
-from test_helpers.test_helpers import get_binary_tree
+from src.binary_tree.min_depth import min_depth, min_depth_bfs
+from tests.test_helpers.test_helpers import get_binary_tree
 
 
 def test_min_depth():

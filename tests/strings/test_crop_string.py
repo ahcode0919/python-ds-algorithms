@@ -1,4 +1,4 @@
-from strings.crop_string import crop_string
+from src.strings.crop_string import crop_string
 
 
 def test_crop_string():

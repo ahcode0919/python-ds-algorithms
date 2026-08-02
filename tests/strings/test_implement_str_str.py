@@ -1,4 +1,4 @@
-from strings.implement_str_str import str_str
+from src.strings.implement_str_str import str_str
 
 
 def test_str_str():

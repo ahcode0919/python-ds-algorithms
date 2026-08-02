@@ -1,4 +1,4 @@
-from strings.valid_word_abbreviation import valid_word_abbreviation
+from src.strings.valid_word_abbreviation import valid_word_abbreviation
 
 
 def test_valid_word_abbreviation():

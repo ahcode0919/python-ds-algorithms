@@ -1,4 +1,4 @@
-from strings.license_key_formatter import license_key_formatter
+from src.strings.license_key_formatter import license_key_formatter
 
 
 def test_license_key_formatter():

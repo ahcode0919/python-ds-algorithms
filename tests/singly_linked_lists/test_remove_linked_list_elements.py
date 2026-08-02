@@ -1,6 +1,6 @@
-from data_structures.singly_linked_list_node import SinglyLinkedListNode
-from singly_linked_lists.remove_linked_list_elements import remove_elements
-from test_helpers.test_helpers import get_list_values
+from src.data_structures.singly_linked_list_node import SinglyLinkedListNode
+from src.singly_linked_lists.remove_linked_list_elements import remove_elements
+from tests.test_helpers.test_helpers import get_list_values
 
 
 def test_remove_elements():

@@ -1,4 +1,4 @@
-from strings.reverse_words import reverse_words
+from src.strings.reverse_words import reverse_words
 
 
 def test_reverse_words():

@@ -1,4 +1,4 @@
-from strings.palindrome import valid_palindrome, valid_palindrome_naive
+from src.strings.palindrome import valid_palindrome, valid_palindrome_naive
 
 
 def test_valid_palindrome_naive():

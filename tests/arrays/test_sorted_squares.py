@@ -1,4 +1,4 @@
-from arrays.sorted_squares import sorted_squares
+from src.arrays.sorted_squares import sorted_squares
 
 
 def test_sorted_squares():

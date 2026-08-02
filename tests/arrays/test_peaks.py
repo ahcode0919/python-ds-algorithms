@@ -1,4 +1,4 @@
-from arrays.peaks import peaks
+from src.arrays.peaks import peaks
 
 
 def test_peaks():

@@ -1,4 +1,4 @@
-from data_structures.singly_linked_list_node import SinglyLinkedListNode
+from src.data_structures.singly_linked_list_node import SinglyLinkedListNode
 
 
 def test_singly_linked_list_node():

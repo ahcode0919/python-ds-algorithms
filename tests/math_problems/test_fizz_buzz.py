@@ -1,4 +1,4 @@
-from math_problems.fizz_buzz import fizz_buzz
+from src.math_problems.fizz_buzz import fizz_buzz
 
 
 def test_fizz_buzz():

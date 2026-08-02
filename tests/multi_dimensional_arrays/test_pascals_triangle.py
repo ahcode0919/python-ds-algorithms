@@ -1,4 +1,4 @@
-from multi_dimensional_arrays.pascals_triangle import pascals_triangle
+from src.multi_dimensional_arrays.pascals_triangle import pascals_triangle
 
 
 def test_pascals_triangle():

@@ -19,11 +19,10 @@ There is no separate build step; this is a pure Python (3.14+) library of algori
 
 ## Architecture
 
-The repo is organized by topic into top-level directories, each containing implementation modules directly at the
-top level (no `src/` layout). `pyproject.toml` sets `pythonpath = ["."]`, so both implementation and test code
-import via the top-level package name, e.g. `from algorithm_theory.binary_search import binary_search_iterative`.
+Algorithm code is stored in `/src`. `pyproject.toml` sets `pythonpath = ["."]`, so both
+ implementation and test code import via the top-level package name, e.g. `from src.algorithm_theory.binary_search import binary_search_iterative`.
 
-Three categories of top-level directories, per the root `README.md`:
+Three categories of top-level `/src` directories, per the root `README.md`:
 
 - **`algorithm_theory/`** — canonical/fundamental algorithm approaches (e.g. binary/jump/linear search, bubble
   sort).
@@ -52,7 +51,7 @@ imported directly from their defining module rather than redefined per problem.
 
 ## Style
 
-Ruff is configured in `pyproject.toml` (line length 100, target `py314`, rule sets `E, F, W, I, N, D`). Docstring
-presence itself is not enforced (`D100-D107` ignored), but when docstrings are present their formatting is linted.
-`tests/*` is exempt from docstring rules entirely. Solutions favor explicit, readable Python over terse one-liners
-(stated explicitly in the root `README.md`).
+- Solutions favor explicit, readable Python over complicated one-liners
+- Ruff is configured in `pyproject.toml` (line length 100, target `py314`, rule sets `E, F, W, I, N, D`).
+  - Rules `D100-D107` are ignored
+  - `tests/*` is exempt from docstring rules entirely.

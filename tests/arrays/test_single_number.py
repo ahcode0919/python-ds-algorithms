@@ -1,4 +1,4 @@
-from arrays.single_number import single_number, single_number_bitwise
+from src.arrays.single_number import single_number, single_number_bitwise
 
 
 def test_single_number():

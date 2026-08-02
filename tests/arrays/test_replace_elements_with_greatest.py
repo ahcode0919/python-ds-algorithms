@@ -1,4 +1,4 @@
-from arrays.replace_elements_with_greatest import replace_elements_with_greatest
+from src.arrays.replace_elements_with_greatest import replace_elements_with_greatest
 
 
 def test_replace_elements_with_greatest():

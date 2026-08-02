@@ -1,4 +1,4 @@
-from strings.multiply_strings import multiply_strings
+from src.strings.multiply_strings import multiply_strings
 
 
 def test_multiply_strings():

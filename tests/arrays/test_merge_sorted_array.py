@@ -1,4 +1,4 @@
-from arrays.merge_sorted_array import merge_sorted_array
+from src.arrays.merge_sorted_array import merge_sorted_array
 
 
 def test_merge_sorted_array():

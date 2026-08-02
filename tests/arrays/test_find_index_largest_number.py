@@ -1,4 +1,4 @@
-from arrays.find_index_largest_number import find_index_largest_number
+from src.arrays.find_index_largest_number import find_index_largest_number
 
 
 def test_find_index_largest_number():

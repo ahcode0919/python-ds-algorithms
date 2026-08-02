@@ -1,4 +1,4 @@
-from arrays.remove_duplicates import remove_duplicates
+from src.arrays.remove_duplicates import remove_duplicates
 
 
 def test_remove_duplicates():

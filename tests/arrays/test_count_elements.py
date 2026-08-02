@@ -1,4 +1,4 @@
-from arrays.count_elements import count_elements
+from src.arrays.count_elements import count_elements
 
 
 def test_count_elements():

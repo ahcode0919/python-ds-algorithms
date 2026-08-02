@@ -1,4 +1,4 @@
-from data_structures.doubly_linked_list_node import DoublyLinkedListNode
+from src.data_structures.doubly_linked_list_node import DoublyLinkedListNode
 
 
 def test_doubly_linked_list_node():

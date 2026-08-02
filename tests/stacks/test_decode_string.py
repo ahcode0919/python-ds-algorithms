@@ -1,4 +1,4 @@
-from stacks.decode_string import decode_string
+from src.stacks.decode_string import decode_string
 
 
 def test_decode_string():

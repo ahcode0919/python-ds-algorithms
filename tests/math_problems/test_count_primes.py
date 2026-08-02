@@ -1,4 +1,4 @@
-from math_problems.count_primes import count_primes
+from src.math_problems.count_primes import count_primes
 
 
 def test_count_primes():

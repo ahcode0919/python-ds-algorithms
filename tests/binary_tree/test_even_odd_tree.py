@@ -1,5 +1,5 @@
-from binary_tree.even_odd_tree import even_odd_tree
-from binary_tree.tree_node import TreeNode
+from src.binary_tree.even_odd_tree import even_odd_tree
+from src.binary_tree.tree_node import TreeNode
 
 
 def test_even_odd_tree():

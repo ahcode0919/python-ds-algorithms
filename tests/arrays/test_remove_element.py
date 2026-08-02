@@ -1,4 +1,4 @@
-from arrays.remove_element import remove_element
+from src.arrays.remove_element import remove_element
 
 
 def test_remove_element():

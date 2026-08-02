@@ -1,5 +1,5 @@
-from n_ary_tree.preorder_traversal_iterative import preorder_traversal_iterative
-from test_helpers.test_helpers import get_n_nary_tree
+from src.n_ary_tree.preorder_traversal_iterative import preorder_traversal_iterative
+from tests.test_helpers.test_helpers import get_n_nary_tree
 
 
 def test_preorder_traversal_iterative():

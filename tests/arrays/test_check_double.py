@@ -1,4 +1,4 @@
-from arrays.check_double import check_double
+from src.arrays.check_double import check_double
 
 
 def test_check_double():

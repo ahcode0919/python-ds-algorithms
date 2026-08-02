@@ -1,4 +1,4 @@
-from arrays.intersection_of_two_arrays_ii import intersection_of_two_arrays
+from src.arrays.intersection_of_two_arrays_ii import intersection_of_two_arrays
 
 
 def test_intersection_of_two_arrays():

@@ -1,6 +1,6 @@
-from binary_tree.has_path_sum import has_path_sum
-from binary_tree.tree_node import TreeNode
-from test_helpers.test_helpers import get_binary_tree
+from src.binary_tree.has_path_sum import has_path_sum
+from src.binary_tree.tree_node import TreeNode
+from tests.test_helpers.test_helpers import get_binary_tree
 
 
 def test_has_path_sum():

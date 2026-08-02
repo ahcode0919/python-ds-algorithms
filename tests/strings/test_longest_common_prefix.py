@@ -1,4 +1,4 @@
-from strings.longest_common_prefix import (
+from src.strings.longest_common_prefix import (
     longest_common_prefix_horizontal,
     longest_common_prefix_vertical,
 )
