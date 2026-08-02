@@ -1,4 +1,4 @@
-from arrays.arrays_intersection import arrays_intersection, arrays_intersection2
+from src.arrays.arrays_intersection import arrays_intersection, arrays_intersection2
 
 
 def test_arrays_intersection():

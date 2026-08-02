@@ -1,4 +1,4 @@
-from arrays.third_max import third_max
+from src.arrays.third_max import third_max
 
 
 def test_third_max():

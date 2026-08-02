@@ -1,4 +1,4 @@
-from arrays.find_max_consecutive_ones import find_max_consecutive_ones
+from src.arrays.find_max_consecutive_ones import find_max_consecutive_ones
 
 
 def test_find_max_consecutive_ones():

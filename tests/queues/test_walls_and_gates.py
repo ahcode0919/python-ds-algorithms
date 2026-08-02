@@ -1,4 +1,4 @@
-from queues.walls_and_gates import walls_and_gates
+from src.queues.walls_and_gates import walls_and_gates
 
 
 def test_walls_and_gates():

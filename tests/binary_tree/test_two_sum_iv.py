@@ -1,5 +1,5 @@
-from binary_tree.two_sum_iv import two_sum_iv
-from test_helpers.test_helpers import TreeNode, get_binary_tree
+from src.binary_tree.two_sum_iv import two_sum_iv
+from tests.test_helpers.test_helpers import TreeNode, get_binary_tree
 
 
 def test_two_sum_iv():

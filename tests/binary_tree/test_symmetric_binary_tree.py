@@ -1,5 +1,5 @@
-from binary_tree.symmetric_binary_tree import symmetric_binary_tree
-from binary_tree.tree_node import TreeNode
+from src.binary_tree.symmetric_binary_tree import symmetric_binary_tree
+from src.binary_tree.tree_node import TreeNode
 
 
 def test_symmetric_binary_tree():

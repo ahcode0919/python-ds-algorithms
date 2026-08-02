@@ -1,6 +1,6 @@
-from binary_tree.tree_from_preorder_inorder import tree_from_preorder_inorder
-from binary_tree.tree_node import TreeNode
-from test_helpers.test_helpers import get_binary_tree_values
+from src.binary_tree.tree_from_preorder_inorder import tree_from_preorder_inorder
+from src.binary_tree.tree_node import TreeNode
+from tests.test_helpers.test_helpers import get_binary_tree_values
 
 
 def test_tree_from_preorder_inorder():

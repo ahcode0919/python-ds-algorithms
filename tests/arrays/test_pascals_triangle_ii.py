@@ -1,4 +1,4 @@
-from arrays.pascals_triangle_ii import pascals_triangle_ii
+from src.arrays.pascals_triangle_ii import pascals_triangle_ii
 
 
 def test_pascals_triangle_ii():

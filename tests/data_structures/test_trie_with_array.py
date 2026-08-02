@@ -1,4 +1,4 @@
-from data_structures.trie_with_array import TrieWithArray
+from src.data_structures.trie_with_array import TrieWithArray
 
 
 def test_trie_with_array():

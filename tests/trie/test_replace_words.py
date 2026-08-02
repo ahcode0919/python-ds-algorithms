@@ -1,4 +1,4 @@
-from trie.replace_words import replace_words
+from src.trie.replace_words import replace_words
 
 
 def test_replace_words():

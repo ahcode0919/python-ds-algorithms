@@ -1,4 +1,4 @@
-from multi_dimensional_arrays.diagonal_traverse import diagonal_traverse
+from src.multi_dimensional_arrays.diagonal_traverse import diagonal_traverse
 
 
 def test_diagonal_traverse():

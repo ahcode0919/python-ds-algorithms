@@ -1,4 +1,4 @@
-from math_problems.power_of_three import power_of_three
+from src.math_problems.power_of_three import power_of_three
 
 
 def test_power_of_three():

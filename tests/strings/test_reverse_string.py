@@ -1,4 +1,4 @@
-from strings.reverse_string import (
+from src.strings.reverse_string import (
     reverse_string,
     reverse_string_in_place,
     reverse_string_with_list_comprehension,

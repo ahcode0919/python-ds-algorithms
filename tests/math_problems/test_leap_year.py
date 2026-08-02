@@ -1,4 +1,4 @@
-from math_problems.leap_year import leap_year
+from src.math_problems.leap_year import leap_year
 
 
 def test_leap_year():

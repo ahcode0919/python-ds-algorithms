@@ -1,4 +1,4 @@
-from strings.add_binary import add_binary, add_binary_with_builtins
+from src.strings.add_binary import add_binary, add_binary_with_builtins
 
 
 def test_add_binary():

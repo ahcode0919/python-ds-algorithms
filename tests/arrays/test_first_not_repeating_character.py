@@ -1,4 +1,4 @@
-from arrays.first_not_repeating_character import (
+from src.arrays.first_not_repeating_character import (
     first_not_repeating_character,
     first_not_repeating_character_set,
 )

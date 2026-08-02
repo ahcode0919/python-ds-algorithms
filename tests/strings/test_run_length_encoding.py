@@ -1,4 +1,4 @@
-from strings.run_length_encoding import run_length_encoding
+from src.strings.run_length_encoding import run_length_encoding
 
 
 def test_run_length_encoding():

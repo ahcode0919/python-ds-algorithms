@@ -1,4 +1,4 @@
-from arrays.container_with_max_area import container_with_max_area
+from src.arrays.container_with_max_area import container_with_max_area
 
 
 def test_container_with_max_area():

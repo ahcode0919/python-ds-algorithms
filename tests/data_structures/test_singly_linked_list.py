@@ -1,4 +1,4 @@
-from data_structures.singly_linked_list import SinglyLinkedList
+from src.data_structures.singly_linked_list import SinglyLinkedList
 
 EMPTY_LIST = SinglyLinkedList()
 

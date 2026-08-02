@@ -1,4 +1,4 @@
-from algorithm_theory.binary_search import binary_search_iterative, binary_search_recursive
+from src.algorithm_theory.binary_search import binary_search_iterative, binary_search_recursive
 
 
 def test_binary_search_iterative():

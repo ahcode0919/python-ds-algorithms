@@ -1,4 +1,4 @@
-from trie.map_sum import MapSum
+from src.trie.map_sum import MapSum
 
 
 def test_map_sum():

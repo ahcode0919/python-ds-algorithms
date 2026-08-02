@@ -1,4 +1,4 @@
-from data_structures.trie_with_dictionary import TrieWithDictionary
+from src.data_structures.trie_with_dictionary import TrieWithDictionary
 
 
 def test_trie_with_dictionary():

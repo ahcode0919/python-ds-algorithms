@@ -1,4 +1,4 @@
-from queues.moving_average import MovingAverage
+from src.queues.moving_average import MovingAverage
 
 
 def test_moving_average():

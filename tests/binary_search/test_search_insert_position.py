@@ -1,4 +1,4 @@
-from binary_search.search_insert_position import search_insert
+from src.binary_search.search_insert_position import search_insert
 
 
 def test_search_insert():

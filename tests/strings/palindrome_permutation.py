@@ -1,4 +1,4 @@
-from strings.palindrome_permutation import palindrome_permutation
+from src.strings.palindrome_permutation import palindrome_permutation
 
 
 def test_palindrome_permutation():

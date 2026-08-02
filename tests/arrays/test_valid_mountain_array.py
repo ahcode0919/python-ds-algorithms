@@ -1,4 +1,4 @@
-from arrays.valid_mountain_array import valid_mountain_array
+from src.arrays.valid_mountain_array import valid_mountain_array
 
 
 def test_valid_mountain_array():

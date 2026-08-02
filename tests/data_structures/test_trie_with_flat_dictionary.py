@@ -1,4 +1,4 @@
-from data_structures.trie_with_flat_dictionary import TrieWithFlatDictionary
+from src.data_structures.trie_with_flat_dictionary import TrieWithFlatDictionary
 
 
 def test_trie_with_flat_dictionary():

@@ -1,5 +1,5 @@
-from doubly_linked_list.flatten_doubly_linked_lists import Node, flatten, flatten_iterative
-from test_helpers.test_helpers import get_list_values
+from src.doubly_linked_list.flatten_doubly_linked_lists import Node, flatten, flatten_iterative
+from tests.test_helpers.test_helpers import get_list_values
 
 
 def test_flatten():

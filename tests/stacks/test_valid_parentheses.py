@@ -1,4 +1,4 @@
-from stacks.valid_parentheses import valid_parentheses
+from src.stacks.valid_parentheses import valid_parentheses
 
 
 def test_valid_parentheses():

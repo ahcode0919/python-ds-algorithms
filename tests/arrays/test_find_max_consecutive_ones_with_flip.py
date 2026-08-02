@@ -1,4 +1,4 @@
-from arrays.find_max_consecutive_ones_with_flip import find_max_consecutive_ones_with_flip
+from src.arrays.find_max_consecutive_ones_with_flip import find_max_consecutive_ones_with_flip
 
 
 def test_find_max_consecutive_ones_with_flip():

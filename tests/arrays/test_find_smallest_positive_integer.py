@@ -1,4 +1,4 @@
-from arrays.find_smallest_positive_integer import find_smallest_positive_integer
+from src.arrays.find_smallest_positive_integer import find_smallest_positive_integer
 
 
 def test_find_smallest_positive_integer():

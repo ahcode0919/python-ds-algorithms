@@ -1,4 +1,4 @@
-from multi_dimensional_arrays.spiral_matrix import spiral_matrix
+from src.multi_dimensional_arrays.spiral_matrix import spiral_matrix
 
 
 def test_spiral_matrix():

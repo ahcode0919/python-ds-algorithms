@@ -1,4 +1,4 @@
-from arrays.minimum_subarray_length import minimum_subarray_length
+from src.arrays.minimum_subarray_length import minimum_subarray_length
 
 
 def test_minimum_subarray_length():

@@ -1,4 +1,4 @@
-from strings.jewels_and_stones import jewels_and_stones
+from src.strings.jewels_and_stones import jewels_and_stones
 
 
 def test_jewels_and_stones():

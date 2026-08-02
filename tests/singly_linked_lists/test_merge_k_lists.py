@@ -1,5 +1,5 @@
-from singly_linked_lists.merge_k_lists import merge_k_lists
-from test_helpers.test_helpers import get_list_values, get_singly_linked_list
+from src.singly_linked_lists.merge_k_lists import merge_k_lists
+from tests.test_helpers.test_helpers import get_list_values, get_singly_linked_list
 
 
 def test_merge_k_lists():

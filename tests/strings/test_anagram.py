@@ -1,4 +1,4 @@
-from strings.anagram import valid_anagram
+from src.strings.anagram import valid_anagram
 
 
 def test_valid_anagram():

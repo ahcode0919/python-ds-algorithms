@@ -1,4 +1,4 @@
-from multi_dimensional_arrays.rotate_image import rotate_image_90_degrees
+from src.multi_dimensional_arrays.rotate_image import rotate_image_90_degrees
 
 
 def test_rotate_image_90_degrees():

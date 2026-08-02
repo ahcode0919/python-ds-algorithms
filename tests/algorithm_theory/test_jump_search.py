@@ -1,4 +1,4 @@
-from algorithm_theory.jump_search import jump_search
+from src.algorithm_theory.jump_search import jump_search
 
 
 def test_jump_search():

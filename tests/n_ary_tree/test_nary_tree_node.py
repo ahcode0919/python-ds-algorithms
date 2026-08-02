@@ -1,4 +1,4 @@
-from n_ary_tree.nary_tree_node import NaryTreeNode
+from src.n_ary_tree.nary_tree_node import NaryTreeNode
 
 
 def test_nary_tree_node():

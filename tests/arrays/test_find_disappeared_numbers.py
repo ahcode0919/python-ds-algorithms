@@ -1,4 +1,7 @@
-from arrays.find_disappeared_numbers import find_disappeared_numbers, find_disappeared_numbers_ii
+from src.arrays.find_disappeared_numbers import (
+    find_disappeared_numbers,
+    find_disappeared_numbers_ii,
+)
 
 
 def test_find_disappeared_numbers():

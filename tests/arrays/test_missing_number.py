@@ -1,4 +1,4 @@
-from arrays.missing_number import missing_number, missing_number_ii
+from src.arrays.missing_number import missing_number, missing_number_ii
 
 
 def test_missing_number():

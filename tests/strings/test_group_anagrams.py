@@ -1,4 +1,4 @@
-from strings.group_anagrams import group_anagrams
+from src.strings.group_anagrams import group_anagrams
 
 
 def test_group_anagrams():

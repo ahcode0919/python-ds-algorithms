@@ -1,4 +1,4 @@
-from queues.queue_with_stack import Queue
+from src.queues.queue_with_stack import Queue
 
 
 def test_queue_with_stack():

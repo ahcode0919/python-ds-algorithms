@@ -1,4 +1,4 @@
-from arrays.rotate_array import rotate_array_in_place, rotate_array_with_array
+from src.arrays.rotate_array import rotate_array_in_place, rotate_array_with_array
 
 
 def test_rotate_array_with_array():

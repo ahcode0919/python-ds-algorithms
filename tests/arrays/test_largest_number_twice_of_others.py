@@ -1,4 +1,4 @@
-from arrays.largest_number_at_least_twice_of_others import (
+from src.arrays.largest_number_at_least_twice_of_others import (
     largest_number_at_least_twice_of_others,
     largest_number_at_least_twice_of_others2,
 )

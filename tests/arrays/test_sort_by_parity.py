@@ -1,4 +1,4 @@
-from arrays.sort_by_parity import sort_by_parity
+from src.arrays.sort_by_parity import sort_by_parity
 
 
 def test_sort_by_parity():

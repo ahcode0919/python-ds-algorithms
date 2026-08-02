@@ -1,4 +1,4 @@
-from arrays.make_array_consecutive import make_array_consecutive
+from src.arrays.make_array_consecutive import make_array_consecutive
 
 
 def test_make_array_consecutive():

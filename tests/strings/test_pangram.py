@@ -1,4 +1,4 @@
-from strings.pangram import pangram
+from src.strings.pangram import pangram
 
 
 def test_pangram():

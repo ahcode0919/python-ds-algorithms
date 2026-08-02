@@ -1,5 +1,5 @@
-from n_ary_tree.postorder_traversal_iterative import postorder_traversal_iterative
-from test_helpers.test_helpers import get_n_nary_tree
+from src.n_ary_tree.postorder_traversal_iterative import postorder_traversal_iterative
+from tests.test_helpers.test_helpers import get_n_nary_tree
 
 
 def test_postorder_traversal_iterative():

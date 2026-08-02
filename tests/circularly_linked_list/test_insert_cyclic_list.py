@@ -1,6 +1,6 @@
-from circularly_linked_list.insert_cyclic_list import insert
-from data_structures.singly_linked_list_node import SinglyLinkedListNode
-from test_helpers.test_helpers import get_cyclic_list_values
+from src.circularly_linked_list.insert_cyclic_list import insert
+from src.data_structures.singly_linked_list_node import SinglyLinkedListNode
+from tests.test_helpers.test_helpers import get_cyclic_list_values
 
 
 def test_insert():

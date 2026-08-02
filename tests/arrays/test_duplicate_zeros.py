@@ -1,4 +1,4 @@
-from arrays.duplicate_zeros import duplicate_zeros
+from src.arrays.duplicate_zeros import duplicate_zeros
 
 
 def test_duplicate_zeros():
