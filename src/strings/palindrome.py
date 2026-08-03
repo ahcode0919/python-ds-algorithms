@@ -13,13 +13,8 @@ def valid_palindrome_naive(string: str) -> bool:
 
 def valid_palindrome(string: str) -> bool:
     """Walk inward from both ends, skipping non-alphanumeric characters, comparing lowercased characters."""
-    length = len(string)
-
-    if length < 2:
-        return True
-
     start = 0
-    end = length - 1
+    end = len(string) - 1
 
     normalized_string = string.lower()
 

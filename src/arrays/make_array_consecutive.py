@@ -7,15 +7,14 @@ def make_array_consecutive(values: list[int]) -> int:
 
     Sort the array, then sum the gaps between consecutive sorted values.
     """
-    length = len(values)
     numbers_needed = 0
 
-    if length <= 1:
+    if len(values) <= 1:
         return numbers_needed
 
     sorted_numbers = sorted(values)
 
-    for i in range(1, length):
+    for i in range(1, len(values)):
         numbers_needed += (sorted_numbers[i] - sorted_numbers[i - 1]) - 1
 
     return numbers_needed

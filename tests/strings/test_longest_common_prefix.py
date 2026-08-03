@@ -5,6 +5,8 @@ from src.strings.longest_common_prefix import (
 
 
 def test_longest_common_prefix_horizontal():
+    assert longest_common_prefix_horizontal([]) == ""
+    assert longest_common_prefix_horizontal([""]) == ""
     assert longest_common_prefix_horizontal(["acv", "def", "sgh"]) == ""
     assert longest_common_prefix_horizontal(["abab", ""]) == ""
     assert longest_common_prefix_horizontal(["ababaabbab", "abab", "abbaba"]) == "ab"
@@ -14,6 +16,7 @@ def test_longest_common_prefix_horizontal():
 
 
 def test_longest_common_prefix_vertical():
+    assert longest_common_prefix_vertical([]) == ""
     assert longest_common_prefix_vertical(["acv", "def", "sgh"]) == ""
     assert longest_common_prefix_vertical(["abab", ""]) == ""
     assert longest_common_prefix_vertical(["ababaabbab", "abab", "abbaba"]) == "ab"

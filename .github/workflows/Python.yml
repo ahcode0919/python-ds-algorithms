@@ -31,6 +31,6 @@ jobs:
     - name: Lint
       run: |
         just lint
-    - name: Unit tests
+    - name: Unit tests + Code coverage check
       run: |
-        just test
+        just test-coverage-percentage

@@ -15,7 +15,7 @@ def replace_words(dictionary: list[str], sentence: str) -> str:
     `"the cat was rat by the bat"`
     """
     words = sentence.split(" ")
-    updated_sentence: [str] = []
+    updated_sentence: list[str] = []
     prefix_trie = TrieNode()
 
     for word in dictionary:
@@ -31,21 +31,21 @@ class TrieNode:
     """A prefix trie node used to store dictionary roots and match sentence words against them."""
 
     def __init__(self):
-        self.nodes: dict[str:TrieNode] = dict()
+        self.nodes: dict[str, TrieNode] = dict()
 
     def insert(self, word: str) -> None:
         """Insert word into the trie, stopping early if a shorter existing root already covers it."""
         current_node = self
         for index in range(1, len(word) + 1):
-            if word[:index] in current_node.nodes:
-                next_node = current_node.nodes.get(word[:index])
+            if current_node and word[:index] in current_node.nodes:
+                next_node = current_node.nodes[word[:index]]
                 if len(next_node.nodes) == 0:
                     return
                 if index == len(word):
                     current_node.nodes[word[:index]] = TrieNode()
                     return
                 current_node = next_node
-            else:
+            elif current_node:
                 current_node.nodes.setdefault(word[:index], TrieNode())
                 current_node = current_node.nodes.get(word[:index])
 
@@ -53,10 +53,8 @@ class TrieNode:
         """Walk the trie along word's prefixes and return the shortest matching root, or word unchanged."""
         current_node = self
         for index in range(1, len(word) + 1):
-            if word[:index] in current_node.nodes:
-                current_node = current_node.nodes.get(word[:index])
+            if current_node and word[:index] in current_node.nodes:
+                current_node = current_node.nodes[word[:index]]
                 if len(current_node.nodes) == 0:
                     return word[:index]
-            else:
-                return word
         return word

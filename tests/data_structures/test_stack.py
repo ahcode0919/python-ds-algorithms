@@ -8,3 +8,4 @@ def test_stack():
     stack.push(1)
     assert len(stack) == 1
     assert stack.pop() == 1
+    assert len(stack) == 0

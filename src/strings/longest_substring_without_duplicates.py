@@ -8,8 +8,6 @@ def longest_substring_without_duplicates(string: str) -> int:
     Slide a window with two pointers, expanding right while characters are unique and shrinking left otherwise.
     """
     length = len(string)
-    if length <= 1:
-        return length
     left_index = 0
     right_index = 0
     longest = 0

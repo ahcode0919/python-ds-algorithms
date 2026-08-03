@@ -8,3 +8,4 @@ def test_palindrome_permutation():
     assert palindrome_permutation("")
     assert not palindrome_permutation("test")
     assert not palindrome_permutation("aabc")
+    assert not palindrome_permutation("abc")

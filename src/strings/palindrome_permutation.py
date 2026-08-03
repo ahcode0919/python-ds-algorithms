@@ -21,7 +21,7 @@ def palindrome_permutation(palindrome: str) -> bool:
                 return False
     else:
         ones_count = Counter(counter.values()).get(1)
-        if ones_count > 1:
+        if ones_count and ones_count > 1:
             return False
 
     return True

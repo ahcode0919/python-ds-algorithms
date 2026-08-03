@@ -29,10 +29,6 @@ def string_to_integer(string: str) -> int:
             start_index = index
             break
 
-    # Handle empty string (no numbers)
-    if start_index == -1:
-        return 0
-
     end_index = start_index
 
     for index in range(start_index, length):

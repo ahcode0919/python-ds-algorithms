@@ -8,3 +8,4 @@ def test_valid_mountain_array():
     assert not valid_mountain_array([1, 2, 3, 4])
     assert not valid_mountain_array([3, 2, 1, 0])
     assert not valid_mountain_array([1])
+    assert not valid_mountain_array([1, 2, 3, 4, 3, 5])

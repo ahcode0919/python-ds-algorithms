@@ -7,8 +7,7 @@ class MinStack:
     """
 
     def __init__(self):
-        # Tuple (value, current_min)
-        self.stack = []
+        self.stack: list[tuple[int, int]] = []
 
     def push(self, value: int) -> None:
         """Push value onto the stack, storing the minimum seen so far alongside it."""
