@@ -26,7 +26,7 @@ def is_palindrome(head: SinglyLinkedListNode | None) -> bool:
     first_pointer = head
     second_pointer = second_half_head
 
-    while palindrome and second_pointer:
+    while palindrome and first_pointer and second_pointer:
         if first_pointer.data != second_pointer.data:
             return False
         first_pointer = first_pointer.next

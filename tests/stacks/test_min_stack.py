@@ -9,6 +9,7 @@ def test_min_stack():
 
     stack.push(-3)
     assert stack.get_min() == -3
+    assert stack.top() == -3
 
     stack.pop()
     stack.pop()

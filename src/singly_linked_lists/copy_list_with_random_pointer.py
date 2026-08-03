@@ -17,9 +17,6 @@ def copy_random_list[T](head: Node[T]) -> Node[T] | None:
 
     Walks the list once, cloning each node and its `random` target via a visited-node lookup.
     """
-    if not head:
-        return None
-
     current: Node[T] | None = head
     nodes: dict[Node[T], Node[T]] = {}
     new_node: Node[T] | None = Node[T](head.value, None, None)

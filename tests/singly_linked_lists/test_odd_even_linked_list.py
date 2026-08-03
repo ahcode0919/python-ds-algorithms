@@ -4,6 +4,9 @@ from tests.test_helpers.test_helpers import get_list_values
 
 
 def test_odd_even_linked_list():
+    head = None
+    assert odd_even_list(head) is None
+
     head = SinglyLinkedListNode(1)
     assert odd_even_list(head) == head
 

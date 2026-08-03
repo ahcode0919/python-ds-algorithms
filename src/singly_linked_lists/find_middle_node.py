@@ -1,7 +1,7 @@
 from src.data_structures.singly_linked_list_node import SinglyLinkedListNode
 
 
-def find_middle_node(head: SinglyLinkedListNode | None) -> SinglyLinkedListNode | None:
+def find_middle_node(head: SinglyLinkedListNode) -> SinglyLinkedListNode:
     """Find Middle Node.
 
     Find the node that comes before the middle node of a singly linked list.
@@ -10,12 +10,10 @@ def find_middle_node(head: SinglyLinkedListNode | None) -> SinglyLinkedListNode 
 
     Advances a slow and a fast pointer (2x speed) until the fast pointer runs out of room.
     """
-    if not head:
-        return None
     slow = head
     fast = head
 
-    while fast.next and fast.next.next:
+    while slow and slow.next and fast.next and fast.next.next:
         slow = slow.next
         fast = fast.next.next
 

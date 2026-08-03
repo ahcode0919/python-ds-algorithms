@@ -1,7 +1,7 @@
 from collections import deque
 
 
-def walls_and_gates(rooms_input: list[list[int]]) -> list[list[int]]:
+def walls_and_gates(rooms: list[list[int]]) -> list[list[int]]:
     """Walls and Gates (BFS).
 
     Run a multi-source BFS from every gate to fill each empty room with its distance to the
@@ -28,11 +28,7 @@ def walls_and_gates(rooms_input: list[list[int]]) -> list[list[int]]:
     0  -1   3   4
     ```
     """
-    rooms = rooms_input[:]
     height = len(rooms)
-    if height == 0:
-        return [[]]
-
     width = len(rooms[0])
     queue = deque()
 

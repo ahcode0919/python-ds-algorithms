@@ -21,3 +21,4 @@ def two_sum_ii(numbers: list[int], target: int) -> list[int]:
             index_right -= 1
         else:
             return [index_left + 1, index_right + 1]
+    return []

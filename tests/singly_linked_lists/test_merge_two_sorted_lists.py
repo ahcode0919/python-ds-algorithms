@@ -4,6 +4,7 @@ from tests.test_helpers.test_helpers import get_list_values
 
 
 def test_merge_two_lists():
+    assert merge_two_lists(None, None) is None
 
     list1 = SinglyLinkedListNode(1)
     assert get_list_values(merge_two_lists(list1, None)) == [1]

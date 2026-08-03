@@ -2,6 +2,7 @@ from src.arrays.find_smallest_positive_integer import find_smallest_positive_int
 
 
 def test_find_smallest_positive_integer():
+    assert find_smallest_positive_integer([]) == 0
     assert find_smallest_positive_integer([1, 2, 3]) == 1
     assert find_smallest_positive_integer([-1, -2, -3]) == 0
     assert find_smallest_positive_integer([1, 1, 1]) == 1

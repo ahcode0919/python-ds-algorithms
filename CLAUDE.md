@@ -10,6 +10,8 @@ This project uses `uv` for dependency management and `just` as the command runne
 just sync                      # install/sync dependencies (uv sync --all-groups)
 just lint                      # uv run ruff check . --fix && uv run ruff format .
 just test                      # uv run pytest
+just test-coverage             # uv run pytest --cov=src --cov-report=term-missing
+just test-coverage-percentage  # uv run pytest --cov=src --cov-report=term --cov-fail-under=98
 uv run pytest tests/algorithm_theory/test_binary_search.py        # run one test file
 uv run pytest tests/algorithm_theory/test_binary_search.py::test_binary_search_iterative  # run one test
 uv add {package}                # add a dependency

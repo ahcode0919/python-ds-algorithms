@@ -13,7 +13,7 @@ def binary_search_iterative(array: list[int], target: int) -> int | None:
     right = len(array) - 1
 
     while left <= right:
-        middle = int((left + right) / 2)
+        middle = (left + right) // 2
 
         if array[middle] == target:
             return middle
@@ -27,7 +27,7 @@ def binary_search_iterative(array: list[int], target: int) -> int | None:
 def binary_search_recursive(array: list[int], left: int, right: int, target: int) -> int | None:
     """Recurse into the left or right sub-array each call until target is found or the bounds cross."""
     if right >= left:
-        mid = int((left + right) / 2)
+        mid = (left + right) // 2
 
         # If element is present at the middle
         if array[mid] == target:

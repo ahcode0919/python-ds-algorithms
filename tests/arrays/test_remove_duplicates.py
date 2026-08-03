@@ -2,6 +2,12 @@ from src.arrays.remove_duplicates import remove_duplicates
 
 
 def test_remove_duplicates():
+    nums = []
+    assert remove_duplicates(nums) == 0
+
+    nums = [1]
+    assert remove_duplicates(nums) == 1
+
     nums = [1, 1, 2]
     assert remove_duplicates(nums) == 2
     assert nums == [1, 2, 2]

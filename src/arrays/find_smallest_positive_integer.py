@@ -7,20 +7,15 @@ def find_smallest_positive_integer(arr: list[int]) -> int:
 
     Single pass tracking the smallest positive value seen so far.
     """
-    length = len(arr)
+    smallest = -1
 
-    if length == 0:
-        return 0
-
-    smallest = None
-
-    for i in range(length):
+    for i in range(len(arr)):
         if arr[i] > 0:
-            if smallest is None:
+            if smallest == -1:
                 smallest = arr[i]
             elif arr[i] < smallest:
                 smallest = arr[i]
 
-    if smallest is None:
+    if smallest == -1:
         return 0
     return smallest

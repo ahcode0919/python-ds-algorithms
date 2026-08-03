@@ -9,13 +9,12 @@ def remove_duplicates(nums: list[int]) -> int:
 
     Two-pointer in-place compaction over an already-sorted array.
     """
-    length = len(nums)
-    if length <= 1:
-        return length
+    if len(nums) <= 1:
+        return len(nums)
 
     last_index = 0
 
-    for index in range(1, length):
+    for index in range(1, len(nums)):
         if nums[index] == nums[last_index]:
             continue
         last_index += 1

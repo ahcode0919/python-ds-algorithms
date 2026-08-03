@@ -15,9 +15,6 @@ def get_intersection_node(
     cover equal total distance and meet at the intersection (or both reach None if there is none). Time: O(N),
     Space: O(1).
     """
-    if not head_a or not head_b:
-        return None
-
     node_a: SinglyLinkedListNode = head_a
     node_b: SinglyLinkedListNode = head_b
 

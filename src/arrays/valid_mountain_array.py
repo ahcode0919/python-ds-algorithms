@@ -9,25 +9,24 @@ def valid_mountain_array(arr: list[int]) -> bool:
 
     Walk up the increasing run, then confirm a strictly decreasing run finishes the array.
     """
-    length = len(arr)
-    if length <= 2:
+    if len(arr) <= 2:
         return False
 
     index = 1
 
     # Check increasing
-    while index < length:
+    while index < len(arr):
         if arr[index - 1] < arr[index]:
             index += 1
         else:
             break
 
     # Edge case: only increasing, only decreasing
-    if index in [length, 1]:
+    if index == len(arr) or index == 1:
         return False
 
     # Check decreasing
-    while index < length:
+    while index < len(arr):
         if arr[index - 1] > arr[index]:
             index += 1
         else:

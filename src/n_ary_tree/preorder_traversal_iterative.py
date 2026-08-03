@@ -1,7 +1,7 @@
 from src.n_ary_tree.nary_tree_node import NaryTreeNode
 
 
-def preorder_traversal_iterative(root: NaryTreeNode) -> list:
+def preorder_traversal_iterative(root: NaryTreeNode | None) -> list:
     """Preorder Traversal (Iterative).
 
     Given the root of an n-ary tree, return the preorder traversal of its nodes' values — a
