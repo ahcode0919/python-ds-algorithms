@@ -3,6 +3,9 @@ from src.singly_linked_lists.palindrome_linked_list import is_palindrome
 
 
 def test_is_palindrome():
+    head = None
+    assert not is_palindrome(head)
+
     head = SinglyLinkedListNode(1)
     assert is_palindrome(head)
 

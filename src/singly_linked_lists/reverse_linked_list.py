@@ -1,7 +1,7 @@
 from src.data_structures.singly_linked_list_node import SinglyLinkedListNode
 
 
-def reverse_linked_list(head: SinglyLinkedListNode) -> SinglyLinkedListNode | None:
+def reverse_linked_list(head: SinglyLinkedListNode | None) -> SinglyLinkedListNode | None:
     """Reverse Linked List.
 
     Reverse a singly linked list.
