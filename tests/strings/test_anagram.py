@@ -6,4 +6,3 @@ def test_valid_anagram():
     assert not valid_anagram("test", "tests")
     assert not valid_anagram("test", "tezt")
     assert not valid_anagram("test", "tsst")
-

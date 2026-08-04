@@ -15,8 +15,8 @@ def get_intersection_node(
     cover equal total distance and meet at the intersection (or both reach None if there is none). Time: O(N),
     Space: O(1).
     """
-    node_a: SinglyLinkedListNode = head_a
-    node_b: SinglyLinkedListNode = head_b
+    node_a = head_a
+    node_b = head_b
 
     while node_a != node_b:
         node_a = node_a.next
